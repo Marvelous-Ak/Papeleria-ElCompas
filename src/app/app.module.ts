@@ -7,15 +7,20 @@ import { AppComponent } from './app.component';
 //Paginas
 import { HomeComponent } from './pages/home/home.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+  ],
+  exports:[
+    NavbarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
