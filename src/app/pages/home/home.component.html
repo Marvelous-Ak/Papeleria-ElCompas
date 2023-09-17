@@ -1,23 +1,69 @@
-<app-navbar></app-navbar>
 
-<div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">First slide</text></svg>
-      </div>
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
-      </div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/img/Banner_Promo_01.png" width="100%" height="100%">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="carousel-item">
+      <img src="/assets/img/Banner_Promo_02.png" width="100%" height="100%">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/img/Banner_Promo_03.png" width="100%" height="100%">
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<script>
+  $(document).ready(function () {
+  // Configuración del carrusel
+  $('#carouselExampleAutoplaying').carousel({
+    interval: 5000, // Establece el intervalo ms
+    pause: 'hover', // Pausa el carrusel al pasar el mouse
+    wrap: true // Permite que el carrusel vuelva a la primera imagen después de la última
+  });
+});
+</script>
+
+<!-- Nuevo contenido -->
+<div class="d-grid gap-1">
+  <div class="m-2 bg-light border border-dark">
+    <h1>Elemento 1</h1>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum enim debitis accusamus, sunt quod asperiores mollitia id quae iste! Quisquam explicabo error impedit quis, quasi aspernatur delectus ea animi consequatur?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ullam asperiores dolores assumenda. Sit, officia consequuntur quos corporis commodi aperiam maxime possimus exercitationem facilis molestiae, dolor ab, recusandae enim at!
+  </div>
+  <div class="m-2 bg-light border border-dark">
+    <h2>Elemento 2</h2>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. At explicabo iusto, beatae perspiciatis itaque nam, quas ratione autem ab accusamus quisquam. Vel autem officiis doloremque magni! Quasi esse aut aperiam?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores reprehenderit illum facere officiis accusantium beatae, corporis qui nesciunt neque, veniam aspernatur doloremque. Adipisci, minima debitis ad amet consectetur molestias ratione?
+  </div>
+  <div class="m-2 bg-light border border-dark">
+    <h3>Elemento 3</h3>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque sit iste perferendis quidem atque! Aperiam assumenda nobis sunt cum animi quibusdam quo magni, error tempora neque doloremque ipsa sequi quod?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis nemo optio iure at, dolor nulla suscipit exercitationem voluptates. Dolores inventore pariatur dignissimos adipisci ullam vel illum minima maiores molestias.
+  </div>
+</div>
+<div class="d-grid gap-1">
+  <div class="m-2 bg-light border border-dark">
+    <h1>Elemento 1</h1>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum enim debitis accusamus, sunt quod asperiores mollitia id quae iste! Quisquam explicabo error impedit quis, quasi aspernatur delectus ea animi consequatur?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ullam asperiores dolores assumenda. Sit, officia consequuntur quos corporis commodi aperiam maxime possimus exercitationem facilis molestiae, dolor ab, recusandae enim at!
+  </div>
+  <div class="m-2 bg-light border border-dark">
+    <h2>Elemento 2</h2>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. At explicabo iusto, beatae perspiciatis itaque nam, quas ratione autem ab accusamus quisquam. Vel autem officiis doloremque magni! Quasi esse aut aperiam?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores reprehenderit illum facere officiis accusantium beatae, corporis qui nesciunt neque, veniam aspernatur doloremque. Adipisci, minima debitis ad amet consectetur molestias ratione?
+  </div>
+  <div class="m-2 bg-light border border-dark">
+    <h3>Elemento 3</h3>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque sit iste perferendis quidem atque! Aperiam assumenda nobis sunt cum animi quibusdam quo magni, error tempora neque doloremque ipsa sequi quod?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis nemo optio iure at, dolor nulla suscipit exercitationem voluptates. Dolores inventore pariatur dignissimos adipisci ullam vel illum minima maiores molestias.
+  </div>
+</div>
