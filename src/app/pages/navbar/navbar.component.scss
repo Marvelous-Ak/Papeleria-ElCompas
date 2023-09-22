@@ -1,0 +1,101 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+/* Estilos personalizados para el navbar */
+.navbar_1 {
+  background-color: #ffffff;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbar_2 {
+  background-color: #193d64;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*Para la sombra al seleccionar no se muestre*/
+.search-input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn.btn-search {
+  height: 50px;
+  background: #21f1d8;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.lupa {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.lupita {
+  fill: #ffffff;
+  stroke: none;
+  transition: transform 0.3s ease; /* Transición de transformación */
+}
+
+/* Animación de tambalear al pasar el mouse */
+.btn-search:hover .lupita {
+  animation: tambalear 0.5s ease; /* Duración de 0.5 segundos */
+}
+
+/* Definición de la animación de tambalear */
+@keyframes tambalear {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+.nav-esp1{
+  font-size: 12px;
+  margin-top: -5px;
+}
+.nav-esp2{
+  font-size: 12px;
+  margin-top: -10px;
+}
+.nav-esp3{
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.imagen-izquierda {
+  width:30px;
+  height:auto;
+  margin-top: 5px;
+  float: left; /* Flotar la imagen a la izquierda */
+  margin-right: 5px; /* Agregar margen a la derecha de la imagen para separarla de los enlaces */
+}
+
+.select_C:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.select_C{
+  border-radius: 4px 0 0 4px;
+  height: 50px;
+  font-size: 13px;
+}
+
+.navbar_text{
+  margin: 0px 20px;
+}
