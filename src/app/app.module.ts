@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 
 //Paginas
 import { HomeComponent } from './pages/home/home.component';
-import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { CatalogosComponent } from './pages/catalogos/catalogos.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CatalogoComponent,
+    //CatalogosComponent,
     NavbarComponent
   ],
   imports: [
