@@ -8,64 +8,80 @@
     margin: 10px;
     position: relative;
     border: none;
-    border-radius: 10%;
+    border-radius: 5%;
     background: rgba(223, 220, 220, 0.5);
 }
 .card:hover > img{
     transform: scale(1.1);
-    background-color: rgb(71, 71, 71);
+    //background-color: white
+}
+.card:hover{
+    background-color: white;
+    border: solid 2px rgb(71, 71, 71, 0.5);;
 }
 h3{
     text-align: center;
     background-color: aqua;
     padding: 2px 0 2px 0;
     font-size: 140%;
-
 }
 .container {
     max-width: 100%;
 }
-
-.nav-xD{
-    background: black;
-    padding-top: 10px;
- }
- .nav-xD .breadcrumb{
-    align-items: center;
-    justify-content: center;
- }
- .price{
-    color: rgb(240, 105, 105);
- }
 ///Proporciones del card
+.cont-1 .card-sup{
+    height: 20%;
+    padding-top: 2%;
+    width: 100%;
+}
+.card .marca{
+    font-size: 0.8em;
+    white-space: nowrap; /* Evita el salto de línea */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se recorta */
+    overflow: hidden; 
+}
+.card-sup .card-title{
+    height: 100%;
+    color: rgba(3,78,83,1);
+    font-size: 1em;
+    margin-top: -1em;
+    white-space: nowrap; /* Evita el salto de línea */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se recorta */
+    overflow: hidden; 
+}
  .cont-1 .card-img-top{
+    margin-top: -10%;
     width: 90%;
     height: 60%;
     transition: all 500ms ease-out;
  }
- .cont-1 .card-body{
-    height: 30%;
- }
- .cont-1 .card-bt{
-    height: 10%;
+ .cont-1 .card-inf{
+    margin-top: 2%;
     display: flex;
+    height: 10%;
+    color: rgba(10,174,185,1);
     justify-content: space-around;
     align-items: center;
  }
- .cont-1 .card-body .card-title{
-    height: 60%;
-    font-size: 1em;
+ .card-inf span{
+    margin-right: 20%;
+    color: rgba(105,116,117,1);
+    text-decoration: line-through;
  }
- .cont-1 .card-body .price{
-    height: 20%;
+ .cont-1 .card-bt{
+    height: 10%;
+    margin-bottom: 2%;
  }
  .card-bt .btn{
-    //margin-left: 10px;
+    width: 100%;
     height: 80%;
-    padding-top: 0;
-    background-color: rgb(231, 135, 135);
+    background-color: rgba(21, 173, 183, 1);
     border: none;
     font-size: 80%;
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
  .cont-1 .btn:hover{
     background-color: red;
@@ -73,8 +89,8 @@ h3{
  //icono de lista de favoritos
  .icon{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 14%;
+    right: 4px;
     visibility: hidden;
 }
 .card:hover > .icon{
@@ -82,130 +98,35 @@ h3{
 }
  .cont-1 .icon button{
     border: none;
-    background-color: white;
+    background-color: rgba(10,174,185,1);
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    fill: white;
 }
 .cont-1 .icon button img{
     position:absolute;
-    top: 12px;
+    top: 10px;
     left: 10px;
     width: 20px; 
 }
+.cont-1 .icon button .cora{
+    position: relative;
+    right: 4px;
+}
 .cont-1 .icon:hover > .btn-primary{
-    background-color: rgb(231, 135, 135);
+    background-color: red;
+    fill: black;
 }
-//botones inferiores
-.card-bt .btn-shop{
-    margin-right: 10px;
-}
-.card-bt .tx-2{
-    display: none;
-}
-
-//Responsividad
-@media (max-width: 1350px){
-    .cont-1 .card-body .card-title{
-        font-size: 0.9em;
-     }
-}
-@media (max-width: 1200px){
-    .cont-1 .card-body .card-title{
-        font-size: 0.8em;
-    }
-    .card-bt{
-        font-size: 70%;
-    }
-    .card-bt .btn{
-        padding-top: 3%;
-        font-size: 100%;
-    }
+ /// Breadcrumb: NAV
+ .nav-xD{
+    background: black;
+    padding-top: 10px;
  }
- @media (max-width: 1130px){
-    .cont-1 .card-body .card-title{
-        font-size: 0.785em;
-    }
-    .card-bt{
-        font-size: 70%;
-    }
-    .card-bt .btn{
-        padding-top: 3%;
-        font-size: 100%;
-    }
-    .card-bt .tx-1{
-        display: none;
-    }
-    .card-bt .tx-2{
-        display: inline-block;
-    }
+ .nav-xD .breadcrumb{
+    align-items: center;
+    justify-content: center;
  }
- @media (max-width: 991px) {
-    .card{
-        height: 380px;
-    }
-    .card-body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .card-bt .tx-2{
-        display: none;
-    }
-    .card-bt .tx-1{
-        display: inline-block;
-    }
-    .cont-1 .card-img-top{
-        height: 70%;
-     }
-     .cont-1 .card-body .card-title{
-        font-size: 1em;
-     }
-     .cont-1 .card-body .price{
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        border-radius: 20%;
-        color: wheat;
-        background-color: rgb(240, 105, 105);
-        font-size: 1.3em;
-        height: 9%;
-        padding: 0 5px 0 5px;
-    }
-
-
- }
- @media (max-width: 767px) {
-    .card{
-        height: 390px;
-    }
-    .cont-1 .card-img-top{
-        height: 70%;
-     }
- } 
- @media (max-width: 576px) {
-    .card{
-        height: 440px;
-        width: 70%;
-        left: 13%;
-    }
-    .card .card-img-top{
-        padding-top: 2%;
-    }
-    .card  .card-body .card-title{
-        font-size: 1.3em;
-    }
-    .card-bt{
-        padding-bottom: 4%;
-    }
-    .card-bt .btn{
-        height: 110%;
-        font-size: 130%;
-    }
-    .cont-1 .card-body .price{
-        height: 8%;
-    }
- } 
  .breadcrumb-item::before {
     margin: 0 0.5rem; /* Ajusta el espacio entre el divisor y el texto */
     color: white; /* Cambia el color de los divisores */
@@ -214,5 +135,62 @@ h3{
     text-decoration: none;
   }
   .item-s{
-    color: red;
+    color: rgb(240, 105, 105);
+  }
+  li a:hover{
+    text-decoration:underline;
+    color:aqua;
+  }
+//Responsividad
+  @media (max-width: 991px) {
+    .cont-1 .card-img-top{
+        width: 50%;
+    }
+    .cont-1 .card-sup{
+        height: 30%;
+    }
+  }
+  @media (max-width: 767px){
+    .card{
+        width: 90%;
+    }
+    .cont-1 .card-img-top{
+        width: 48%;
+    }
+  }
+  @media (max-width: 576px) {
+    .card{
+        width: 200px;
+    }
+  }
+  @media (min-width: 1800px){
+    .card{
+        height: 500px;
+    }
+  }
+  @media (min-width:2500px){
+    .contenedor-principal{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .card{
+        width: 80%;
+    }
+  }
+  @media (min-width:3000px){
+  .contenedor-principal{
+    width: 50%;
+    margin-left: 25%;
+  }
+  .card{
+    height: 700px;
+    }
+  }
+  @media (max-width:500px){
+    .contenedor-principal, h3, nav{
+        width: 200%;
+    }
+    .card{
+        width: 90%;
+    }
   }
