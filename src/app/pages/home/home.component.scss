@@ -63,13 +63,9 @@
     
   }
 
-.carousel-cata  .carousel-prev, .carousel-next{
-    //max-width: 5%;
-    background-color: #e1e1e1;
-    border-radius: 50%;
+.car-prev, .car-next{
     height: 6vh;
     width: 6vh;
     top: 50%;
     left: 2;
-    transform: translateY(-50%);
   }

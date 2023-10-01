@@ -1,131 +1,222 @@
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/assets/img/Banner_Promo_01.png" width="100%" height="100%">
-      </div>
-      <div class="carousel-item">
-        <img src="/assets/img/Banner_Promo_02.png" width="100%" height="100%">
-      </div>
-      <div class="carousel-item">
-        <img src="/assets/img/Banner_Promo_03.png" width="100%" height="100%">
-      </div>
+<!--Carrusel Promos-->
+<div
+  id="carouselExampleAutoplaying"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/img/Banner_Promo_01.png" width="100%" height="100%" />
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  
-  <script>
-    $(document).ready(function () {
-    // Configuración del carrusel
-    $('#carouselExampleAutoplaying').carousel({
-      interval: 5000, // Establece el intervalo ms
-      pause: 'hover', // Pausa el carrusel al pasar el mouse
-      wrap: true // Permite que el carrusel vuelva a la primera imagen después de la última
-    });
-  });
-  </script>
-  <br>
-  <div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="d-flex justify-content-center align-items-center">
-          <img src="/assets/img/Banner_Promo_01.png" width="20%" height="auto">
-        </div>
-        
-      </div>
-      <div class="carousel-item">
-        <img src="/assets/img/Banner_Promo_02.png" width="20%" height="auto">
-      </div>
-      <div class="carousel-item">
-        <img src="/assets/img/Banner_Promo_03.png" width="20%" height="auto">
-      </div>
+    <div class="carousel-item">
+      <img src="/assets/img/Banner_Promo_02.png" width="100%" height="100%" />
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <div class="card">
-          <img src="assets/img/catálogo/papel.png" alt="Papel" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Papel</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="assets/img/catálogo/escolares.jpeg" alt="Papel" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Escolares</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="assets/img/catálogo/artes.jpg" alt="Artes" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Artes</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="assets/img/catálogo/lapices.jpeg" alt="Lapices" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Lapices</h5>
-          </div>
-        </div>
-      </div>
+    <div class="carousel-item">
+      <img src="/assets/img/Banner_Promo_03.png" width="100%" height="100%" />
     </div>
   </div>
-  <br>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br />
 
- <!--Carrucel de catáloogos-->
- <div id="carouselExample" class="carousel slide carousel-cata">
+<!--Carrusel catálogo ejemplo-->
+<div id="carouselExample" class="carousel carousel-dark">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/papel.png"
+                alt="Papel"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Papel</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/escolares.jpeg"
+                alt="Papel"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Escolares</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/artes.jpg"
+                alt="Artes"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Artes</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/lapices.jpg"
+                alt="Lapices"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Escritura</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/oficina.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Oficina</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/manualidades.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Manualidades</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/didacticos.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Didácticos</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                src="assets/img/catálogo/ade.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Adhesivos</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev car-prev"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next car-next"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br />
+
+<!--Carrucel de catáloogos-->
+<div id="carouselExample" class="carousel slide carousel-cata">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="card-group">
         <a href="/">
           <div class="card" width="20%" height="auto">
-            <img src="assets/img/catálogo/papel.png" class="card-img-top" alt="...">
+            <img
+              src="assets/img/catálogo/papel.png"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Papel</h5>
             </div>
           </div>
         </a>
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/escolares.jpeg" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/escolares.jpeg"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Escolares</h5>
             </div>
           </div>
         </a>
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/artes.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/artes.jpg"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Artes</h5>
             </div>
           </div>
         </a>
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/lapices.jpeg" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/lapices.jpg"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Escritura</h5>
             </div>
@@ -136,32 +227,48 @@
     <div class="carousel-item">
       <div class="card-group">
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/oficina.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/oficina.jpg"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Oficina</h5>
             </div>
           </div>
         </a>
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/manualidades.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/manualidades.jpg"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Manualidades</h5>
             </div>
           </div>
         </a>
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/didacticos.png" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/didacticos.png"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Didácticos</h5>
             </div>
           </div>
         </a>
         <a href="/">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/catálogo/ade.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 18rem">
+            <img
+              src="assets/img/catálogo/ade.jpg"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h5 class="card-title">Adhesivos</h5>
             </div>
@@ -169,29 +276,48 @@
         </a>
       </div>
     </div>
-  <button class="carousel-prev carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-next carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!--Fin-->
-<div class="m-2 bg-light border border-dark">
-<h2>Elemento 2</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. At explicabo iusto, beatae perspiciatis itaque nam, quas ratione autem ab accusamus quisquam. Vel autem officiis doloremque magni! Quasi esse aut aperiam?
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores reprehenderit illum facere officiis accusantium beatae, corporis qui nesciunt neque, veniam aspernatur doloremque. Adipisci, minima debitis ad amet consectetur molestias ratione?
-</div>
-<div class="m-2 bg-light border border-dark">
-<h3>Elemento 3</h3>
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque sit iste perferendis quidem atque! Aperiam assumenda nobis sunt cum animi quibusdam quo magni, error tempora neque doloremque ipsa sequi quod?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis nemo optio iure at, dolor nulla suscipit exercitationem voluptates. Dolores inventore pariatur dignissimos adipisci ullam vel illum minima maiores molestias.
-</div>
+    <button
+      class="carousel-prev carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-next carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!--Fin-->
+  <div class="m-2 bg-light border border-dark">
+    <h2>Elemento 2</h2>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. At explicabo iusto,
+    beatae perspiciatis itaque nam, quas ratione autem ab accusamus quisquam.
+    Vel autem officiis doloremque magni! Quasi esse aut aperiam? Lorem ipsum
+    dolor sit amet consectetur adipisicing elit. Asperiores reprehenderit illum
+    facere officiis accusantium beatae, corporis qui nesciunt neque, veniam
+    aspernatur doloremque. Adipisci, minima debitis ad amet consectetur
+    molestias ratione?
+  </div>
+  <div class="m-2 bg-light border border-dark">
+    <h3>Elemento 3</h3>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque sit iste
+    perferendis quidem atque! Aperiam assumenda nobis sunt cum animi quibusdam
+    quo magni, error tempora neque doloremque ipsa sequi quod? Lorem ipsum dolor
+    sit amet, consectetur adipisicing elit. Nisi officiis nemo optio iure at,
+    dolor nulla suscipit exercitationem voluptates. Dolores inventore pariatur
+    dignissimos adipisci ullam vel illum minima maiores molestias.
+  </div>
 
-<!-- Contenido -->
-<!--
+  <!-- Contenido -->
+  <!--
 <div>
 <div class="container_Pro container 1">
   <div class="card border border-secondary custom-card">
@@ -298,4 +424,4 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis nemo opt
     </div>
   </div>
 </div>
--->
+--></div>
