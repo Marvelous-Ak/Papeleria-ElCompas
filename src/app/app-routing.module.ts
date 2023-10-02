@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { LocationComponent } from './pages/location/location.component';
+import { CommentsComponent } from './pages/comments/comments.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirecciona a '/home' en la raíz
   { path: 'home', component: HomeComponent }, // Ruta para el componente "home"
   { path: 'catalogo', component: CatalogoComponent },
-  { path: 'location', component: LocationComponent} // Ruta al componente "location"
+  { path: 'location', component: LocationComponent},
+  { path: 'comments' , component: CommentsComponent} // Ruta al componente "location"
   // Agrega otras rutas según sea necesario
 ];
 
