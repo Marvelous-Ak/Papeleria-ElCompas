@@ -6,15 +6,16 @@ import { AppComponent } from './app.component';
 
 //Paginas
 import { HomeComponent } from './pages/home/home.component';
-import { CatalogosComponent } from './pages/catalogos/catalogos.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationComponent } from './pages/location/location.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     //CatalogosComponent,
-    NavbarComponent
+    NavbarComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   exports:[
-    NavbarComponent
+    NavbarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

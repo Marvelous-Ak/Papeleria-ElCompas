@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, // Ruta para el componente "home"
   { path: 'location', component: LocationComponent}, // Ruta al componente "location"
   { path: 'catalogos', loadChildren:()=>import("./pages/catalogos/catalogos.module").then(m=>m.CatalogosModule)}
+
+  
   // Agrega otras rutas según sea necesario
 ];
 
