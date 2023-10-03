@@ -9,6 +9,7 @@ import { DidacticosComponent } from './didacticos/didacticos.component';
 import { PapelComponent } from './papel/papel.component';
 import { LapicesComponent } from './lapices/lapices.component';
 import { OficinaComponent } from './oficina/oficina.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
 
 const routes: Routes = [
   {path:"",component:CatalogosComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:"didacticos", component:DidacticosComponent},
   {path:"papel", component:PapelComponent},
   {path:"escritura", component:LapicesComponent},
-  {path:"oficina", component:OficinaComponent}
+  {path:"oficina", component:OficinaComponent},
+  {path: "catalogo", component: CatalogoComponent}
 
 ];
 

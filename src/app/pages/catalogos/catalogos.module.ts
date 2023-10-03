@@ -13,6 +13,7 @@ import { DidacticosComponent } from './didacticos/didacticos.component';
 import { AdhesivosComponent } from './adhesivos/adhesivos.component';
 import { OficinaComponent } from './oficina/oficina.component';
 import { CardComponent } from './card/card.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CardComponent } from './card/card.component';
     DidacticosComponent,
     AdhesivosComponent,
     OficinaComponent,
-    CardComponent
+    CardComponent,
+    CatalogoComponent
   ],
   imports: [
     CommonModule,
