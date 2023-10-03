@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:"adhesivos", component:AdhesivosComponent},
   {path:"didacticos", component:DidacticosComponent},
   {path:"papel", component:PapelComponent},
-  {path:"lapices", component:LapicesComponent},
+  {path:"escritura", component:LapicesComponent},
   {path:"oficina", component:OficinaComponent}
 
 ];
