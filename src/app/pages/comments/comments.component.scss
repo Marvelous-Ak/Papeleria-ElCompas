@@ -1,0 +1,39 @@
+
+.comentarios .caja-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.comentarios .caja-contenedor .caja {
+  background: white;
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  border: .1rem solid rgba(0, 0, 0, .2);
+  box-shadow: 0 ,.5rem .1rem rgba(5, 5, 5, 0.1);
+  flex: 1 1 10rem;
+  border-radius: 1.5rem;
+}
+
+.comentarios .caja-contenedor .caja .user img{
+  border-radius: 50%;
+  object-fit: cover;
+  height: 7rem;
+  width: 7rem;
+  margin-top: 2rem;
+}
+
+.comentarios .caja-contenedor .caja .user h3{
+  color: rgb(21, 137, 183, 1);
+  font-size: 2rem;
+}
+
+.comentarios .caja-contenedor .caja .comentarios{
+  color:#000000;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
