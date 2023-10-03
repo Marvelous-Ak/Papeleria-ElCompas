@@ -9,15 +9,13 @@
     position: relative;
     border: none;
     border-radius: 5%;
-    background: rgba(223, 220, 220, 0.5);
+    background: white;// rgba(223, 220, 220, 0.5);
+    border: solid 2px rgb(71, 71, 71, 0.5);;
+    
 }
 .card:hover > img{
     transform: scale(1.1);
     //background-color: white
-}
-.card:hover{
-    background-color: white;
-    border: solid 2px rgb(71, 71, 71, 0.5);;
 }
 
 .card-sup{
@@ -87,7 +85,7 @@
     visibility: hidden;
 }
 .card:hover > .icon{
-    //visibility: visible;   //comentamos para posteriormente descomentar xD
+    visibility: visible;   //comentamos para posteriormente descomentar xD
     animation: tambalear 0.5s ease infinite alternate;
 }
 .icon button{
