@@ -11,7 +11,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationComponent } from './pages/location/location.component';
 import { CommentsComponent } from './pages/comments/comments.component';
-
+import { InfoProductComponent } from './pages/info-product/info-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,18 +19,12 @@ import { CommentsComponent } from './pages/comments/comments.component';
     //CatalogosComponent,
     NavbarComponent,
     LocationComponent,
-    CommentsComponent
+    CommentsComponent,
+    InfoProductComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
-  exports:[
-    NavbarComponent,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  exports: [NavbarComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

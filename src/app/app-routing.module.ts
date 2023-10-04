@@ -5,10 +5,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { LocationComponent } from './pages/location/location.component';
 import { CommentsComponent } from './pages/comments/comments.component';
 import { CatalogosComponent } from './pages/catalogos/catalogos.component';
+import { InfoProductComponent } from './pages/info-product/info-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirecciona a '/home' en la raíz
   { path: 'home', component: HomeComponent }, // Ruta para el componente "home"
+  { path: 'location', component: LocationComponent}, // Ruta al componente "location"
+  { path: 'info.product', component: InfoProductComponent},
   { path: 'comments' , component: CommentsComponent}, // Ruta al componente "location"
   { path: 'location', component: LocationComponent}, // Ruta al componente "location"
   { path: 'catalogos', loadChildren:()=>import("./pages/catalogos/catalogos.module").then(m=>m.CatalogosModule)}
