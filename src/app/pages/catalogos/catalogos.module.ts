@@ -12,7 +12,7 @@ import { PapelComponent } from './papel/papel.component';
 import { DidacticosComponent } from './didacticos/didacticos.component';
 import { AdhesivosComponent } from './adhesivos/adhesivos.component';
 import { OficinaComponent } from './oficina/oficina.component';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from 'src/components/card/card.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 
 
