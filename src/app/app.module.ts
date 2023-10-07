@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 //Paginas
 import { HomeComponent } from './pages/home/home.component';
-import { NavbarComponent } from './pages/navbar/navbar.component';
+import { NavbarComponent } from 'src/components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationComponent } from './pages/location/location.component';
 import { CommentsComponent } from './pages/comments/comments.component';
