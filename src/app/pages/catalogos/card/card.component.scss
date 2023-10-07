@@ -1,7 +1,7 @@
 .card{
     left: 2%;
-    height: 330px;
-    width: 150px;
+    height: 380px;
+    width: 220px;
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center;
@@ -10,7 +10,7 @@
     border: none;
     border-radius: 5%;
     background: white;// rgba(223, 220, 220, 0.5);
-    border: solid 2px rgb(71, 71, 71, 0.5);;
+    border: solid 1px rgb(228, 228, 228);;
     
 }
 .card:hover > img{

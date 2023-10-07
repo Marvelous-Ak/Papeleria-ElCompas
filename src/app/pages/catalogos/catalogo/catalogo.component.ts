@@ -41,6 +41,7 @@ export class CatalogoComponent implements OnInit {
       this.didacticoCards = this.cards.filter(cards => cards.category.includes("Didacticos"));
       this.manualidadesCards = this.cards.filter(cards => cards.category.includes("Manualidades"));
       this.adheCards = this.cards.filter(cards => cards.category.includes("Adhesivos"));
+      this.sharedService.productos = this.cards;
 
     }
     
