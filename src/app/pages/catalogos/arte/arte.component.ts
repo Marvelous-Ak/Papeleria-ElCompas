@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CatalogosService } from 'src/app/Services/catalogos.service';
+import { CatalogosService } from 'src/app/Services/catalogs.service';
+import { Producto } from 'src/app/Shared/data';
 
 @Component({
   selector: 'app-arte',
@@ -7,28 +8,24 @@ import { CatalogosService } from 'src/app/Services/catalogos.service';
   styleUrls: ['./arte.component.scss']
 })
 export class ArteComponent implements OnInit {
-  public cards: any=[]
+  public cards: Producto[]=[]
 
   constructor(private CatalogoService:CatalogosService){
   }
   ngOnInit(): void {
     this.cargarData();
-    /*
-    this.cards=[
-      {
-        marca: "Pelikan",
-        name: "Acuarela Infantil",
-        image: "https://github.com/Andres7027/CatalogoDeProductos/blob/main/Arte/Arte-1.png?raw=true",
-        precio: "$30.00",
-        precioAnt:"",
-        promo: false
-      }
-    ]*/
   }
-  public cargarData(){
-    this.CatalogoService.get('https://crudcrud.com/api/b5bf0c0eae6146c39624bb146fb9a31b/artes')
-    .subscribe(respuesta => {
-      this.cards = respuesta;
-    })
+
+  public cargarData() {
+    this.CatalogoService.get('https://crudcrud.com/api/ed6bc2267d0e45568d14762be8a3acda/productos')
+    .subscribe((respuesta: any) => {
+      this.cards = respuesta.filter((productoZ: any)=>{
+        return productoZ.category.includes ('Artes');
+      });
+  
+
+    }
+    
+    )
   }
 }

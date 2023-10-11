@@ -50,7 +50,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion4Click()" class="link-underline-light text-dark">
+                <a href="/papel">
                   <h5 class="card-title">Papel</h5>
                 </a>
               </div>
@@ -64,7 +64,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion2Click()" class="link-underline-light text-dark">
+                <a href="/escolares">
                   <h5 class="card-title">Escolares</h5>
                 </a>
               </div>
@@ -78,7 +78,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion1Click()" class="link-underline-light text-dark">
+                <a href="/artes">
                   <h5 class="card-title">Artes</h5>
                 </a>
               </div>
@@ -92,7 +92,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion5Click()" class="link-underline-light text-dark">
+                <a href="/escritura">
                   <h5 class="card-title">Escritura</h5>
                 </a>
               </div>
@@ -112,7 +112,7 @@
                 alt="..."
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion3Click()" class="link-underline-light text-dark">
+                <a href="/oficina">
                   <h5 class="card-title">Oficina</h5>
                 </a>
               </div>
@@ -126,7 +126,7 @@
                 alt="..."
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion7Click()" class="link-underline-light text-dark">
+                <a href="/manualidades">
                   <h5 class="card-title">Manualidades</h5>
                 </a>
               </div>
@@ -140,7 +140,7 @@
                 alt="..."
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion6Click()" class="link-underline-light text-dark">
+                <a href="/didacticos">
                   <h5 class="card-title">Didácticos</h5>
                 </a>
               </div>
@@ -154,7 +154,7 @@
                 alt="..."
               />
               <div class="card-body">
-                <a (click)="mostrarSeccion8Click()" class="link-underline-light text-dark">
+                <a href="/adhesivos">
                   <h5 class="card-title">Adhesivos</h5>
                 </a>
               </div>
@@ -192,7 +192,7 @@
 <br>
   <!-- Contenido -->
   
-<div>
+<!--div>
 <div class="container_Pro container 1">
   <div class="card border border-secondary custom-card">
     <img class="img_p card-img-top" src="https://www.officedepot.com.mx/medias/48872.jpg-1200ftw?context=bWFzdGVyfHJvb3R8NDAyNDA0fGltYWdlL2pwZWd8aDA1L2gyOC85OTEyODk2MTI3MDA2LmpwZ3w0NmMwNjgxMWFjMmNiMDA0YWEyZGUxZmY0M2RkMWM1ODBkODI1ZjFkNzc5YWU4MmRkNDg3NmNjYzFhMmVhMTE3" alt="descripcion de la imagen">
@@ -279,5 +279,8 @@
         <a href="#" class="btn btn-primary">Comprar: $35 Pesos</a>
     </div>
   </div>
+</div-->
+<div class="card-grid">
+  <app-card [detallesP]="datallesCard" *ngFor="let datallesCard of cardsPromo"></app-card>
 </div>
 

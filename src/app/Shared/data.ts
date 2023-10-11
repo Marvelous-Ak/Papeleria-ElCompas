@@ -8,4 +8,5 @@ export interface Producto {
     category: string[];
     descripcion: string;
     stock: number;
+    _id: string;
 }
