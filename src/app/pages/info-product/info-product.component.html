@@ -1,21 +1,28 @@
 <div class="container">
+    <!-- Apartado de la imagen -->
     <div class="img">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_696020-MLU54959426707_042023-F.webp" alt="">
+        <img src="{{infoProduct[pos].image}}" alt="">
     </div>
+    <!-- Apartado donde se muestra el precio, nombre, etc -->
     <div class="textoC">
         <div class="name">
-            <p class="nameP info">Memoria USB Kingston DataTraveler 100 G3 DT100G3 128GB 3.0 negro</p>
+            <p class="nameP info">{{infoProduct[pos].name}}</p>
         </div>
         <div class="pago">
-            <p class="precio info">
-                $ 1,169
+            <p class="oferta info">
+                MNX ${{infoProduct[pos].precioAnt}}
             </p>
-            <p class="formaP info">
-                Hasta 12 mensualidades fijas de $246.07
+            <p class="precio info">
+                MXN ${{infoProduct[pos].precio}}
             </p>
         </div>
         <div class="stocks">
-            <p class="piezas info">15 piezas disponibles</p>
+            <p class="piezas info">{{stockD}}</p>
+        </div>
+        <div class="marca info">
+            <p class="marcaP">
+                Marca: {{infoProduct[pos].marca}}
+            </p>
         </div>
         <div class="cant-buy">
             <label for="" class="cant info">Cantidad</label>
@@ -31,7 +38,7 @@
             <!-- <a href="home/info.product" class="link">
                 
             </a> -->
-            <button class="click" id="enviar">Comprar</button>
+            <button class="click" id="enviar" onclick="mialerta()">Comprar</button>
         </div>
     </div>
 </div>
@@ -41,16 +48,15 @@
             Descripción
         </h1>
         <p class="description">
-            Facilita el acceso a portátiles, equipos de sobremesa, monitores y otros dispositivos digitales.<br>
-            DT Exodia permite rápidas transferencias y facilita el almacenamiento de documentos, música, vídeo y mucho más.<br>
-            Por su práctico diseño y modernos colores, son ideales para el uso diario en el trabajo, el hogar, los estudios o dondequiera que lleve sus datos.<br>
-            <br>
-            Capacidades: 128gb<br>
-            Velocidad; USB 3.2 Gen 1<br>
-            Dimensiones: 67,3 mm x 21,04 mm x 10,14 mm<br>
-            Peso: 11g<br>
-            Marca: Kingston<br>
-            Compatible con:Windows® 10, 8.1, 8, Mac OS (v.10.10.x +), Linux (v. 2.6.x +), Chrome™ OS<br>
+            {{infoProduct[pos].descripcion}}
         </p>
     </div>
 </div>
+<div>
+    <input type="number" [(ngModel)]="pos" maxlength="1">
+</div>
+<!-- <div>
+    {{infoProduct[0] | json}} <br><br> Trae el array del objeto de la posicion 0
+    {{infoProduct[0].imagen}} <br><br> Trar la imagen de la posicion 0 del objeto
+    {{infoProduct | json}} Trae todos los arreglos del Array
+</div> -->
