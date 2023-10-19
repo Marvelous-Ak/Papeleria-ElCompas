@@ -21,6 +21,7 @@ import { LapicesComponent } from './pages/catalogos/lapices/lapices.component';
 import { ManualidadesComponent } from './pages/catalogos/manualidades/manualidades.component';
 import { OficinaComponent } from './pages/catalogos/oficina/oficina.component';
 import { PapelComponent } from './pages/catalogos/papel/papel.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PapelComponent } from './pages/catalogos/papel/papel.component';
     ManualidadesComponent,
     OficinaComponent,
     PapelComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
