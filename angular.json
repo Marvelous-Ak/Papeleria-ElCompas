@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "proyecto": {
+    "papeleria": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/proyecto",
+            "outputPath": "dist/papeleria",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,15 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/global-scripts.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -71,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "proyecto:build:production"
+              "browserTarget": "papeleria:build:production"
             },
             "development": {
-              "browserTarget": "proyecto:build:development"
+              "browserTarget": "papeleria:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "proyecto:build"
+            "browserTarget": "papeleria:build"
           }
         },
         "test": {
