@@ -1,0 +1,35 @@
+nav{
+    text-align: center;
+    padding: 1% 0 2% 2%;
+    
+    
+  }
+  
+  span{
+    color: #034E53;
+    font-size: 250%;
+  }
+
+.maps{
+    width: 700px;
+    height: 500px;
+    //left: calc(50% - 350px);
+}
+.txt   {
+    position: absolute;
+    left: 750px;
+    top: 50px;
+    width: 280px;
+}
+.container{
+    //margin-left:70px;
+    position: relative;
+    //padding-top: 50px;
+}
+p{
+    font-size: 1.2rem;
+}
+#h{
+    margin: 0px;
+    margin-top: 40px;
+}
