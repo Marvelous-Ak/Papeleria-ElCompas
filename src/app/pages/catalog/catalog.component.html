@@ -1,1 +1,15 @@
-<p>catalog works!</p>
+
+<div class="card-grid">
+    <app-card [detallesP]="datallesCard" *ngFor="let datallesCard of cards" (click)="selectCard(datallesCard)"></app-card>
+</div>
+
+
+<!--p>
+    datos del card:
+</p>
+
+<div *ngIf="selectedCard">
+    <p>{{ selectedCard.brand }}</p>
+    <p>{{ selectedCard.description }}</p>
+    <p>{{ selectedCard.id}}</p>
+  </div-->

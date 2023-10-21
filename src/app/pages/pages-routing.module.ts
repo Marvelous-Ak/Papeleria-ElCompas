@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { CommentComponent } from './comment/comment.component';
 import { LocationComponent } from './location/location.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'catalog',
+    path: 'catalog/:numero',
     component: CatalogComponent,
   },
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'location',
     component: LocationComponent,
+  },
+  {
+    path: 'product/:numero',
+    component: ProductComponent,
   },
 ];
 
