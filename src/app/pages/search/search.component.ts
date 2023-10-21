@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CatalogosService } from 'src/app/Services/catalogs.service';
+import { ActivatedRoute, Router } from '@angular/router'
 
 
 @Component({
@@ -6,6 +8,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent{
+export class SearchComponent {
 
 }
