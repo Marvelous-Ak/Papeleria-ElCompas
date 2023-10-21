@@ -5,6 +5,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { CommentComponent } from './comment/comment.component';
 import { LocationComponent } from './location/location.component';
 import { SearchComponent } from './search/search.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'catalog',
+    path: 'catalog/:numero',
     component: CatalogComponent,
   },
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent,
+  },
+  {
+    path: 'product/:numero',
+    component: ProductComponent,
   },
 ];
 

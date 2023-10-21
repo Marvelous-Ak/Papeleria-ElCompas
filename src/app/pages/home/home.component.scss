@@ -40,7 +40,7 @@
   .card-grid {
     display: grid;
     grid-template-columns: repeat(
-      5,
+      4,
       minmax(15%, 1fr)
     ); /* Ajusta el ancho mínimo y máximo de cada columna según tus necesidades */
     justify-items: center;

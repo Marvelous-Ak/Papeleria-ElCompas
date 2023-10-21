@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card-body card-sup">
-      <p class="card-text marca">{{detallesP.marca}}</p>
+      <p class="card-text marca" >{{detallesP.brand}}</p>
       <h5 class="card-title">{{detallesP.name}}</h5>
     </div>
       <img [src]="detallesP.image" class="card-img-top img-1" alt="...">
       <div class="card-body card-inf">
-        <span><p class="card-text">{{detallesP.precioAnt}}</p></span>
-         <p class="card-text price">{{detallesP.precio}}</p>
+        <span><p class="card-text" *ngIf="detallesP.promo">${{detallesP.priceAnt}}</p></span>
+         <p class="card-text price">${{detallesP.price}}</p>
       </div>
       <div class="icon">
         <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir a la lista de deseos">

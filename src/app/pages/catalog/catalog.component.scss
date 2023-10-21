@@ -1,0 +1,19 @@
+h3{
+    text-align: center;
+    background-color: black;
+    padding: 2px 0 2px 0;
+    font-size: 140%;
+    color: rgb(97, 252, 244);
+  }
+  // Cards
+  .card-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-grid {
+    padding-right: 1%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(15%, 1fr));/* Ajusta el ancho mínimo y máximo de cada columna según tus necesidades */
+    justify-items: center; 
+  }

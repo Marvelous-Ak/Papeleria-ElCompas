@@ -13,6 +13,8 @@ import { CommentComponent } from './pages/comment/comment.component';
 import { LocationComponent } from './pages/location/location.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CardComponent } from './pages/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +29,13 @@ import { CardComponent } from './pages/card/card.component';
     LocationComponent,
     SearchComponent,
     CardComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
