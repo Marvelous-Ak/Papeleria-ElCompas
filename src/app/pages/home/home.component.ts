@@ -9,7 +9,8 @@ import { CatalogosService } from 'src/app/Services/catalogs.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public cardsR: Product[]=[]
+  public cardsR: Product[]=[];
+  selectedCardR: any = null; 
 
   constructor(private CatalogoService:CatalogosService, private router: Router) {}
 
@@ -33,8 +34,17 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  showCategory(id:number){ 
+  showCategory(id:number){ //Cambio a la vista de cataloos desde el carrusel de catálos
     this.router.navigate(['catalog', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
   }
 
+  //Cambio de vista al producto seleccionado desde los productos recientes:
+  selectCard(card: any) {
+    this.selectedCardR = card;
+    this.showProduct(card.id);
+  }
+
+  showProduct(id:number){ 
+   this.router.navigate(['product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+  }
 }
