@@ -4,28 +4,38 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-//Paginas
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CatalogoComponent } from './pages/catalogo/catalogo.component';
-import { NavbarComponent } from './pages/navbar/navbar.component';
-import { CommentsComponent } from './pages/comments/comments.component';
+import { CatalogComponent } from './pages/catalog/catalog.component';
+import { CommentComponent } from './pages/comment/comment.component';
+import { LocationComponent } from './pages/location/location.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CardComponent } from './pages/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CatalogoComponent,
+    FooterComponent,
     NavbarComponent,
-    CommentsComponent,
+    SkeletonComponent,
+    //pages
+    HomeComponent,
+    CatalogComponent,
+    CommentComponent,
+    LocationComponent,
+    SearchComponent,
+    CardComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-  ],
-  exports:[
-    NavbarComponent
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

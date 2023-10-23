@@ -1,3 +1,18 @@
+nav{
+    text-align: center;
+    padding: 1% 0 2% 2%;
+    
+    
+  }
+  
+  span{
+    color: #034E53;
+    font-size: 250%;
+  }
+  .xd{
+    padding-bottom: 3%;
+  }
+
 .maps{
     width: 700px;
     height: 500px;
@@ -5,29 +20,25 @@
 }
 .txt   {
     position: absolute;
-    left: 850px;
+    left: 750px;
     top: 50px;
     width: 280px;
-}
-.hr{
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    text-align: center;
-    border-bottom: 3px solid #000;
-    margin: 30px 30px;
-    padding-bottom: 10px;
 }
 .container{
     //margin-left:70px;
     position: relative;
-    padding-top: 50px;
+    //padding-top: 50px;
 }
 p{
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
 }
 #h{
     margin: 0px;
     margin-top: 40px;
+}
+.hrs{
+  background: #CACACA;
+  padding: 5px;
+  border-radius: 25px;
+  text-align: center;
 }
