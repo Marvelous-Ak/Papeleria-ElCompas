@@ -5,7 +5,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { LocationComponent } from './location/location.component';
 import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
-import { SearchComponent } from './search/search.component';
+
 
 //Prueba de diseños
 import { CardComponent } from './card/card.component';
