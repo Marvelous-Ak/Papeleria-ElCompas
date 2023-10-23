@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  showCategory(id:number){ //Cambio a la vista de cataloos desde el carrusel de catálos
+  showCategory(id:number){ //Cambio a la vista de cataloos desde el carrusel de catálogos
     this.router.navigate(['catalog', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
   }
 

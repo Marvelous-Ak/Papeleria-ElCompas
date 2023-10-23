@@ -26,11 +26,13 @@
               name="search"
               class="form-control search-input"
               placeholder="Buscar Producto"
+              [(ngModel)]="searchTerm"
               autofocus="autofocus"
               autocomplete="off"
             />
+            <!-- Boton de buscar-->
             <span class="input-group-btn">
-              <button class="btn btn-search">
+              <button class="btn btn-search" (click)="navigateToSearch()">
                 <svg class="lupa" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                   <path
                     class="lupita"
@@ -39,6 +41,7 @@
                 </svg>
               </button>
             </span>
+            <!-- End Boton de buscar-->
           </div>
         </div>
         <!-- End Search Box-->
