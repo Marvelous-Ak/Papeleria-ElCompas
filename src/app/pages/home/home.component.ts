@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
         respuesta.sort((a:any, b:any) => b.created_at.getTime() - a.created_at.getTime());
 
         // Selecciona los n productos más recientes
-        this.cardsR = respuesta.slice(0, 8); //por el momento mustra unicamente 8
+        this.cardsR = respuesta.slice(0, 12); //por el momento mustra unicamente 8
       });
   }
 

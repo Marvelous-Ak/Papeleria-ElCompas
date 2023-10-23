@@ -5,6 +5,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { CommentComponent } from './comment/comment.component';
 import { LocationComponent } from './location/location.component';
 import { ProductComponent } from './product/product.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
