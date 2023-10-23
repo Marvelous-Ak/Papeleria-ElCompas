@@ -1,12 +1,12 @@
-export interface Producto {
-    marca: string;
+export interface Product{
+    brand: string;
     name: string;
     image: string;
-    precio: string;
-    precioAnt: string;
+    price: number;
+    priceAnt: number;
     promo: boolean;
-    category: string[];
-    descripcion: string;
+    description: string;
     stock: number;
-    _id: string;
+    id: number;
+    created_at: Date;
 }

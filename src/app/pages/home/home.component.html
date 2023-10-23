@@ -50,7 +50,7 @@
                 class="card-img-top"
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/papel">
+                <a class="nav-link text-dark" (click)="showCategory(1)">
                   <h5 class="card-title">Papel</h5>
                 </a>
               </div>
@@ -64,7 +64,7 @@
                 class="card-img-top"
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/escolares">
+                <a class="nav-link text-dark" (click)="showCategory(2)">
                   <h5 class="card-title">Escolares</h5>
                 </a>
               </div>
@@ -78,7 +78,7 @@
                 class="card-img-top"
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/artes">
+                <a class="nav-link text-dark" (click)="showCategory(3)">
                   <h5 class="card-title">Artes</h5>
                 </a>
               </div>
@@ -92,7 +92,7 @@
                 class="card-img-top"
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/escritura">
+                <a class="nav-link text-dark" (click)="showCategory(4)">
                   <h5 class="card-title">Escritura</h5>
                 </a>
               </div>
@@ -112,7 +112,7 @@
                 alt="..."
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/oficina">
+                <a class="nav-link text-dark" (click)="showCategory(5)">
                   <h5 class="card-title">Oficina</h5>
                 </a>
               </div>
@@ -126,7 +126,7 @@
                 alt="..."
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/manualidades">
+                <a class="nav-link text-dark" (click)="showCategory(6)">
                   <h5 class="card-title">Manualidades</h5>
                 </a>
               </div>
@@ -140,7 +140,7 @@
                 alt="..."
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/didacticos">
+                <a class="nav-link text-dark" (click)="showCategory(7)">
                   <h5 class="card-title">Didácticos</h5>
                 </a>
               </div> 
@@ -154,7 +154,7 @@
                 alt="..."
               />
               <div class="card-body text-cat">
-                <a class="nav-link text-dark" href="/adhesivos">
+                <a class="nav-link text-dark" (click)="showCategory(8)">
                   <h5 class="card-title">Adhesivos</h5>
                 </a>
               </div>
@@ -186,7 +186,9 @@
 <!--End Carrusel catálogo ejemplo-->
 <br>
   <!-- Contenido -->
-
+  <p>productos más recientes:</p>
 <div class="card-grid">
-  <app-card [detallesP]="datallesCard" *ngFor="let datallesCard of cardsPromo"></app-card>
+  <app-card [detallesP]="datallesCard" *ngFor="let datallesCard of cardsR" (click)="selectCard(datallesCard)"></app-card>
 </div>
+
+

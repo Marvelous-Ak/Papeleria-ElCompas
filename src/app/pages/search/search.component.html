@@ -1,0 +1,9 @@
+<div class="search">
+    Resultados Encontrados: {{ searchTerm }}
+</div>
+
+
+<div class="card-grid">
+    <app-card [detallesP]="datallesCard" *ngFor="let datallesCard of cardsSearch" (click)="selectCard(datallesCard)"></app-card>
+</div>
+

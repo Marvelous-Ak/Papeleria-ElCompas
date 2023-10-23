@@ -1,0 +1,23 @@
+nav{
+  text-align: center;
+  padding: 1% 0 2% 2%;
+  
+  
+}
+
+span{
+  color: #034E53;
+  font-size: 250%;
+}
+  // Cards
+  .card-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-grid {
+    padding-right: 1%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(15%, 1fr));/* Ajusta el ancho mínimo y máximo de cada columna según tus necesidades */
+    justify-items: center; 
+  }

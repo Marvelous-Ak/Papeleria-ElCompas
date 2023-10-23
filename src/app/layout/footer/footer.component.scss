@@ -1,0 +1,83 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.footer .lgo{
+    width: 150px;
+    margin-bottom: 35px;
+}
+.footer p{
+    font-size: 15px;
+    color: #FFFFFF;
+    
+}
+.footer{
+    background: #5A5A5A;
+    padding: 35px 25px;
+    position: relative;
+    //min-width: 1000px;
+    
+}
+//Modificar la tabla en base a div
+.contain{    
+    display: table;
+    margin: 0 auto;
+    //max-width: 1000px;
+}
+.contain .contT{
+    display: table-row;
+}
+.contain .cont{
+    display: table-cell;
+    padding: 0 10px;
+}
+.contain .contS{
+    display: table-cell;
+    padding: 0 10px;
+    //width: 10%;
+}
+//Titulo
+.contain .title{
+    font-size: 20px;
+    font-weight: bold;
+}
+//Modificacion Lista
+.contain .navF{
+    list-style-type: none;
+    white-space: nowrap;
+    margin-bottom: 0px;
+}
+.contain .navF a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+.contain .navF a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+    .contS{
+        width: 5%;
+    }
+    .footer .contain p{
+        font-size: 10px;
+    }
+    .footer .contain .title{
+        font-size: 15px;
+    }
+    .footer .contain a{
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1000px){
+    .contS{
+        width: 10%;
+    }
+    .footer{
+        min-width: 1000px;
+    }
+    .cont{
+        max-width: 1000px;
+    }
+}

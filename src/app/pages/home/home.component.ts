@@ -1,30 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/Shared/data';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
-import { Producto } from 'src/app/Shared/data';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
-  public cardsPromo: Producto[]=[]
+export class HomeComponent implements OnInit {
+  public cardsR: Product[]=[];
+  selectedCardR: any = null; 
 
-  constructor(private router: Router, private CatalogoService:CatalogosService) {}
+  constructor(private CatalogoService:CatalogosService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.cargarPromo();
+  ngOnInit(){
+    this.cargarDataR();
   }
 
-  public cargarPromo() {
-    this.CatalogoService.get('https://crudcrud.com/api/ed6bc2267d0e45568d14762be8a3acda/productos')
-    .subscribe((respuesta: any) => {
-      this.cardsPromo = respuesta.filter((productoPromo: any)=>{
-        return productoPromo.promo === true
+  cargarDataR() {
+    this.CatalogoService.get('http://127.0.0.1:8000/api/catalogos')
+      .subscribe((respuesta: any) => {
+        // Convierte las fechas de creación en objetos Date
+        respuesta.forEach((product:Product) => {
+          product.created_at = new Date(product.created_at);
+        });
+
+        // Ordena los productos en orden descendente (más recientes primero)
+        respuesta.sort((a:any, b:any) => b.created_at.getTime() - a.created_at.getTime());
+
+        // Selecciona los n productos más recientes
+        this.cardsR = respuesta.slice(0, 12); //por el momento mustra unicamente 8
       });
-    }
-    )
   }
-  
+
+  showCategory(id:number){ //Cambio a la vista de cataloos desde el carrusel de catálogos
+    this.router.navigate(['catalog', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+  }
+
+  //Cambio de vista al producto seleccionado desde los productos recientes:
+  selectCard(card: any) {
+    this.selectedCardR = card;
+    this.showProduct(card.id);
+  }
+
+  showProduct(id:number){ 
+   this.router.navigate(['product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+  }
 }

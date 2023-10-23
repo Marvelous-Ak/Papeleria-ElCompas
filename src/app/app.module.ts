@@ -4,46 +4,39 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-//Paginas
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NavbarComponent } from 'src/components/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CatalogComponent } from './pages/catalog/catalog.component';
+import { CommentComponent } from './pages/comment/comment.component';
 import { LocationComponent } from './pages/location/location.component';
-import { CommentsComponent } from './pages/comments/comments.component';
-import { InfoProductComponent } from './pages/info-product/info-product.component';
-import { CatalogosComponent } from './pages/catalogos/catalogos.component';
-import { CardComponent } from 'src/components/card/card.component';
-import { AdhesivosComponent } from './pages/catalogos/adhesivos/adhesivos.component';
-import { ArteComponent } from './pages/catalogos/arte/arte.component';
-import { DidacticosComponent } from './pages/catalogos/didacticos/didacticos.component';
-import { EscolaresComponent } from './pages/catalogos/escolares/escolares.component';
-import { LapicesComponent } from './pages/catalogos/lapices/lapices.component';
-import { ManualidadesComponent } from './pages/catalogos/manualidades/manualidades.component';
-import { OficinaComponent } from './pages/catalogos/oficina/oficina.component';
-import { PapelComponent } from './pages/catalogos/papel/papel.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CardComponent } from './pages/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CatalogosComponent,
+    FooterComponent,
     NavbarComponent,
+    SkeletonComponent,
+    //pages
+    HomeComponent,
+    CatalogComponent,
+    CommentComponent,
     LocationComponent,
-    CommentsComponent,
-    InfoProductComponent,
+    SearchComponent,
     CardComponent,
-    AdhesivosComponent,
-    ArteComponent,
-    DidacticosComponent,
-    EscolaresComponent,
-    LapicesComponent,
-    ManualidadesComponent,
-    OficinaComponent,
-    PapelComponent,
+    ProductComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  exports: [NavbarComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
