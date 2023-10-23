@@ -11,28 +11,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit{
 
-  public producto: Product[]=[];
-  public productoEjemploRodo: Product []=[];
+  public producto!: Product;
   numero!: number;
 
   constructor( private CatalogoService:CatalogosService, private route: ActivatedRoute){
   }
 
   ngOnInit(){
-
-    this.productoEjemploRodo=[{   //recibes este formato, usalo para tus ejemplos
-      brand: '',
-      name: '',
-      image: '',
-      price: 2,
-      priceAnt: 9,
-      promo: true,
-      description: '',
-      stock: 2,
-      id: 1,
-      created_at: new Date('2023-10-20T08:00:00')
-    }]
-
     
     this.route.params.subscribe(params => {
       this.numero = +params['numero']; // El "+" convierte el parámetro en un número

@@ -1,1 +1,54 @@
-<p>product works!</p>
+<div class="container">
+    <!-- Apartado de la imagen -->
+    <div class="img">
+        <img src="{{producto.image}}" alt="">
+    </div>
+    <!-- Apartado donde se muestra el precio, nombre, etc -->
+    <div class="textoC">
+        <div class="name">
+            <p class="nameP info">{{producto.name}}</p>
+        </div>
+        <div class="pago">
+            <p class="oferta info">
+                MNX ${{producto.priceAnt}}
+            </p>
+            <p class="precio info">
+                MXN ${{producto.price}}
+            </p>
+        </div>
+        <div class="stocks">
+            <p class="piezas info">{{producto.stock}}</p>
+        </div>
+        <div class="marca info">
+            <p class="marcaP">
+                Marca: {{producto.brand}}
+            </p>
+        </div>
+        <div class="cant-buy">
+            <label for="" class="cant info">Cantidad</label>
+            <select name="" id="select">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+            </select>
+        </div>
+        <div class="push">
+            <!-- <a href="home/info.product" class="link">
+                
+            </a> -->
+            <button class="click" id="enviar" onclick="mialerta()">Comprar</button>
+        </div>
+    </div>
+</div>
+<div class="cont-desp">
+    <div class="cont-text">
+        <h1 class="desp-title">
+            Descripción
+        </h1>
+        <p class="description">
+            {{producto.description}}
+        </p>
+    </div>
+</div>
