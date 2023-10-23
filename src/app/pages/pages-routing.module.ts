@@ -6,6 +6,7 @@ import { LocationComponent } from './location/location.component';
 import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
 
+
 //Prueba de diseños
 import { CardComponent } from './card/card.component';
 import { CommentComponent } from './comment/comment.component';

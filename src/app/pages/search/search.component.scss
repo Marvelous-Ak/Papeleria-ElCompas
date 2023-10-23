@@ -5,3 +5,16 @@
     font-size: 25px;
     font-weight:bold;
 }
+
+//cards
+.card-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-grid {
+    padding-right: 1%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(15%, 1fr));/* Ajusta el ancho mínimo y máximo de cada columna según tus necesidades */
+    justify-items: center; 
+  }
