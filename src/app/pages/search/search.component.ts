@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { ActivatedRoute, Router } from '@angular/router'
 import { Product } from 'src/app/Shared/data';
+import { catchError } from 'rxjs';
 
 
 @Component({
@@ -37,10 +38,36 @@ export class SearchComponent {
   //Consultar al API
   public cargarDataSearch(name:string){ 
     this.CatalogoService.get('http://127.0.0.1:8000/api/search/'+name)
+    .pipe(
+      catchError((error: any) => {
+        if (error.status === 400) {
+          console.log('Error 400 en su solicitud');
+          this.cardsSearch=[];
+        }
+        // Puedes agregar otras acciones o manejo de errores aquí si es necesario.
+        return [];
+      })
+    )
     .subscribe((respuesta: any) => {
-      this.cardsSearch = respuesta;
+      this.cardsSearch=respuesta;   
+      //console.log(respuesta); 
+      /*if (respuesta.length ===0){
+        this.cargarDataSearch2(name);
+      }else{
+        //console.log(respuesta)
+      }*/
     })
   }
+
+
+  public cargarDataSearch2(name:string){ 
+    this.CatalogoService.get('http://127.0.0.1:8000/api/search2/'+name)
+    .subscribe((respuesta: any) => {
+      this.cardsSearch=respuesta;   
+      console.log(respuesta); 
+    })
+  }
+
 
   //Cambio a products
   selectCard(card: any) {
