@@ -1,7 +1,7 @@
 <div class="container">
     <!-- Apartado de la imagen -->
     <div class="img">
-        <img src="{{producto.image}}" alt="">
+        <img src="{{producto.image}}" title={{producto.id}}>
     </div>
     <!-- Apartado donde se muestra el precio, nombre, etc -->
     <div class="textoC">
@@ -17,7 +17,7 @@
             </p>
         </div>
         <div class="stocks">
-            <p class="piezas info">{{producto.stock}}</p>
+            <p class="piezas info">Cantidad: {{producto.stock}} piezas disponibles</p>
         </div>
         <div class="marca info">
             <p class="marcaP">
@@ -51,4 +51,9 @@
             {{producto.description}}
         </p>
     </div>
+</div>
+
+<div class="popup-image">
+    <span id="cerrar">&times;</span>
+    <img src="https://tonypapelerias.vtexassets.com/arquivos/ids/215773-1200-auto?v=637943830289400000&width=1200&height=auto&aspect=true" class="igm">
 </div>

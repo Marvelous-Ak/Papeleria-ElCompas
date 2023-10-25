@@ -21,6 +21,9 @@ import { NavigationAdminComponent } from './admin/layout/navigation-admin/naviga
 import { NavbarAdminComponent } from './admin/layout/navbar-admin/navbar-admin.component';
 import { DashboardComponent } from './admin/pages/dashboard/dashboard.component';
 
+//Cargar servicios Script
+import { LoadServiceService } from './Services/load-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,7 @@ import { DashboardComponent } from './admin/pages/dashboard/dashboard.component'
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [LoadServiceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
