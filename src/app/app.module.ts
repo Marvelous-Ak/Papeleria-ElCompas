@@ -16,6 +16,9 @@ import { CardComponent } from './pages/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './pages/product/product.component';
 
+//Cargar servicios Script
+import { LoadServiceService } from './Services/load-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,7 @@ import { ProductComponent } from './pages/product/product.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [LoadServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
