@@ -76,6 +76,6 @@ export class SearchComponent {
   }
 
   showProduct(id:number){ 
-   this.router.navigate(['product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+   this.router.navigate(['home/product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
   }
 }
