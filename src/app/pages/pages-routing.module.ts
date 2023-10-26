@@ -13,7 +13,7 @@ import { CommentComponent } from './comment/comment.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
   },
   {
