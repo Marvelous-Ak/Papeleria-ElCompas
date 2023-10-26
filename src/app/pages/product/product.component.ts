@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/Shared/data';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoadServiceService } from 'src/app/Services/load-service.service';
 
 
 @Component({
@@ -11,28 +12,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit{
 
-  public producto: Product[]=[];
-  public productoEjemploRodo: Product []=[];
+  public producto!: Product;
   numero!: number;
 
-  constructor( private CatalogoService:CatalogosService, private route: ActivatedRoute){
+  constructor( private CatalogoService:CatalogosService, private route: ActivatedRoute, private _LoadScript: LoadServiceService){
+    _LoadScript.Carga(["ClickImg"]);
   }
 
   ngOnInit(){
-
-    this.productoEjemploRodo=[{   //recibes este formato, usalo para tus ejemplos
-      brand: '',
-      name: '',
-      image: '',
-      price: 2,
-      priceAnt: 9,
-      promo: true,
-      description: '',
-      stock: 2,
-      id: 1,
-      created_at: new Date('2023-10-20T08:00:00')
-    }]
-
     
     this.route.params.subscribe(params => {
       this.numero = +params['numero']; // El "+" convierte el parámetro en un número
@@ -48,4 +35,12 @@ export class ProductComponent implements OnInit{
     })
   }
 
+  /*onClick(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Inicie Sesion',
+      text: 'Inicie S-esion o Crea una cuenta para continuar',
+    })
+  }*/
+  
 }

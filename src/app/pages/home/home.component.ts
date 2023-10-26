@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   showCategory(id:number){ //Cambio a la vista de cataloos desde el carrusel de catálogos
-    this.router.navigate(['catalog', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+    this.router.navigate(['home/catalog', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
   }
 
   //Cambio de vista al producto seleccionado desde los productos recientes:
@@ -45,6 +45,6 @@ export class HomeComponent implements OnInit {
   }
 
   showProduct(id:number){ 
-   this.router.navigate(['product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+   this.router.navigate(['home/product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
   }
 }

@@ -13,6 +13,6 @@ export class NavbarComponent {
   navigateToSearch() {
     // Codificar la cadena de búsqueda y reemplazar '%20' con '+'
     const encodedSearchTerm = encodeURIComponent(this.searchTerm).replace(/%20/g, '_');
-    this.router.navigate(['/search'], { queryParams: { q: encodedSearchTerm } });
+    this.router.navigate(['home/search'], { queryParams: { q: encodedSearchTerm } });
   }
 }

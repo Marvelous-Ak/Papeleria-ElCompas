@@ -15,6 +15,14 @@ import { SearchComponent } from './pages/search/search.component';
 import { CardComponent } from './pages/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './pages/product/product.component';
+import { SkeletonAdminComponent } from './admin/layout/skeleton-admin/skeleton-admin.component';
+import { FooterAdminComponent } from './admin/layout/footer-admin/footer-admin.component';
+import { NavigationAdminComponent } from './admin/layout/navigation-admin/navigation-admin.component';
+import { NavbarAdminComponent } from './admin/layout/navbar-admin/navbar-admin.component';
+import { DashboardComponent } from './admin/pages/dashboard/dashboard.component';
+
+//Cargar servicios Script
+import { LoadServiceService } from './Services/load-service.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +38,13 @@ import { ProductComponent } from './pages/product/product.component';
     SearchComponent,
     CardComponent,
     ProductComponent,
+    //Area Admin
+    SkeletonAdminComponent,
+    FooterAdminComponent,
+    NavigationAdminComponent,
+    NavbarAdminComponent,
+    //Pages Admin
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +52,7 @@ import { ProductComponent } from './pages/product/product.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [LoadServiceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
