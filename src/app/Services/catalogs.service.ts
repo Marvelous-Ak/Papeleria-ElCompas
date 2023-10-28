@@ -1,13 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Product } from '../Shared/data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatalogosService {
+  private apiURL = "http://127.0.0.1:8000/api/";
   constructor(private http: HttpClient) { }
 
-  public get(url:string){
-    return this.http.get(url);
+  //Consulta get modificada
+  public get(url: string){
+    return this.http.get(this.apiURL + url);
+  }
+
+  //GET: traer todos los productos
+  public getAll(){
+    return this.http.get(this.apiURL + "catalogos");
+  }
+
+  //POST: Crear productos
+  public create(newProduct: Product){
+    return this.http.post(this.apiURL + "catalogos", newProduct);
+  }
+
+  //Delete: Eliminar producto
+  public delete(id: number){
+    return this.http.delete(this.apiURL + "catalogs/" + id);
   }
 }

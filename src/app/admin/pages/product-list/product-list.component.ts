@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/Shared/data';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -23,7 +24,7 @@ export class ProductListComponent {
 
   //// Traer todos los productos: función ShowAll
   public listAll(){ 
-    this.CatalogoService.get('http://127.0.0.1:8000/api/catalogos')
+    this.CatalogoService.getAll()
     .subscribe((respuesta: any) => {
       this.listProduct = respuesta;
     })
@@ -33,11 +34,29 @@ export class ProductListComponent {
   getTotalPages(): number {
     return Math.ceil(this.listProduct.length / this.itemsPerPage);
   }
-  
   getPages(): number[] {
     return Array(this.getTotalPages())
       .fill(0)
       .map((x, i) => i + 1);
   }
-  
+
+  //Eliminar
+  public deleteProduct(product: Product){
+    //deberia de tirar una alerte que pregunte si desea eliminar el producto ... 
+    
+    this.CatalogoService.delete(product.id)
+    .pipe(
+      catchError((error: any) => {
+        if (error.status === 500) {
+          /// mensaje de error al eliminar
+        }
+        return [];
+      })
+    )
+    .subscribe((repuesta: any)=>{
+      this.listAll();
+      // mensaje de que se eliminó exitosamente
+
+    })
+  }
 }

@@ -26,7 +26,7 @@ export class CatalogComponent implements OnInit {
     
   }
   public cargarData(id:number){ //Cargamos datos del API con el id 
-    this.CatalogoService.get('http://127.0.0.1:8000/api/catalogs/'+id)
+    this.CatalogoService.get('catalogs/'+id)
     .subscribe((respuesta: any) => {
       this.cards = respuesta;
     })
