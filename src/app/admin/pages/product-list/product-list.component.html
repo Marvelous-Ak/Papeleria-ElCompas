@@ -56,7 +56,10 @@
           <td>$ {{ product.promo ? product.priceAnt:  product.price }}</td>
           <td>{{ product.promo ? "$ " ++ product.price : '---' }}</td>
           <td>{{ product.stock }}</td>
-          <td class="imageP"><img src="{{ product.image }}" alt=""></td>
+          <td class="imageP">
+            <div class="text-center img-wrapper">
+              <img class="rounded mx-auto d-block"  src="{{ product.image }}" alt="{{ product.name }}">
+            </div></td>
           <td class="mat-cell">
             <button class="btn btn-icon btn-2 btn-warning" type="button">
               <span class="btn-inner--icon">
