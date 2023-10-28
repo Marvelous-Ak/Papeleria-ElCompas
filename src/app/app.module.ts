@@ -17,12 +17,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './pages/product/product.component';
 import { SkeletonAdminComponent } from './admin/layout/skeleton-admin/skeleton-admin.component';
 import { FooterAdminComponent } from './admin/layout/footer-admin/footer-admin.component';
-import { NavigationAdminComponent } from './admin/layout/navigation-admin/navigation-admin.component';
 import { NavbarAdminComponent } from './admin/layout/navbar-admin/navbar-admin.component';
 import { DashboardComponent } from './admin/pages/dashboard/dashboard.component';
 
 //Cargar servicios Script
 import { LoadServiceService } from './Services/load-service.service';
+import { BodyComponent } from './admin/layout/body/body.component';
+import { ProductListComponent } from './admin/pages/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +42,12 @@ import { LoadServiceService } from './Services/load-service.service';
     //Area Admin
     SkeletonAdminComponent,
     FooterAdminComponent,
-    NavigationAdminComponent,
+    BodyComponent,
     NavbarAdminComponent,
     //Pages Admin
     DashboardComponent,
+    ProductListComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -4,11 +4,6 @@ import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 import { SkeletonAdminComponent } from './admin/layout/skeleton-admin/skeleton-admin.component';
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
     path: 'home',
     component: SkeletonComponent,
     children: [
