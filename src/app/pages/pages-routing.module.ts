@@ -14,6 +14,11 @@ import { CommentComponent } from './comment/comment.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: HomeComponent,
   },
   {

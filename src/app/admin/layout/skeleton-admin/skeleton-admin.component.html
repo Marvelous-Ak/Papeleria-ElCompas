@@ -1,5 +1,5 @@
-<app-navbar-admin></app-navbar-admin>
-<router-outlet></router-outlet>
-<p>skeleton-admin works!</p>
-
-
+<app-navbar-admin (onToggleSidenav)="onToggleSidenav($event)"></app-navbar-admin>
+<app-body
+[collapsed]="isSideNavCollapsed"
+[screenWidth]="screenWidth"
+></app-body>
