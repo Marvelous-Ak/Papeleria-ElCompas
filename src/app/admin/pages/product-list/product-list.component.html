@@ -37,8 +37,8 @@
         <tr *ngIf="i >= (currentPage - 1) * itemsPerPage && i < currentPage * itemsPerPage">
           <th scope="row">{{ product.brand }}</th>
           <td>{{ product.name }}</td>
-          <td>$ {{ product.price }}</td>
-          <td>{{ product.promo ? "$ " ++ product.priceAnt : '---' }}</td>
+          <td>$ {{ product.promo ? product.priceAnt:  product.price }}</td>
+          <td>{{ product.promo ? "$ " ++ product.price : '---' }}</td>
           <td>{{ product.stock }}</td>
           <td class="imageP"><img src="{{ product.image }}" alt=""></td>
           <td class="mat-cell">
