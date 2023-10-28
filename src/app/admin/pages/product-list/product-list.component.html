@@ -53,8 +53,8 @@
         <tr *ngIf="i >= (currentPage - 1) * itemsPerPage && i < currentPage * itemsPerPage">
           <th scope="row">{{ product.brand }}</th>
           <td>{{ product.name }}</td>
-          <td>$ {{ product.promo ? product.priceAnt:  product.price }}</td>
-          <td>{{ product.promo ? "$ " ++ product.price : '---' }}</td>
+          <td>$ {{ product.price }}</td>
+          <td>{{ product.promo ? "$" ++ product.pricePromo : '---' }}</td>
           <td>{{ product.stock }}</td>
           <td class="imageP">
             <div class="text-center img-wrapper">
@@ -66,7 +66,7 @@
                 <i class="fa-solid fa-gear"></i>
               </span>
             </button>
-            <button class="btn btn-icon btn-2 btn-danger" type="button">
+            <button class="btn btn-icon btn-2 btn-danger" type="button" (click)="deleteProduct(product)">
               <span class="btn-inner--icon"><i class="fas fa-remove"></i></span>
             </button>
           </td>
