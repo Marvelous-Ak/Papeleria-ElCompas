@@ -3,31 +3,35 @@
 </div>
 
 <div class="containerForm">
-    <div class="cargarImagen">
-        <!-- Capturar archivos -->
-        <div class="addimg">
-            <input type="file" name="addimg" id="addimg" (change)="capFile($event)" accept="image/*">
-            <button class="upload">Subir imagen</button>
+    <div class="contenedorImgText">
+        <!-- Contenedor de la Imagen y Button -->
+        <div class="cargarImagen">
+            <!-- Capturar archivos -->
+            <div class="addimg">
+                <input type="file" name="addimg" id="file" (change)="capFile($event)" accept="image/*">
+                <!-- <button class="upload">Subir imagen</button> -->
+                <label for="file" class="upload">Subir Imagen</label>
+            </div>
+            <!-- PREVIEW IMAGE SELECT -->
+            <div class="capFile" *ngIf="preview">
+                <img [src]="preview" alt="">
+            </div>
         </div>
-        <!-- PREVIEW IMAGE SELECT -->
-        <div class="capFile" *ngIf="preview">
-            <img [src]="preview" alt="">
-        </div>
-    </div>
-
-    <!-- Formulario de Agregar Producto -->
-    <div class="formulario">
-            <div class="parte1">
-            <label for="name">Nombre del Producto</label>
-            <input type="text" id="name" name="name" maxlength="20" placeholder="Nombre">
-            <label for="brand">Marca</label>
-            <input type="text" id="brand" name="brand" maxlength="10" placeholder="Marca">
-       </div>
-
-       <div class="parte2">
-            <label for="price" name="price">Precio</label>
-            <input type="number" id="price" name="price" maxlength="4" placeholder="Precio">
-            <label for="stocks">Stocks</label>
+        <!-- Contenedor de producto parte 1 -->
+        <div class="parte1">
+            <div class="nombreP config">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" maxlength="20" placeholder="Nombre">
+            </div>
+            <div class="marcaP config">
+                <label for="brand">Marca</label>
+                <input type="text" id="brand" name="brand" maxlength="10" placeholder="Marca">
+            </div>
+            <div class="precioP config">
+                <label for="price" name="price">Precio</label>
+                <input type="number" id="price" name="price" maxlength="4" placeholder="Precio">
+            </div>        
+            <label for="stocks config">Stocks</label>
             <input type="text" inputmode="numeric" name="stocks" maxlength="3" placeholder="Stocks" id="stock">
             <!-- Interuptor de Promocion -->
             <div class="promoDiv">
@@ -41,6 +45,12 @@
                     <input type="text" maxlength="3" name="promo2" id="desc2" placeholder="Descuento">
                 </div>
             </div>
+       </div>
+    </div>
+
+    <!-- Formulario de Agregar Producto -->
+    <div class="formulario">
+       <div class="parte2">
             <!-- Seleccion de Categorias -->
             <div class="CatSelect">
                 <label for="catSelect">Selecciona la opción categoria:</label>
@@ -89,14 +99,16 @@
                     
                 </div>
             </div>
-
-            <label for="description" class="descripcion">Descripcion</label>
-            <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox">
+            <!-- Contenido Descripcion -->
+            <div class="addDescp">
+                <label for="description" class="descripcion">Descripcion</label>
+                <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox">
+            </div>
        </div>
     </div>
 
     <div class="buttons">
         <button type="button" class="btn btn-primary">Aceptar</button>
-        <button type="button" class="btn btn-danger">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="pageListProduc()">Cancelar</button>
     </div>
 </div>

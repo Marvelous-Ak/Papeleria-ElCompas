@@ -17,9 +17,9 @@
 //Estilo de diseño de los contenedores
 .containerForm{
     width: 90%;
-    height: 85%;
+    height: 95%;
     //max-height: 800px;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     position: relative;
 }
@@ -28,11 +28,27 @@
     bottom: 0;
     right: 0;
 }
+.containerForm .buttons button{
+    margin: 5px;
+}
 .texto{
     margin-bottom: 2%;
+}    
+//Contenedor Texto(Parte 1)
+.parte1{
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    padding: 5px 10px;
+    //background: #000;
 }
-.containerForm .buttons button{
-    margin: 5px 5px;
+.cargarImagen, .parte1{
+    display: inline-block;
+}
+.contenedorImgText{
+    width: 100%;
+    max-height: 400px;
+    display: inline-flex;
 }
 
 @media screen and (max-height:900px){
@@ -43,14 +59,65 @@
 }
 
 //Estilos de div capturar imagen
+.cargarImagen{
+    width: 300px;
+    height: 400px;
+    //background: #000;
+    padding: 5px;
+    border: 2px dashed #D7DBDD;
+    text-align: center;
+}
+.addimg, .capFile{
+    width: 90%;
+}
 .capFile img{
     width: 250px;
-    height: 250px;
+    height: 50%;
+    max-height: 350px;
     border-radius: 5%;
-    border: 2px solid #000;
+    //border: 2px solid #000;
+    margin: 0 15px;
+    //vertical-align: middle;
 }
 .capFile{
-    width: 300px;
-    height: 300px;
-    background: #000;
+    margin-top: 7px;
+    // vertical-align: middle;
+    //max-height: 340px;
+    //background: #000;
+}
+//Estilo Button
+.upload{
+    width: 100%;
+    background: #0DCAF0;
+    border: none;
+    cursor: pointer;
+    padding: 2px 0;
+    // position: relative;
+    display: flex;
+    border-radius: 7px;
+    justify-content: center;
+    max-width: 250px;
+}
+.upload:hover{
+    background: #4DDDFA;
+}
+
+.addimg input[type="file"]{
+    display: none;
+}
+//Estilos label
+.parte1 label{
+    width: 85px;
+    font-size: 20px;
+}
+.parte1 #name,
+.parte1 #brand,
+.parte1 #stock,
+.parte1 #price,
+.parte1 #desc{
+    width: 80%;
+    padding: 2px 3px;
+}
+.config{
+    margin: 5px 0;
 }

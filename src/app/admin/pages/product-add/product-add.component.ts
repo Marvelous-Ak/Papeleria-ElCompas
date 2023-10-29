@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-add',
@@ -9,9 +10,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ProductAddComponent implements OnInit{
     public archivo: any = [];
-    public preview: String = "";
+    public preview: String = ""
+    //public nombre: String = "";
 
-    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer){
+    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer,private router: Router){
       LoadScript.Carga(["ValidacionProductAdd"]);
     }
 
@@ -26,7 +28,8 @@ export class ProductAddComponent implements OnInit{
         console.log(image);
       })
       //this.archivo.push(fileCap);
-      //console.log(event.target.files);
+      /*console.log(event.target.files[0].name);
+      this.nombre = event.targ.files[0].name;*/
     }
 
     extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
@@ -50,5 +53,7 @@ export class ProductAddComponent implements OnInit{
             return null;
         }
     })
-      
+    pageListProduc() {
+      this.router.navigate(['admin/Product-List']);
+    }
 }
