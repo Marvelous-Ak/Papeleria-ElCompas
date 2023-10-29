@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ProductListComponent {
   public listProduct: Product[] = [];
 
-  itemsPerPage: number = 10; // Cantidad de productos por página
+  itemsPerPage: number = 8; // Cantidad de productos por página
   currentPage: number = 1; // Página actual
 
   // Agregar una propiedad para almacenar el producto a eliminar

@@ -64,7 +64,7 @@
             <!-- Boton Editar-->
             <button class="btn btn-icon btn-2 btn-warning" type="button">
               <span class="btn-inner--icon">
-                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-arrows-rotate"></i>
               </span>
             </button>
             <!--Boton Eliminar-->
@@ -106,15 +106,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Confirmar eliminación</h5>
-        <button type="button" class="close" (click)="productToDelete = null">
-          <span>&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="productToDelete = null"></button>
       </div>
       <div class="modal-body">
         ¿Estás seguro de que deseas eliminar {{ productToDelete.name }}?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="productToDelete = null">Cancelar</button>
+        <button type="button" class="btn btn-outline-primary" (click)="productToDelete = null">Cancelar</button>
         <button type="button" class="btn btn-danger" (click)="deleteConfirmed()">Eliminar</button>
       </div>
     </div>
