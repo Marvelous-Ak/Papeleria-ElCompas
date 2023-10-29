@@ -1,18 +1,9 @@
+//Estilos del formulario
 .containerForm .promoDiv .promo{
     margin-right: 10px;
 }
 .containerForm .promoDiv .actPromo{
     display: none;
-}
-.containerForm label{
-    margin: 0px 15px;
-}
-.parte2 #price, .parte2 #stock{
-    width: 100px;
-    padding: 2px;
-}
-#descp{
-    width: 30%;
 }
 //Estilo de diseño de los contenedores
 .containerForm{
@@ -42,14 +33,6 @@
     padding: 5px 10px;
     //background: #000;
 }
-.cargarImagen, .parte1{
-    display: inline-block;
-}
-.contenedorImgText{
-    width: 100%;
-    max-height: 400px;
-    display: inline-flex;
-}
 
 @media screen and (max-height:900px){
     .buttons button{
@@ -70,6 +53,9 @@
 .addimg, .capFile{
     width: 90%;
 }
+.addimg{
+    margin: auto;
+}
 .capFile img{
     width: 250px;
     height: 50%;
@@ -85,6 +71,16 @@
     //max-height: 340px;
     //background: #000;
 }
+.cargarImagen, .parte1{
+    display: inline-block;
+}
+.contenedorImgText{
+    width: 100%;
+    max-height: 400px;
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+
 //Estilo Button
 .upload{
     width: 100%;
@@ -108,7 +104,8 @@
 //Estilos label
 .parte1 label{
     width: 85px;
-    font-size: 20px;
+    font-size: 18px;    
+    margin: 0px 15px;
 }
 .parte1 #name,
 .parte1 #brand,
@@ -119,5 +116,50 @@
     padding: 2px 3px;
 }
 .config{
-    margin: 5px 0;
+    margin: 15px 0;
+}
+//Estilos promo
+.promoDiv .switch-product,
+.promoDiv .actPromo{
+    margin-left: 20px;
+}
+.promoDiv{
+    width: 100%;
+    max-width: 600px;
+}
+.promoDiv .actPromo #desc{
+    width: 110px;
+    margin: 0;
+}
+.promoDiv .actPromo #desc2{
+    width: 80%;
+    padding: 2px 3px;
+}
+//Estilos Fomulario Parte 2
+.formulario{
+    width: 100%;
+    max-height: 230px;
+    display: inline-flex;
+}
+.formulario .CatSelect,
+.formulario .addDescp{
+    display: inline-block;
+}
+.formulario .CatSelect{
+    margin-right: 25px;
+}
+.formulario .addDescp label{
+    font-size: 18px;
+    margin: 0 15px;
+    margin-bottom: 15px;
+}
+.formulario .addDescp #descp{
+    width: 100%;
+    padding: 2px 3px;
+    height: 200px;
+    margin-left: 15px;
+}
+.formulario .addDescp{
+    width: 100%;
+    max-width: 600px;
 }

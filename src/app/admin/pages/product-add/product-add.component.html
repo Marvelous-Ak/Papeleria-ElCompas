@@ -3,6 +3,7 @@
 </div>
 
 <div class="containerForm">
+    <!-- Formulario de Imagen y Add Product -->
     <div class="contenedorImgText">
         <!-- Contenedor de la Imagen y Button -->
         <div class="cargarImagen">
@@ -19,23 +20,29 @@
         </div>
         <!-- Contenedor de producto parte 1 -->
         <div class="parte1">
+            <!-- Nombre -->
             <div class="nombreP config">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" maxlength="20" placeholder="Nombre">
             </div>
+            <!-- Marca -->
             <div class="marcaP config">
                 <label for="brand">Marca</label>
                 <input type="text" id="brand" name="brand" maxlength="10" placeholder="Marca">
             </div>
+            <!-- Precio -->
             <div class="precioP config">
                 <label for="price" name="price">Precio</label>
-                <input type="number" id="price" name="price" maxlength="4" placeholder="Precio">
-            </div>        
-            <label for="stocks config">Stocks</label>
-            <input type="text" inputmode="numeric" name="stocks" maxlength="3" placeholder="Stocks" id="stock">
+                <input type="text" id="price" name="price" maxlength="4" placeholder="Precio">
+            </div> 
+            <!-- Stocks -->
+            <div class="stockP config">
+                <label for="stocks config">Stocks</label>
+                <input type="text" inputmode="numeric" name="stocks" maxlength="3" placeholder="Stocks" id="stock">
+            </div>
             <!-- Interuptor de Promocion -->
             <div class="promoDiv">
-                <div class="form-check form-switch">
+                <div class="form-check form-switch switch-product">
                     <label for="flexSwitchCheckDefault" class="form-check-label">Promocion</label>
                     <input type="checkbox" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                 </div>
@@ -50,12 +57,11 @@
 
     <!-- Formulario de Agregar Producto -->
     <div class="formulario">
-       <div class="parte2">
             <!-- Seleccion de Categorias -->
             <div class="CatSelect">
                 <label for="catSelect">Selecciona la opción categoria:</label>
                 <div class="checkCat">
-
+                    <!-- Categoria de los productos -->
                     <div class="form-check">
                         <input type="checkbox" name="papel" id="flexCheckDefault1" class="form-check-input" value="">
                         <label for="promo" class="form-check-label" for="flexCheckDefault">Papel</label>
@@ -95,16 +101,13 @@
                         <input type="checkbox" name="promo" id="flexCheckDefault8" class="form-check-input" value="">
                         <label class="form-check-label" for="flexCheckDefault">Adhesivos</label>
                     </div>
-                    
-                    
                 </div>
             </div>
             <!-- Contenido Descripcion -->
             <div class="addDescp">
                 <label for="description" class="descripcion">Descripcion</label>
                 <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox">
-            </div>
-       </div>
+            </div> 
     </div>
 
     <div class="buttons">
