@@ -24,6 +24,7 @@ import { DashboardComponent } from './admin/pages/dashboard/dashboard.component'
 import { LoadServiceService } from './Services/load-service.service';
 import { BodyComponent } from './admin/layout/body/body.component';
 import { ProductListComponent } from './admin/pages/product-list/product-list.component';
+import { ProductAddComponent } from './admin/pages/product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ProductListComponent } from './admin/pages/product-list/product-list.co
     //Pages Admin
     DashboardComponent,
     ProductListComponent,
+    ProductAddComponent,
     
   ],
   imports: [
