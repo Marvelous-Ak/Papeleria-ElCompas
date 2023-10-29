@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../Shared/data';
+import {  ProductPost } from '../Shared/data';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,13 @@ export class CatalogosService {
   }
 
   //POST: Crear productos
-  public create(newProduct: Product){
+  public create(newProduct: ProductPost){
     return this.http.post(this.apiURL + "catalogos", newProduct);
+  }
+
+  //PUT: Editar productos
+  public edit(newProduct: ProductPost, id:number){
+    return this.http.put(this.apiURL + "catalogs/"+ id, newProduct);
   }
 
   //Delete: Eliminar producto

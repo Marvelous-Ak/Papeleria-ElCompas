@@ -69,7 +69,12 @@ export class ProductListComponent {
       this.productToDelete = null;
     }
   }
+
+  //
   pageAddProduc() {
     this.router.navigate(['admin/Product-Add']);
+  }
+  pageEditeProduct(product: Product){
+    this.router.navigate(['admin/Product-Edit/'+ product.id]);
   }
 }

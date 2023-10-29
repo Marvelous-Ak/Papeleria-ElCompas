@@ -1,5 +1,5 @@
 <div class="texto">
-    <h1 class="title">Agregar Producto</h1>
+    <h1 class="title">{{status ? 'Editar Producto' : 'Agregar Producto'}}</h1>
 </div>
 
 <div class="containerForm">
@@ -10,39 +10,54 @@
             <div class="addimg">
                 <input type="file" name="addimg" id="file" (change)="capFile($event)" accept="image/*">
                 <!-- <button class="upload">Subir imagen</button> -->
-                <label for="file" class="upload">Subir Imagen</label>
+                <label for="file" class="upload">{{status ? 'Editar Imagen' : 'Seleccionar Imagen'}}</label>
             </div>
             <!-- PREVIEW IMAGE SELECT -->
-            <div class="capFile" *ngIf="preview">
-                <img [src]="preview" alt="">
+            <div class="capFile" *ngIf="status && !preview">
+                    <img src="{{producto.image}}" alt="">
             </div>
+            <div class="capFile" *ngIf="preview">
+                    <img [src]="preview" alt="">
+            </div>
+            
         </div>
         <!-- Contenedor de producto parte 1 -->
         <div class="parte1">
             <div class="nombreP config">
                 <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" maxlength="20" placeholder="Nombre">
+                <input type="text" id="name" name="name" maxlength="20" placeholder="Nombre" *ngIf="status" [(ngModel)]="producto.name" (ngModelChange)="producto.name"
+                    [ngModelOptions]="{standalone: true}">
+                <input type="text" id="name" name="name" [(ngModel)]="newProducto.name" maxlength="20" placeholder="Nombre" *ngIf="!status">
             </div>
             <div class="marcaP config">
                 <label for="brand">Marca</label>
-                <input type="text" id="brand" name="brand" maxlength="10" placeholder="Marca">
+                <input type="text" id="brand" name="brand" maxlength="10" placeholder="Marca" *ngIf="status" [(ngModel)]="producto.brand"  (ngModelChange)="producto.brand"
+                    [ngModelOptions]="{standalone: true}">
+                <input type="text" id="brand" name="brand" [(ngModel)]="newProducto.brand" maxlength="10" placeholder="Marca" *ngIf="!status">
             </div>
             <div class="precioP config">
                 <label for="price" name="price">Precio</label>
-                <input type="number" id="price" name="price" maxlength="4" placeholder="Precio">
+                <input type="number" id="price" name="price" maxlength="4" placeholder="Precio" *ngIf="status" [(ngModel)]="producto.price"  (ngModelChange)="producto.price"
+                    [ngModelOptions]="{standalone: true}">
+                <input type="number" id="price" name="price" [(ngModel)]="newProducto.price" maxlength="4" placeholder="Precio" *ngIf="!status">
             </div>        
             <label for="stocks config">Stocks</label>
-            <input type="text" inputmode="numeric" name="stocks" maxlength="3" placeholder="Stocks" id="stock">
+            <input type="text" inputmode="numeric" name="stocks" maxlength="3" id="stock" *ngIf="status" [(ngModel)]="producto.stock"  (ngModelChange)="producto.stock"
+                [ngModelOptions]="{standalone: true}">
+            <input type="number" inputmode="numeric" id="stock" [(ngModel)]="newProducto.stock" name="stocks" maxlength="20" placeholder="Stock" *ngIf="!status">
             <!-- Interuptor de Promocion -->
             <div class="promoDiv">
                 <div class="form-check form-switch">
                     <label for="flexSwitchCheckDefault" class="form-check-label">Promocion</label>
-                    <input type="checkbox" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <input type="checkbox" class="form-check-input" [(ngModel)]="newProducto.promo" role="switch" id="flexSwitchCheckDefault">
                 </div>
                 <!-- En caso de tener desceunto mostrar el div -->
                 <div class="actPromo">
                     <label for="promo2" id="desc">Descuento</label>
-                    <input type="text" maxlength="3" name="promo2" id="desc2" placeholder="Descuento">
+                    <input type="number" maxlength="3" name="promo2" id="desc2" placeholder="Descuento" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
+                        [ngModelOptions]="{standalone: true}">
+                    <input type="number" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="Descuento" *ngIf="status && !producto.promo">
+                    <input type="number"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="Descuento" *ngIf="!status">
                 </div>
             </div>
        </div>
@@ -57,42 +72,42 @@
                 <div class="checkCat">
 
                     <div class="form-check">
-                        <input type="checkbox" name="papel" id="flexCheckDefault1" class="form-check-input" value="">
+                        <input type="checkbox" name="papel" id="flexCheckDefault1" class="form-check-input"  value="" [ngModel]="idArray.includes(1)" (ngModelChange)="toggleCategory(1)">
                         <label for="promo" class="form-check-label" for="flexCheckDefault">Papel</label>
                     </div>   
                     
                     <div class="form-check">
-                        <input type="checkbox" name="escolar" id="flexCheckDefault2" class="form-check-input" value="">
+                        <input type="checkbox" name="escolar" id="flexCheckDefault2" class="form-check-input" value="" [ngModel]="idArray.includes(2)" (ngModelChange)="toggleCategory(2)">
                         <label for="promo" class="form-check-label">Escolares</label>
                     </div>
 
                     <div class="form-check">
-                        <input type="checkbox" name="arte " id="flexCheckDefault3" class="form-check-input" value="">
+                        <input type="checkbox" name="arte " id="flexCheckDefault3" class="form-check-input" value="" [ngModel]="idArray.includes(3)" (ngModelChange)="toggleCategory(3)">
                         <label class="form-check-label" for="flexCheckDefault">Artes</label>
                     </div>
                     
                     <div class="form-check">
-                        <input type="checkbox" name="promo" id="flexCheckDefault4" class="form-check-input" value="">
+                        <input type="checkbox" name="promo" id="flexCheckDefault4" class="form-check-input" value="" [ngModel]="idArray.includes(4)" (ngModelChange)="toggleCategory(4)">
                         <label class="form-check-label" for="flexCheckDefault">Escritura</label>
                     </div>
                     
                     <div class="form-check">
-                        <input type="checkbox" name="promo" id="flexCheckDefault5" class="form-check-input" value="">
+                        <input type="checkbox" name="promo" id="flexCheckDefault5" class="form-check-input" value="" [ngModel]="idArray.includes(5)" (ngModelChange)="toggleCategory(5)">
                         <label class="form-check-label" for="flexCheckDefault">Oficina</label>
                     </div>
                     
                     <div class="form-check">
-                        <input type="checkbox" name="promo" id="flexCheckDefault6" class="form-check-input" value="">
+                        <input type="checkbox" name="promo" id="flexCheckDefault6" class="form-check-input" value="" [ngModel]="idArray.includes(6)" (ngModelChange)="toggleCategory(6)">
                         <label class="form-check-label" for="flexCheckDefault">Manualidades</label>
                     </div>
                     
                     <div class="form-check">
-                        <input type="checkbox" name="promo" id="flexCheckDefault7" class="form-check-input" value="">
+                        <input type="checkbox" name="promo" id="flexCheckDefault7" class="form-check-input" value="" [ngModel]="idArray.includes(7)" (ngModelChange)="toggleCategory(7)">
                         <label class="form-check-label" for="flexCheckDefault">Didácticos</label>
                     </div>
                     
                     <div class="form-check">
-                        <input type="checkbox" name="promo" id="flexCheckDefault8" class="form-check-input" value="">
+                        <input type="checkbox" name="promo" id="flexCheckDefault8" class="form-check-input" value="" [ngModel]="idArray.includes(8)" (ngModelChange)="toggleCategory(8)">
                         <label class="form-check-label" for="flexCheckDefault">Adhesivos</label>
                     </div>
                     
@@ -102,13 +117,15 @@
             <!-- Contenido Descripcion -->
             <div class="addDescp">
                 <label for="description" class="descripcion">Descripcion</label>
-                <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox">
+                <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox" *ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description"
+                    [ngModelOptions]="{standalone: true}">
+                <input type="text" name="descp" id="descp" [(ngModel)]="newProducto.description" maxlength="150" class="descrpcionBox" *ngIf="!status">
             </div>
        </div>
     </div>
 
     <div class="buttons">
-        <button type="button" class="btn btn-primary">Aceptar</button>
+        <button type="button" class="btn btn-primary" (click)="newOrEditeProduct()">{{status ? 'Editar' : 'Agregar'}}</button>
         <button type="button" class="btn btn-danger" (click)="pageListProduc()">Cancelar</button>
     </div>
 </div>

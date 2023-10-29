@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CatalogosService } from 'src/app/Services/catalogs.service';
+import { Product, ProductPost } from 'src/app/Shared/data';
 
 @Component({
   selector: 'app-product-add',
@@ -11,21 +13,116 @@ import { Router } from '@angular/router';
 export class ProductAddComponent implements OnInit{
     public archivo: any = [];
     public preview: String = ""
+    public idP!: number;
+    public status: boolean= false; /// false: Add   true:  Edit
+    public producto!: Product;
+    public newProducto: ProductPost ={
+      "brand": "", "name": "", "promo": false, "description": "", "categories":[]
+    };
+    public category: any =[];
+    public idArray: number[] = [];
     //public nombre: String = "";
 
-    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer,private router: Router){
+    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer,private router: Router, private route: ActivatedRoute, private CatalogoService:CatalogosService){
       LoadScript.Carga(["ValidacionProductAdd"]);
     }
 
-    ngOnInit(): void{
-      
+     cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
+    const actPromo = document.querySelector('.actPromo') as HTMLElement ;
+    if (this.newProducto.promo) {
+        actPromo.style.display = 'block';
+       }else {
+        actPromo.style.display = 'none';
+      }
     }
 
+    ngOnInit(): void{
+      this.route.url.subscribe(segments => {
+        // Verifica la URL para determinar desde qué ruta se redirigió
+        if (segments[0].path === 'Product-Add') { 
+          this.status = false;
+        } else if (segments[0].path === 'Product-Edit'){
+          this.route.params.subscribe(params => {
+            this.idP = +params['numero']; // El "+" convierte el parámetro en un número
+            this.status = true;
+            this.cargarInfo();
+          });
+        } 
+      });
+    }
+
+    //////solicitar valores del producto seleccionado
+    cargarInfo(){
+      this.CatalogoService.get('products/'+this.idP)
+    .subscribe((respuesta: any) => {
+      this.producto = respuesta;
+      this.newProducto.image = respuesta.image;
+      this.newProducto.promo = respuesta.promo;
+      this.cambi();
+      
+    })
+
+     this.CatalogoService.get('categories/'+this.idP)
+     .subscribe((respuesta: any)=>{
+      this.category = respuesta;
+      for (const item of this.category) {
+        this.idArray.push(item.id);
+        this.newProducto.categories = this.idArray;
+       
+      }
+     })
+    }
+    ////
+    ///// POST y PUT: Crear y editar producto
+
+    newOrEditeProduct(){
+      
+      if(this.status){
+        this.newProducto.name = this.producto.name;
+        this.newProducto.brand = this.producto.brand;
+        this.newProducto.stock = this.producto.stock;
+        this.newProducto.description = this.producto.description;
+        this.newProducto.price = this.producto.price;
+        if(this.producto.promo){
+          this.newProducto.pricePromo = this.producto.pricePromo;
+        } 
+        if(!this.newProducto.promo){
+          this.newProducto.pricePromo = 0;
+        }
+        this.CatalogoService.edit(this.newProducto, this.idP)
+        .subscribe((resp: any)=>{
+          this.router.navigate(['admin/Product-List']);
+        })
+      }else{
+        if(!this.newProducto.promo){this.newProducto.pricePromo = 0.00}
+        this.CatalogoService.create(this.newProducto)
+        .subscribe((resp: any)=>{
+        //////Mensaje de creado con éxito
+        if(resp.status === 0){
+          this.router.navigate(['admin/Product-List']);
+        } 
+        })
+      }
+    }
+
+    toggleCategory(categoryId: number) {
+      if (this.newProducto.categories.includes(categoryId)) {
+        // Si el categoryId ya existe en idArray, lo eliminamos
+        this.newProducto.categories = this.newProducto.categories.filter(id => id !== categoryId);
+      } else {
+        // Si el categoryId no existe en idArray, lo agregamos
+        this.newProducto.categories.push(categoryId);
+      }
+        
+    }
+    
+////////////////////////////////////////////////
     capFile(event: any){
       const fileCap = event.target.files[0];
       this.extraerBase64(fileCap).then((image: any) => {
         this.preview = image.base;
-        console.log(image);
+        this.newProducto.image = image.base;
+        //console.log(image);
       })
       //this.archivo.push(fileCap);
       /*console.log(event.target.files[0].name);
@@ -53,6 +150,8 @@ export class ProductAddComponent implements OnInit{
             return null;
         }
     })
+
+    ///Cancelar acción
     pageListProduc() {
       this.router.navigate(['admin/Product-List']);
     }
