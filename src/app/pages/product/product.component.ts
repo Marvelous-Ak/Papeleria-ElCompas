@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit{
   }
 
   cargarProducto(id:number){
-    this.CatalogoService.get('http://127.0.0.1:8000/api/products/'+id)
+    this.CatalogoService.get('products/'+id)
     .subscribe((respuesta: any) => {
       this.producto = respuesta;
       console.log(this.producto)
