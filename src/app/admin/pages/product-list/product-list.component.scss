@@ -1,3 +1,34 @@
 .table{
     vertical-align: middle;
 }
+
+.tittle{
+    color: #034E53;
+}
+
+.container{
+    column-count: 2;
+  }
+  //contenedor de imagen
+.img-wrapper{
+  max-width: 5em;
+  height: 5em;
+  background:#fff;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+}
+.imageP img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+
+  }
+  
+.tablaP{
+    padding-bottom: 2%;
+}
+
+.fa-gear{
+  color: #fff;
+}

@@ -9,7 +9,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ProductAddComponent implements OnInit{
     public archivo: any = [];
-    public preview: String = "";
+    public preview: String = ""
+    //public nombre: String = "";
 
     constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer){
       LoadScript.Carga(["ValidacionProductAdd"]);
@@ -26,7 +27,8 @@ export class ProductAddComponent implements OnInit{
         console.log(image);
       })
       //this.archivo.push(fileCap);
-      //console.log(event.target.files);
+      /*console.log(event.target.files[0].name);
+      this.nombre = event.targ.files[0].name;*/
     }
 
     extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
