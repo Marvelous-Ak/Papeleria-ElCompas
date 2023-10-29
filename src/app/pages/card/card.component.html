@@ -5,8 +5,9 @@
     </div>
       <img [src]="detallesP.image" class="card-img-top img-1" alt="...">
       <div class="card-body card-inf">
-        <span><p class="card-text" *ngIf="detallesP.promo">${{detallesP.priceAnt}}</p></span>
-         <p class="card-text price">${{detallesP.price}}</p>
+        <span class="promotion"><p class="card-text" *ngIf="detallesP.promo">{{"$" + detallesP.price}} </p></span>
+        <span><p class="card-text price">{{detallesP.promo ? "$" + detallesP.pricePromo : "$" + detallesP.price}}</p></span>
+         
       </div>
       <div class="icon">
         <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir a la lista de deseos" (click)="addFavorites()">

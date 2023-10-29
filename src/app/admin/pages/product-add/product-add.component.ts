@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-add',
@@ -12,7 +13,7 @@ export class ProductAddComponent implements OnInit{
     public preview: String = ""
     //public nombre: String = "";
 
-    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer){
+    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer,private router: Router){
       LoadScript.Carga(["ValidacionProductAdd"]);
     }
 
@@ -52,5 +53,7 @@ export class ProductAddComponent implements OnInit{
             return null;
         }
     })
-      
+    pageListProduc() {
+      this.router.navigate(['admin/Product-List']);
+    }
 }

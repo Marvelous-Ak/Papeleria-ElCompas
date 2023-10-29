@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   cargarDataR() {
-    this.CatalogoService.get('http://127.0.0.1:8000/api/catalogos')
+    this.CatalogoService.getAll()
       .subscribe((respuesta: any) => {
         // Convierte las fechas de creación en objetos Date
         respuesta.forEach((product:Product) => {

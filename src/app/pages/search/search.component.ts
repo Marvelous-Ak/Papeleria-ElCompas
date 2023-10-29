@@ -37,14 +37,13 @@ export class SearchComponent {
 
   //Consultar al API
   public cargarDataSearch(name:string){ 
-    this.CatalogoService.get('http://127.0.0.1:8000/api/search/'+name)
+    this.CatalogoService.get('search/'+name)
     .pipe(
       catchError((error: any) => {
         if (error.status === 400) {
           console.log('Error 400 en su solicitud');
           this.cardsSearch=[];
         }
-        // Puedes agregar otras acciones o manejo de errores aquí si es necesario.
         return [];
       })
     )
@@ -61,7 +60,7 @@ export class SearchComponent {
 
 
   public cargarDataSearch2(name:string){ 
-    this.CatalogoService.get('http://127.0.0.1:8000/api/search2/'+name)
+    this.CatalogoService.get('search2/'+name)
     .subscribe((respuesta: any) => {
       this.cardsSearch=respuesta;   
       console.log(respuesta); 

@@ -53,20 +53,22 @@
         <tr *ngIf="i >= (currentPage - 1) * itemsPerPage && i < currentPage * itemsPerPage">
           <th scope="row">{{ product.brand }}</th>
           <td>{{ product.name }}</td>
-          <td>$ {{ product.promo ? product.priceAnt:  product.price }}</td>
-          <td>{{ product.promo ? "$ " ++ product.price : '---' }}</td>
+          <td>$ {{ product.price }}</td>
+          <td>{{ product.promo ? "$" ++ product.pricePromo : '---' }}</td>
           <td>{{ product.stock }}</td>
           <td class="imageP">
             <div class="text-center img-wrapper">
               <img class="rounded mx-auto d-block"  src="{{ product.image }}" alt="{{ product.name }}">
             </div></td>
           <td class="mat-cell">
+            <!-- Boton Editar-->
             <button class="btn btn-icon btn-2 btn-warning" type="button">
               <span class="btn-inner--icon">
                 <i class="fa-solid fa-gear"></i>
               </span>
             </button>
-            <button class="btn btn-icon btn-2 btn-danger" type="button">
+            <!--Boton Eliminar-->
+            <button class="btn btn-icon btn-2 btn-danger" type="button" (click)="deleteProduct(product)">
               <span class="btn-inner--icon"><i class="fas fa-remove"></i></span>
             </button>
           </td>
@@ -98,3 +100,23 @@
   </nav>
 </div>
 
+<!-- Cuadro de diálogo de confirmación de eliminación -->
+<div class="modal" tabindex="-1" role="dialog" style="display: block;" *ngIf="productToDelete">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar eliminación</h5>
+        <button type="button" class="close" (click)="productToDelete = null">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar {{ productToDelete.name }}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="productToDelete = null">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="deleteConfirmed()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

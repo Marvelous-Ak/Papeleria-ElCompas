@@ -53,12 +53,14 @@
     color: rgba(10,174,185,1);
     justify-content: space-around;
     align-items: center;
+    //font-size: 90%;
     
  }
- .card-inf span{
+ .card-inf .promotion{
     margin-right: 20%;
     color: #697475;
     text-decoration: line-through;
+    font-size: 90%;
  }
 .card-bt{
     height: 10%;
@@ -122,6 +124,7 @@
     width: 50px !important;
     height: 50px !important;
 }
+
 @keyframes tambalear {
     0% {
       transform: rotate(3deg);
