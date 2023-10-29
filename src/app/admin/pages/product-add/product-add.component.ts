@@ -27,6 +27,15 @@ export class ProductAddComponent implements OnInit{
       LoadScript.Carga(["ValidacionProductAdd"]);
     }
 
+     cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
+    const actPromo = document.querySelector('.actPromo') as HTMLElement ;
+    if (this.newProducto.promo) {
+        actPromo.style.display = 'block';
+       }else {
+        actPromo.style.display = 'none';
+      }
+    }
+
     ngOnInit(): void{
       this.route.url.subscribe(segments => {
         // Verifica la URL para determinar desde qué ruta se redirigió
@@ -48,6 +57,9 @@ export class ProductAddComponent implements OnInit{
     .subscribe((respuesta: any) => {
       this.producto = respuesta;
       this.newProducto.image = respuesta.image;
+      this.newProducto.promo = respuesta.promo;
+      this.cambi();
+      
     })
 
      this.CatalogoService.get('categories/'+this.idP)
@@ -56,6 +68,7 @@ export class ProductAddComponent implements OnInit{
       for (const item of this.category) {
         this.idArray.push(item.id);
         this.newProducto.categories = this.idArray;
+       
       }
      })
     }
