@@ -5,6 +5,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { Product, ProductPost } from 'src/app/Shared/data';
 
+declare var alertaMJS: any;
+//const valid = document.getElementById('estado') as HTMLButtonElement;
+//valid.innerText = 'xd';
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
@@ -24,7 +27,7 @@ export class ProductAddComponent implements OnInit{
     //public nombre: String = "";
 
     constructor(private LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private CatalogoService: CatalogosService) {
-      LoadScript.Carga(["ValidacionProductAdd"]);
+      LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
     }
 
      cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
