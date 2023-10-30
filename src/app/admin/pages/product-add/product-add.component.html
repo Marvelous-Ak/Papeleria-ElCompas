@@ -77,10 +77,10 @@
                     <div class="input-group mb-3 config">
                         <label class="form-label" for="price" name="price">Descuento:</label>
                         <span class="input-group-text">$</span>
-                        <input class="form-control" type="text" maxlength="3" name="promo2" id="desc2" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
+                        <input class="form-control" type="text" maxlength="10" name="promo2" id="desc2" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
                             [ngModelOptions]="{standalone: true}">
-                        <input class="form-control" type="text" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto.promo">
-                        <input class="form-control" type="text"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
+                        <input class="form-control" type="text" maxlength="10" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto.promo">
+                        <input class="form-control" type="text"  maxlength="10" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
                     </div> 
     
                 </div>
