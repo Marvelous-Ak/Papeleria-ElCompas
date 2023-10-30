@@ -24,34 +24,40 @@
 
         <!-- Contenedor de producto parte 1 -->
         <div class="parte1">
+
             <!-- Nombre -->
-            <div class="nombreP config">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" maxlength="20" placeholder="Nombre" *ngIf="status" [(ngModel)]="producto.name" (ngModelChange)="producto.name"
-                    [ngModelOptions]="{standalone: true}">
-                <input type="text" id="name" name="name" [(ngModel)]="newProducto.name" maxlength="20" placeholder="Nombre" *ngIf="!status">
-            </div>
-            <!-- Marca -->
-            <div class="marcaP config">
-                <label for="brand">Marca</label>
-                <input type="text" id="brand" name="brand" maxlength="10" placeholder="Marca" *ngIf="status" [(ngModel)]="producto.brand"  (ngModelChange)="producto.brand"
-                    [ngModelOptions]="{standalone: true}">
-                <input type="text" id="brand" name="brand" [(ngModel)]="newProducto.brand" maxlength="10" placeholder="Marca" *ngIf="!status">
-            </div>
-            <!-- Precio -->
-            <div class="precioP config">
-                <label for="price" name="price">Precio</label>
-                <input type="number" id="price" name="price" maxlength="4" placeholder="Precio" *ngIf="status" [(ngModel)]="producto.price"  (ngModelChange)="producto.price"
-                    [ngModelOptions]="{standalone: true}">
-                <input type="number" id="price" name="price" [(ngModel)]="newProducto.price" maxlength="4" placeholder="Precio" *ngIf="!status">
-            </div> 
-            <!-- Stocks -->
-            <div class="stockP config">
-                <label for="stocks config">Stock</label>
-                <input type="text" inputmode="numeric" name="stocks" maxlength="3" id="stock" *ngIf="status" [(ngModel)]="producto.stock"  (ngModelChange)="producto.stock"
+            <div class="input-group mb-3 nombreP config">
+                <label class="form-label" for="name">Nombre:</label>
+                <input class="form-control" id="name" name="name" maxlength="20" *ngIf="status" [(ngModel)]="producto.name" (ngModelChange)="producto.name"
                 [ngModelOptions]="{standalone: true}">
-            <input type="number" inputmode="numeric" id="stock" [(ngModel)]="newProducto.stock" name="stocks" maxlength="20" placeholder="Stock" *ngIf="!status">
+                <input class="form-control" type="text" id="name" name="name" [(ngModel)]="newProducto.name" maxlength="20" placeholder="Ej. Cuaderno Profesional" *ngIf="!status">
             </div>
+
+            <!-- Marca -->
+            <div class="input-group mb-3 marcaP config">
+                <label class="form-label" for="brand">Marca:</label>
+                <input class="form-control" type="text" id="brand" name="brand" maxlength="10" *ngIf="status" [(ngModel)]="producto.brand"  (ngModelChange)="producto.brand"
+                    [ngModelOptions]="{standalone: true}">
+                <input class="form-control" type="text" id="brand" name="brand" [(ngModel)]="newProducto.brand" maxlength="10" placeholder="Ej. Scribe" *ngIf="!status">
+            </div>
+
+            <!-- Precio -->
+            <div class="input-group mb-3 precioP config">
+                <label class="form-label" for="price" name="price">Precio:</label>
+                <span class="input-group-text">$</span>
+                <input class="form-control" type="text" id="price" name="price" maxlength="4" placeholder="00.00" *ngIf="status" [(ngModel)]="producto.price"  (ngModelChange)="producto.price"
+                    [ngModelOptions]="{standalone: true}">
+                <input class="form-control" type="text" id="price" name="price" [(ngModel)]="newProducto.price" maxlength="4" placeholder="85.00" *ngIf="!status">
+            </div> 
+
+            <!-- Stocks -->
+            <div class="input-group mb-3 stockP config">
+                <label class="form-label" for="stock">Stock:</label>
+                <input class="form-control" type="text" inputmode="numeric" name="stocks" maxlength="3" id="stock" *ngIf="status" [(ngModel)]="producto.stock"  (ngModelChange)="producto.stock"
+                [ngModelOptions]="{standalone: true}">
+            <input class="form-control" type="text" inputmode="numeric" id="stock" [(ngModel)]="newProducto.stock" name="stocks" maxlength="20" placeholder="Ej. 48" *ngIf="!status">
+            </div>
+
             <!-- Interuptor de Promocion -->
             <div class="promoDiv">
                 <div class="form-check form-switch switch-product">
@@ -60,19 +66,29 @@
                 </div>
                 <!-- En caso de tener desceunto mostrar el div -->
                 <div class="actPromo">
-                    <label for="promo2" id="desc">Descuento</label>
-                    <input type="number" maxlength="3" name="promo2" id="desc2" placeholder="Descuento" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
+                    <label for="promo2" id="desc">Descuento:</label>
+                    <input class="form-control" type="number" maxlength="3" name="promo2" id="desc2" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
                         [ngModelOptions]="{standalone: true}">
-                    <input type="number" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="Descuento" *ngIf="status && !producto.promo">
-                    <input type="number"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="Descuento" *ngIf="!status">
+                    <input type="number" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto.promo">
+                    <input type="number"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
                 </div>
-            </div>
 
+                <!-- Remplazar el de arriba por este-->
+                <div class="input-group mb-3 config">
+                    <label class="form-label" for="price" name="price">Descuento:</label>
+                    <span class="input-group-text">$</span>
+                    <input class="form-control" type="text" maxlength="3" name="promo2" id="desc2" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
+                        [ngModelOptions]="{standalone: true}">
+                    <input class="form-control" type="text" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto.promo">
+                    <input class="form-control" type="text"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
+                </div> 
+
+            </div>
+            <!-- Descripcion de Producto-->
             <div class="addDescp">
-                <label for="description" class="descripcion">Descripcion</label>
-                <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox" *ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description"
-                    [ngModelOptions]="{standalone: true}">
-                <input type="text" name="descp" id="descp" [(ngModel)]="newProducto.description" maxlength="150" class="descrpcionBox" *ngIf="!status">
+                <label for="description" class="descripcion">Descripcion:</label>
+                <textarea class="form-control" name="descp" id="descp" rows="3"*ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description" [ngModelOptions]="{standalone: true}"></textarea>
+                <textarea class="form-control" name="descp" id="descp" rows="3"[(ngModel)]="newProducto.description" maxlength="150" *ngIf="!status"></textarea>
             </div>
 
        </div>

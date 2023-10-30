@@ -1,6 +1,3 @@
-.tittle{
-    color: #034E53;
-}
 //Estilos del formulario
 .containerForm .promoDiv .promo{
     margin-right: 10px;
@@ -110,10 +107,7 @@
     font-size: 18px;    
     margin: 0px 15px;
 }
-.parte1 #name,
-.parte1 #brand,
-.parte1 #stock,
-.parte1 #price,
+
 .parte1 #desc{
     width: 80%;
     padding: 2px 3px;
@@ -144,6 +138,7 @@
     max-height: 230px;
     display: inline-flex;
 }
+.formulario .CatSelect,
 .addDescp{
     display: inline-block;
 }
@@ -158,7 +153,7 @@
 .addDescp #descp{
     width: 100%;
     padding: 2px 3px;
-    height: 200px;
+    height: 7.5rem;
     margin-left: 15px;
 }
 .addDescp{
