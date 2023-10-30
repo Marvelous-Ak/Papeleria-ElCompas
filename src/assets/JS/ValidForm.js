@@ -1,14 +1,8 @@
-const formulario = document.getElementById('formulario');//Extraer elemento del formulario
 const inputs = document.querySelectorAll('#formulario input'); //Extraer todos los inputs que esten dentro de formulario
-var val1 = document.getElementById('estado');
+
 
 //Invalido
 const valid = {
-    name: false,
-    brand: false,
-    price: false,
-    stock: false,
-    descp: false,
     image: false //Esta funcion no se borra
 }
 
@@ -25,21 +19,15 @@ function validFile(){
         alertaFile('error','Error al leer el archivo', 'Los formatos que el archivo sube no son compatibles. SOLO IMAGENES');
         return false;
     } else {
-        var fileSize = fileCap.files[0];
+        var fileSize = fileCap.files[0]; //Extraer el size de la imagen seleccionada
+        
         if(fileSize && fileSize.size > 10485800){//Validar que la imagen insertado no exceda de los 10MB
             fileCap.value = '';
             alertaFile('warning','Tamaño de Archivo excedido','No puedes exceder de los 10MB de la imagen');
             valid.image = false;
             return false;
         } else {
-            /*if (fileCap.files && fileCap.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('imagePreview').innerHTML = '<img src="'+e.target.result+'"/>';
-                };
-                reader.readAsDataURL(fileCap.files[0]);
-            }*/
-            val1.image = true;
+            
         }
         
     }
