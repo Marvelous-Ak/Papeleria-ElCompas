@@ -26,9 +26,8 @@ export class ProductAddComponent implements OnInit{
     public idArray: number[] = [];
     //public nombre: String = "";
 
-    constructor(private LoadScript:LoadServiceService, private santizer: DomSanitizer,private router: Router, private route: ActivatedRoute, private CatalogoService:CatalogosService){
+    constructor(private LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private CatalogoService: CatalogosService) {
       LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
-      
     }
 
      cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
@@ -79,41 +78,37 @@ export class ProductAddComponent implements OnInit{
     ////
     ///// POST y PUT: Crear y editar producto
 
-    newOrEditeProduct(){      
-    //const textB: string = valid?.textContent || "";
-    if(this.status){
-      this.newProducto.name = this.producto.name;
-      this.newProducto.brand = this.producto.brand;
-      this.newProducto.stock = this.producto.stock;
-      this.newProducto.description = this.producto.description;
-      this.newProducto.price = this.producto.price;
-      if(this.producto.promo){
-        this.newProducto.pricePromo = this.producto.pricePromo;
-      } 
-      if(!this.newProducto.promo){
-        this.newProducto.pricePromo = 0;
+    newOrEditeProduct(){
+      
+      if (this.status) {
+        this.newProducto.name = this.producto.name;
+        this.newProducto.brand = this.producto.brand;
+        this.newProducto.stock = this.producto.stock;
+        this.newProducto.description = this.producto.description;
+        this.newProducto.price = this.producto.price;
+        if (this.producto.promo) {
+          this.newProducto.pricePromo = this.producto.pricePromo;
+        }
+        if (!this.newProducto.promo) {
+          this.newProducto.pricePromo = 0;
+        }
+        this.CatalogoService.edit(this.newProducto, this.idP)
+          .subscribe((resp: any) => {
+            // Redirige a Product-List después de editar
+            this.router.navigate(['admin/Product-List']);
+          });
+      }else {
+        if (!this.newProducto.promo) {
+          this.newProducto.pricePromo = 0.00;
+        }
+        this.CatalogoService.create(this.newProducto)
+          .subscribe((resp: any) => {
+        //////Mensaje de creado con éxito
+        if (resp.status === 0) {
+          this.router.navigate(['admin/Product-List']);
+        }
+      });
       }
-      this.CatalogoService.edit(this.newProducto, this.idP)
-      .subscribe((resp: any)=>{
-        this.router.navigate(['admin/Product-List']);
-      })
-    }else{
-      if(!this.newProducto.promo){this.newProducto.pricePromo = 0.00}
-      this.CatalogoService.create(this.newProducto)
-      .subscribe((resp: any)=>{
-      //////Mensaje de creado con éxito
-      if(resp.status === 0){
-        this.router.navigate(['admin/Product-List']);
-      } 
-      })
-    }
-
-    /*  if(textB == 'Agregar' || textB == 'Editar'){
-        
-      } else {
-          alertaMJS();
-      }
-          console.log(textB);*/
     }
 
     toggleCategory(categoryId: number) {

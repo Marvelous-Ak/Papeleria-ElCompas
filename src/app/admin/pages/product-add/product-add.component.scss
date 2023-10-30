@@ -15,12 +15,9 @@
     position: relative;
 }
 .containerForm .buttons{
-    /*position: absolute;
+    position: absolute;
     bottom: 0;
-    right: 0;*/
-    width: 100%;
-    text-align: right;
-    margin-top: 10px;
+    right: 0;
 }
 .containerForm .buttons button{
     margin: 5px;
@@ -104,41 +101,19 @@
 .addimg input[type="file"]{
     display: none;
 }
-.btnState:hover{
-    box-shadow: 2px 0px 10px rgba(13, 164, 240, 1);
-}
-.btnCancel:hover{
-    box-shadow: 2px 0px 10px rgba(226, 68, 83, 1);
-}
 //Estilos label
 .parte1 label{
     width: 85px;
     font-size: 18px;    
     margin: 0px 15px;
 }
-.parte1 #name,
-.parte1 #brand,
-.parte1 #stock,
-.parte1 #price,
-.addDescp #descp{
-    width: 100%;
+
+.parte1 #desc{
+    width: 80%;
     padding: 2px 3px;
-    border-radius: 3px;
-    border: 2px solid transparent;
-    transition: .3s ease all;
-}
-.parte1 #name:focus,
-.parte1 #brand:focus,
-.parte1 #stock:focus,
-.parte1 #price:focus,
-.addDescp #descp:focus{
-    border: 2px solid #0075FF;
-    outline: none;
-    box-shadow: 3px 0px 15px rgba(163, 163, 163,0.4);
-    transition: .3s ease all;
 }
 .config{
-    margin: 5px 0;
+    margin: 15px 0;
 }
 //Estilos promo
 .promoDiv .switch-product,
@@ -160,74 +135,28 @@
 //Estilos Fomulario Parte 2
 .formulario{
     width: 100%;
-    max-height: 250px;
+    max-height: 230px;
     display: inline-flex;
-    margin-bottom: 35px;
 }
 .formulario .CatSelect,
-.formulario .addDescp{
+.addDescp{
     display: inline-block;
 }
 .formulario .CatSelect{
     margin-right: 25px;
 }
-.formulario .addDescp label{
+.addDescp label{
     font-size: 18px;
     margin: 0 15px;
     margin-bottom: 15px;
 }
-.formulario .addDescp #descp{
+.addDescp #descp{
     width: 100%;
     padding: 2px 3px;
-    height: 200px;
+    height: 7.5rem;
     margin-left: 15px;
 }
-.formulario .addDescp{
+.addDescp{
     width: 100%;
     max-width: 600px;
-}
-//Estilos validacion
-.formName{
-    position: relative;
-    width: 80%;
-    margin: 0;
-    margin-left: 15px;
-}
-.msjError{
-    font-size: 10px;
-    margin: 0 15px;
-    color: #ff0000;
-    display: none;
-}
-.msjError-activo{
-    display: block;
-}
-.fomrState{
-    position: absolute;
-    right: 10px;
-    bottom: 8px;
-    z-index: 100;
-    opacity: 0;
-}
-.txtMsj{
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    background: #F66060;
-    border-radius: 5px;
-    text-align: center;
-    display: none;
-}
-.FromGrup-error label,
-.FromGrup-error .fomrState{
-    color: #BB2929;
-    opacity: 1;
-}
-.FromGrup-error #name,
-.FromGrup-error #brand,
-.FromGrup-error #price,
-.FromGrup-error #stock,
-.FromGrup-error #descp{
-    border: 1.5px solid #BB2929;
-    margin: 0;
 }
