@@ -9,6 +9,7 @@ export interface Product{
     stock: number;
     id: number;
     created_at: Date;
+    updated_at: Date;
 }
 
 export interface ProductPost{

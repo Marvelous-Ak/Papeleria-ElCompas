@@ -30,6 +30,15 @@ export class ProductListComponent {
   //// Traer todos los productos: función ShowAll
   public listAll() {
     this.CatalogoService.getAll().subscribe((respuesta: any) => {
+      respuesta.forEach((product:Product) => {
+        product.updated_at = new Date(product.updated_at);
+      });
+
+      // Ordena los productos en orden descendente (más recientes primero)
+      respuesta.sort((a:any, b:any) => b.updated_at.getTime() - a.updated_at.getTime());
+
+      // Selecciona los n productos más recientes
+      //this.listProduct = respuesta.slice(0, 12);
       this.listProduct = respuesta;
     });
   }
