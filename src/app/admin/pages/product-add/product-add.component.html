@@ -67,6 +67,14 @@
                     <input type="number"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="Descuento" *ngIf="!status">
                 </div>
             </div>
+
+            <div class="addDescp">
+                <label for="description" class="descripcion">Descripcion</label>
+                <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox" *ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description"
+                    [ngModelOptions]="{standalone: true}">
+                <input type="text" name="descp" id="descp" [(ngModel)]="newProducto.description" maxlength="150" class="descrpcionBox" *ngIf="!status">
+            </div>
+
        </div>
     </div>
 
@@ -119,12 +127,6 @@
                 </div>
             </div>
             <!-- Contenido Descripcion -->
-            <div class="addDescp">
-                <label for="description" class="descripcion">Descripcion</label>
-                <input type="text" name="descp" id="descp" maxlength="150" class="descrpcionBox" *ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description"
-                    [ngModelOptions]="{standalone: true}">
-                <input type="text" name="descp" id="descp" [(ngModel)]="newProducto.description" maxlength="150" class="descrpcionBox" *ngIf="!status">
-            </div>
     </div>
 
     <div class="buttons">

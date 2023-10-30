@@ -144,25 +144,24 @@
     max-height: 230px;
     display: inline-flex;
 }
-.formulario .CatSelect,
-.formulario .addDescp{
+.addDescp{
     display: inline-block;
 }
 .formulario .CatSelect{
     margin-right: 25px;
 }
-.formulario .addDescp label{
+.addDescp label{
     font-size: 18px;
     margin: 0 15px;
     margin-bottom: 15px;
 }
-.formulario .addDescp #descp{
+.addDescp #descp{
     width: 100%;
     padding: 2px 3px;
     height: 200px;
     margin-left: 15px;
 }
-.formulario .addDescp{
+.addDescp{
     width: 100%;
     max-width: 600px;
 }
