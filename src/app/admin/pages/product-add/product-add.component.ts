@@ -27,7 +27,7 @@ export class ProductAddComponent implements OnInit{
     //public nombre: String = "";
 
     constructor(public LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private CatalogoService: CatalogosService) {
-      
+      LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
     }
 
      cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
@@ -40,7 +40,6 @@ export class ProductAddComponent implements OnInit{
     }
 
     ngOnInit(): void{
-      this.LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
       this.route.url.subscribe(segments => {
         // Verifica la URL para determinar desde qué ruta se redirigió
         if (segments[0].path === 'Product-Add') { 

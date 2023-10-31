@@ -1,7 +1,3 @@
-const inputs = document.querySelectorAll('#formulario input'); //Extraer todos los inputs que esten dentro de formulario
-
-
-//Invalido
 const valid = {
     image: false //Esta funcion no se borra
 }
