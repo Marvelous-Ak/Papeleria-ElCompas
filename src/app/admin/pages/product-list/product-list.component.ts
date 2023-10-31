@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
+
+  
   public listProduct: Product[] = [];
 
   itemsPerPage: number = 8; // Cantidad de productos por página
