@@ -18,9 +18,11 @@ export class ProductAddComponent implements OnInit{
     public preview: String = ""
     public idP!: number;
     public status: boolean= false; /// false: Add   true:  Edit
-    public producto!: Product;
+    public producto: Product  ={
+      "brand": "", "name": "", "promo": false, "description": "", "image":"", "id": 0, "stock":0, "price": 0, "pricePromo": 0, "created_at": new Date, "updated_at": new Date
+    };
     public newProducto: ProductPost ={
-      "brand": "", "name": "", "promo": false, "description": "", "categories":[]
+      "brand": "", "name": "", "promo": false, "description": "", "categories":[], "image":""
     };
     public category: any =[];
     public idArray: number[] = [];
