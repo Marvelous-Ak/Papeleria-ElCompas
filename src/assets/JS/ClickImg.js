@@ -1,3 +1,16 @@
+const oferta = document.getElementById('promo');
+const precio = document.getElementById('price');
+const texto = oferta.textContent || oferta.innerHTML;
+
+
+if(texto != "MNX $0.00"){
+    precio.classList.remove('precio');
+    oferta.classList.remove('oferta');
+    precio.classList.add('oferta');
+    oferta.classList.add('price');
+    document.querySelector('.oferta').style.display = 'block';
+    console.log('Diferente');
+}
 
 document.querySelectorAll('.container img').forEach(image =>{
     image.onclick = () =>{
