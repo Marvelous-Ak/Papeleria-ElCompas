@@ -14,7 +14,6 @@ export class SearchComponent {
 
   searchTerm: string = '';
   public cardsSearch: Product[]=[];
-  selectedCard: any = null; 
 
   constructor(private route: ActivatedRoute, private CatalogoService:CatalogosService, private router: Router) { }
 
@@ -67,14 +66,4 @@ export class SearchComponent {
     })
   }
 
-
-  //Cambio a products
-  selectCard(card: any) {
-    this.selectedCard = card;
-    this.showProduct(card.id);
-  }
-
-  showProduct(id:number){ 
-   this.router.navigate(['home/product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
-  }
 }
