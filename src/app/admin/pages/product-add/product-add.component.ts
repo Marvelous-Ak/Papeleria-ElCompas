@@ -129,7 +129,7 @@ export class ProductAddComponent implements OnInit{
 ////////////////////////////////////////////////
     capFile(event: any){
       const fileCap = event.target.files[0];
-      const targetSizeInBytes = 600 * 600;
+      const targetSizeInBytes = 614400;
       this.checkSize(fileCap, targetSizeInBytes); /// Mandamos el archivo (imagen) a comprimirlo....
       this.extraerBase64(fileCap).then((image: any) => {
         this.preview = image.base;
@@ -168,6 +168,7 @@ export class ProductAddComponent implements OnInit{
 
     /// function compresed image
     checkSize(file: File, targetSizeInBytes: number) { ///checamos el tamaño de la imágen
+      console.log(file);
       if (file.size > targetSizeInBytes) {
         this.compressedImage(file);  /// si es más que 600x600 lo comprimimos
       } else {
@@ -183,6 +184,7 @@ export class ProductAddComponent implements OnInit{
       const base64Image = reader.result as string;
       this.imageCompress.compressFile(base64Image, -1, 600, 600).then((compressedImage) => { //dimensiones de salida
         this.newProducto.image= compressedImage;
+        console.log(compressedImage)
       });
     };
 
