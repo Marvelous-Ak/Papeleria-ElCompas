@@ -1,13 +1,18 @@
 var checkbox = document.getElementById('flexSwitchCheckDefault');
-checkbox.addEventListener("change", validaCheckbox, false);
+var promoAct = document.getElementById('desc2');
   
-function validaCheckbox(){
-  var checked = checkbox.checked;
-  if(checked){
-    //alert('checkbox esta seleccionado');
-    document.querySelector('.actPromo').style.display = 'block';
-  } else {
-    document.querySelector('.actPromo').style.display = 'none';
 
-  }
+
+checkbox.addEventListener('change', function() {
+  // Si el checkbox está marcado, habilita el input; de lo contrario, deshabilítalo
+  promoAct.disabled = !checkbox.checked;
+});
+
+if(checkbox.checked){
+  promoAct.disabled = false;
+} else {
+  promoAct.disabled = true;
 }
+
+
+console.log(checkbox.checked);

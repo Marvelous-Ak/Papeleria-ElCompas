@@ -9,12 +9,13 @@
             <p class="nameP info">{{producto.name}}</p>
         </div>
         <div class="pago">
-            <p class="oferta info">
-                MNX ${{producto.pricePromo}}
-            </p>
-            <p class="precio info">
+            <p class="precio info" id="price">
                 MXN ${{producto.price}}
             </p>
+            <p class="oferta info" id="promo">
+                MNX ${{producto.pricePromo}}
+            </p>
+            
         </div>
         <div class="stocks">
             <p class="piezas info">Cantidad: {{producto.stock}} piezas disponibles</p>

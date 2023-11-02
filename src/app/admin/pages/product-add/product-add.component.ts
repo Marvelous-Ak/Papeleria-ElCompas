@@ -6,6 +6,9 @@ import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { Product, ProductPost } from 'src/app/Shared/data';
 import { NgxImageCompressService } from 'ngx-image-compress';
 
+declare var alertaMJS: any;
+//const valid = document.getElementById('estado') as HTMLButtonElement;
+//valid.innerText = 'xd';
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
@@ -26,9 +29,9 @@ export class ProductAddComponent implements OnInit{
     public idArray: number[] = [];
     //public nombre: String = "";
 
-    constructor(private LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, 
+    constructor(public LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, 
       private route: ActivatedRoute, private CatalogoService: CatalogosService, private imageCompress: NgxImageCompressService) {
-      LoadScript.Carga(["ValidacionProductAdd"]);
+      LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
     }
 
      cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
@@ -170,21 +173,30 @@ export class ProductAddComponent implements OnInit{
     checkSize(file: File, targetSizeInBytes: number) { ///checamos el tamaño de la imágen
       console.log(file);
       if (file.size > targetSizeInBytes) {
-        this.compressedImage(file);  /// si es más que 600x600 lo comprimimos
+        if (file.size > 2000000){
+          console.log("mayor  1ue A")
+          this.compressedImage(file, 50); 
+        } else {
+          console.log("maenor qur a")
+          this.compressedImage(file, 600); 
+        }
+         /// si es más que 600x600 lo comprimimos
       } else {
         this.extraerBase64(file).then((image: any) => {
+          console.log("saltamos")
           this.newProducto.image = image.base; // sino simplemente lo codificamos en base 64
         })
       }
     }
-    compressedImage(file: File){ /// Comprimimos la imágen
+    compressedImage(file: File, cali: number){ /// Comprimimos la imágen
       const reader = new FileReader();
 
     reader.onload = () => {
       const base64Image = reader.result as string;
-      this.imageCompress.compressFile(base64Image, -1, 600, 600).then((compressedImage) => { //dimensiones de salida
+      this.imageCompress.compressFile(base64Image, -1, cali, cali).then((compressedImage) => { //dimensiones de salida
         this.newProducto.image= compressedImage;
-        console.log(compressedImage)
+        console.log("andamos ")
+        //console.log(compressedImage)
       });
     };
 
