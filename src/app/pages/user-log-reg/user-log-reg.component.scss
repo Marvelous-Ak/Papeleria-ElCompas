@@ -88,3 +88,60 @@
 #Register{
     display: none;
 }
+
+//Estilos registro
+.container2{
+    width: 100%;
+    max-width: 700px;
+    border: 2px solid #E5E7E9;
+    padding: 10px 15px;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+.registroForm{
+    width: 75%;
+    margin: 20px auto;
+}
+.registroForm label{
+    margin: 5px 0;
+}
+.registro{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.validForm{
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+//Padin interno del label
+.registroForm input{
+    padding: 5px 10px;
+}
+#inputGroupPrepend{
+    padding: 0 5px;
+}
+.validForm .form-check label{
+    font-size: 13px;
+}
+.check{
+    width: 90%;
+    margin: auto;
+}
+#invalidCheck{
+    margin-top: 7px;
+}
+//Acomodo del Boton
+#Register .enviar{
+    padding: 5px 25px;
+}
+#Register .button {
+    width: 100%;
+    text-align: right;
+    margin-top: 15px;
+}
