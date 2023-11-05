@@ -6,6 +6,11 @@ checkbox.addEventListener('change', function() {
   promoAct.disabled = !checkbox.checked;
 });
 
-promoAct.disabled = !checkbox.checked;
+if(checkbox.checked){
+  promoAct.disabled = false;
+} else {
+  promoAct.disabled = true;
+}
 
-console.log('entra');
+
+console.log(checkbox.checked);

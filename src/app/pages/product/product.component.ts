@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/Shared/data';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 
 
@@ -42,5 +42,7 @@ export class ProductComponent implements OnInit{
       text: 'Inicie S-esion o Crea una cuenta para continuar',
     })
   }*/
+
+  
   
 }

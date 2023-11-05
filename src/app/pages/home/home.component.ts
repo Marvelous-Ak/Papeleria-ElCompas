@@ -10,7 +10,7 @@ import { CatalogosService } from 'src/app/Services/catalogs.service';
 })
 export class HomeComponent implements OnInit {
   public cardsR: Product[]=[];
-  selectedCardR: any = null; 
+  
 
   constructor(private CatalogoService:CatalogosService, private router: Router) {}
 
@@ -38,13 +38,5 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['home/catalog', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
   }
 
-  //Cambio de vista al producto seleccionado desde los productos recientes:
-  selectCard(card: any) {
-    this.selectedCardR = card;
-    this.showProduct(card.id);
-  }
-
-  showProduct(id:number){ 
-   this.router.navigate(['home/product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
-  }
+  
 }

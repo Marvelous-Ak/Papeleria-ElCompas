@@ -5,6 +5,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { LocationComponent } from './location/location.component';
 import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
+import { UserLogRegComponent } from './user-log-reg/user-log-reg.component';
 
 
 //Prueba de diseños
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'card',
     component: CardComponent,
+  },
+  {
+    path: 'login',
+    component: UserLogRegComponent,
   },
 ];
 

@@ -11,7 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CatalogComponent implements OnInit {
   public cards: Product[]=[];
   numero!: number;
-  selectedCard: any = null; 
   category: string ='';
 
   constructor( private CatalogoService:CatalogosService, private route: ActivatedRoute, private router: Router){
@@ -46,13 +45,5 @@ export class CatalogComponent implements OnInit {
     }
   }
 
-  selectCard(card: any) {
-    this.selectedCard = card;
-    this.showProduct(card.id);
-  }
-
-  showProduct(id:number){ 
-   this.router.navigate(['home/product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
-  }
   
 }

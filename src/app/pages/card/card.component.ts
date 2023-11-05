@@ -8,12 +8,23 @@ import { Router } from '@angular/router';
 })
 export class CardComponent {
   @Input() detallesP:any;
-  constructor(private route: Router){
+  constructor(private route: Router, ){
 
   }
 
-  addFavorites(){
-    this.route.navigate(['home/location']);
+  ///Agregar a favoritos
+  addFavorites(id:number){
+    ///this.route.navigate(['home/location']);
     
+  }
+
+  //Cambio de vista al producto seleccionado desde los productos recientes:
+  showProduct(id:number){ 
+   this.route.navigate(['home/product', id]); //cambiamos de vista, el id nos indicará que valores extraer del API
+  }
+
+  ///Comprar
+  shopProduct(id:number){
+
   }
 }
