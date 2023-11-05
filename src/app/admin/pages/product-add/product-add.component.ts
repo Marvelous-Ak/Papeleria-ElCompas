@@ -4,7 +4,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { Product, ProductPost } from 'src/app/Shared/data';
-import { NgxImageCompressService } from 'ngx-image-compress';
 
 declare var alertaMJS: any;
 //const valid = document.getElementById('estado') as HTMLButtonElement;
@@ -19,19 +18,16 @@ export class ProductAddComponent implements OnInit{
     public preview: String = ""
     public idP!: number;
     public status: boolean= false; /// false: Add   true:  Edit
-    public producto: Product  ={
-      "brand": "", "name": "", "promo": false, "description": "", "image":"", "id": 0, "stock":0, "price": 0, "pricePromo": 0, "created_at": new Date, "updated_at": new Date
-    };
+    public producto!: Product;
     public newProducto: ProductPost ={
-      "brand": "", "name": "", "promo": false, "description": "", "categories":[], "image":""
+      "brand": "", "name": "", "promo": false, "description": "", "categories":[]
     };
     public category: any =[];
     public idArray: number[] = [];
     //public nombre: String = "";
 
-    constructor(private LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, 
-      private route: ActivatedRoute, private CatalogoService: CatalogosService, private imageCompress: NgxImageCompressService) {
-      LoadScript.Carga(["ValidacionProductAdd"]);
+    constructor(public LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, private route: ActivatedRoute, private CatalogoService: CatalogosService) {
+      LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
     }
 
      cambi(){ ////Muestra lo contiene actPromo si cuando se inicia, el producto tiene promoción.
@@ -44,7 +40,6 @@ export class ProductAddComponent implements OnInit{
     }
 
     ngOnInit(): void{
-      this.LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
       this.route.url.subscribe(segments => {
         // Verifica la URL para determinar desde qué ruta se redirigió
         if (segments[0].path === 'Product-Add') { 
@@ -67,7 +62,6 @@ export class ProductAddComponent implements OnInit{
       this.newProducto.image = respuesta.image;
       this.newProducto.promo = respuesta.promo;
       this.cambi();
-      //console.log(respuesta);
       
     })
 
@@ -98,12 +92,10 @@ export class ProductAddComponent implements OnInit{
         if (!this.newProducto.promo) {
           this.newProducto.pricePromo = 0;
         }
-        console.log(this.newProducto);
         this.CatalogoService.edit(this.newProducto, this.idP)
           .subscribe((resp: any) => {
             // Redirige a Product-List después de editar
             this.router.navigate(['admin/Product-List']);
-            console.log("Exito!!!");
           });
       }else {
         if (!this.newProducto.promo) {
@@ -133,10 +125,10 @@ export class ProductAddComponent implements OnInit{
 ////////////////////////////////////////////////
     capFile(event: any){
       const fileCap = event.target.files[0];
-      const targetSizeInBytes = 600 * 600;
-      this.checkSize(fileCap, targetSizeInBytes); /// Mandamos el archivo (imagen) a comprimirlo....
       this.extraerBase64(fileCap).then((image: any) => {
         this.preview = image.base;
+        this.newProducto.image = image.base;
+        //console.log(image);
       })
       //this.archivo.push(fileCap);
       /*console.log(event.target.files[0].name);
@@ -169,28 +161,4 @@ export class ProductAddComponent implements OnInit{
     pageListProduc() {
       this.router.navigate(['admin/Product-List']);
     }
-
-    /// function compresed image
-    checkSize(file: File, targetSizeInBytes: number) { ///checamos el tamaño de la imágen
-      if (file.size > targetSizeInBytes) {
-        this.compressedImage(file);  /// si es más que 600x600 lo comprimimos
-      } else {
-        this.extraerBase64(file).then((image: any) => {
-          this.newProducto.image = image.base; // sino simplemente lo codificamos en base 64
-        })
-      }
-    }
-    compressedImage(file: File){ /// Comprimimos la imágen
-      const reader = new FileReader();
-
-    reader.onload = () => {
-      const base64Image = reader.result as string;
-      this.imageCompress.compressFile(base64Image, -1, 600, 600).then((compressedImage) => { //dimensiones de salida
-        this.newProducto.image= compressedImage;
-      });
-    };
-
-    reader.readAsDataURL(file);
-    }
-    
 }
