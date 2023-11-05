@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Product } from 'src/app/Shared/data';
+import { Product, Comment } from 'src/app/Shared/data';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 
 @Component({
@@ -10,12 +10,24 @@ import { CatalogosService } from 'src/app/Services/catalogs.service';
 })
 export class HomeComponent implements OnInit {
   public cardsR: Product[]=[];
+  public cardsC: Comment[]=[];
+  
+  
   
 
   constructor(private CatalogoService:CatalogosService, private router: Router) {}
 
   ngOnInit(){
     this.cargarDataR();
+
+    this.cardsC=[
+      {
+        id: 2, content: "axuc", user_name: "Pedro", user_image: "http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg", rating: 4
+      },
+      {
+        id: 1, content: "acdcdcdc", user_name: "Carlos", user_image: "http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg", rating: 0
+      }
+    ];
   }
 
   cargarDataR() {
