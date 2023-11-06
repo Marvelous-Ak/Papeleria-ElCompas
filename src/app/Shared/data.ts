@@ -31,5 +31,8 @@ export interface Comment{
     user_name: string;
     user_image: string;
     rating: number;
-    
+}
+export interface Users{
+
+
 }
