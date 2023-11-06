@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+.correo,.pass:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
 //Estilos del div del contenedor Login
 .container{
     width: 100%;
