@@ -1,17 +1,12 @@
 export const navbarData = [
   {
     routeLink: 'Dashboard',
-    icon: 'fa-solid fa-house',
+    icon: 'fa-solid fa-chart-pie',
     label: 'Dashboard',
   },
   {
-    routeLink: '',
-    icon: 'fa-solid fa-home-user',
-    label: 'Home',
-  },
-  {
     routeLink: 'Product-List',
-    icon: 'fa-solid fa-cart-shopping',
+    icon: 'fa-solid fa-list-check',
     label: 'Lista de Productos',
   },
   {
@@ -20,8 +15,13 @@ export const navbarData = [
     label: 'Bodega (Sin Funcion)',
   },
   {
+    routeLink: 'Supplier-List',
+    icon: 'fa-solid fa-address-card',
+    label: 'Proveedores',
+  },
+  {
     routeLink: '',
-    icon: 'fa-regular fa-address-card',
-    label: 'Proveedores (Sin Funcion)',
+    icon: 'fa-solid fa-home-user',
+    label: 'Home',
   },
 ];
