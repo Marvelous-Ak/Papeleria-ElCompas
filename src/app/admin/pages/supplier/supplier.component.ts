@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
+import { LoadServiceService } from 'src/app/Services/load-service.service';
 
 @Component({
   selector: 'app-supplier',
   templateUrl: './supplier.component.html',
-  styleUrls: ['./supplier.component.scss']
+  styleUrls: ['./supplier.component.scss'],
 })
 export class SupplierComponent {
 
-openModal(){
-  const modelDiv = document.getElementById('ModalProveedor');
-  if(modelDiv != null){
-    modelDiv.style.display='block';
+  constructor(private LoadScript: LoadServiceService){
+    LoadScript.Carga(["Boostrap5-3","ValidarRegistro"]);
   }
-  
-}
 
-closeModal(){
-  const modelDiv = document.getElementById('ModalProveedor');
-  if(modelDiv != null){
-    modelDiv.style.display='none';
+  openModal() {
+    const modelDiv = document.getElementById('ModalProveedor');
+    if (modelDiv != null) {
+      modelDiv.style.display = 'block';
+    }
   }
-  
-}
 
+  closeModal() {
+    const modelDiv = document.getElementById('ModalProveedor');
+    if (modelDiv != null) {
+      modelDiv.style.display = 'none';
+    }
+  }
 }
