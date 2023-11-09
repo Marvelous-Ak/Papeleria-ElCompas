@@ -31,6 +31,7 @@ import { ProductAddComponent } from './admin/pages/product-add/product-add.compo
 //Cargar servicios Script
 import { LoadServiceService } from './Services/load-service.service';
 import { UserLogRegComponent } from './pages/user-log-reg/user-log-reg.component';
+import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { UserLogRegComponent } from './pages/user-log-reg/user-log-reg.component
     ProductAddComponent,
     UserLogRegComponent,
     SupplierComponent,
+    SupplierAddComponent,
     
   ],
   imports: [
