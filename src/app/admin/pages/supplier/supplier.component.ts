@@ -11,18 +11,4 @@ export class SupplierComponent {
   constructor(private LoadScript: LoadServiceService){
     LoadScript.Carga(["Boostrap5-3","ValidarRegistro"]);
   }
-
-  openModal() {
-    const modelDiv = document.getElementById('ModalProveedor');
-    if (modelDiv != null) {
-      modelDiv.style.display = 'block';
-    }
-  }
-
-  closeModal() {
-    const modelDiv = document.getElementById('ModalProveedor');
-    if (modelDiv != null) {
-      modelDiv.style.display = 'none';
-    }
-  }
 }

@@ -1,54 +1,45 @@
-<form class="row g-3 needs-validation" novalidate>
-  <!-- Nombre del proveedor -->
-    <div class="col-md-4 position-relative">
-      <label class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Eduardo" required>
+<form class="row g-3 needs-validation mx-auto" novalidate>
+  <!-- Proveedor -->
+    <div class="col-md-12 position-relative">
+      <label for="provee" class="form-label fw-bold">Proveedor</label>
+      <input type="text" id="provee"class="form-control" placeholder="Papeleria Tony" required>
+    </div>
+    <!-- Nombre -->
+    <div class="col-md-6 position-relative">
+      <label for="name"class="form-label fw-bold">Nombre</label>
+      <input type="text" class="form-control" id="name" placeholder="Eduardo" required>
+    </div>
+    <!-- Apellido -->
+    <div class="col-md-6 position-relative">
+      <label for="last_name" class="form-label fw-bold">Apellido</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Gimenez" required>
     </div>
     <!-- Email -->
-    <div class="col-md-5 position-relative">
-      <label class="form-label">Correo Electrónico</label>
-      <div class="input-group has-validation">
-      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-      <input type="email" class="form-control" id="validationTooltip02" placeholder="admin.01@compas.com" required>
-    </div>
+    <div class="col-md-7 position-relative">
+      <label for="correo" class="form-label fw-bold">Correo Electrónico</label>
+      <input type="email" class="form-control" id="correo" placeholder="admin.01@compas.com" required>
     </div>
     <!-- Telefono -->
-    <div class="col-md-4 position-relative">
-      <label for="validationTooltipUsername" class="form-label">Username</label>
-      <div class="input-group has-validation">
-        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-        <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-          Please choose a unique and valid username.
-        </div>
-      </div>
+    <div class="col-md-5 position-relative">
+      <label for="number" class="form-label fw-bold">Telefono</label>
+      <input type="text" class="form-control" id="number" placeholder="123 357 6518" required>
     </div>
     <!-- Direccion -->
-    <div class="col-md-6 position-relative">
-      <label for="validationTooltip03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationTooltip03" required>
+    <div class="col-md-12 position-relative">
+      <label for="direc" class="form-label fw-bold">Dirección</label>
+      <textarea type="text" class="form-control" id="direc" required></textarea>
       <div class="invalid-tooltip">
         Please provide a valid city.
       </div>
     </div>
-    <div class="col-md-3 position-relative">
-      <label for="validationTooltip04" class="form-label">State</label>
-      <select class="form-select" id="validationTooltip04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-tooltip">
-        Please select a valid state.
-      </div>
-    </div>
-    <div class="col-md-3 position-relative">
-      <label for="validationTooltip05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationTooltip05" required>
-      <div class="invalid-tooltip">
-        Please provide a valid zip.
-      </div>
-    </div>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
-    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <!-- Agregar-->
+      <button class="btn btn-success col-3" type="submit">
+        <i class="fa-solid fa-check"></i>
+        Agregar</button>
+        <!-- Cancelar-->
+        <button type="button" class="btn btn-danger col-3" data-bs-dismiss="modal">
+          <i class="fa-solid fa-xmark"></i>
+          Close</button>
+        </div>
   </form>

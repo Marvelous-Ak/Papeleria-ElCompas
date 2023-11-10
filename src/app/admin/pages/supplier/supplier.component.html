@@ -64,26 +64,18 @@
   </table>
 
  <!-- Modal Agregar Proveedor-->
- <div class="modal" id="ModalProveedor">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Agregar Proveedor</h4>
-          <button type="button" class="btn-close" (click)="closeModal()" data-bs-dismiss="modal"></button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-          <app-supplier-add></app-supplier-add>
-        </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" (click)="closeModal()" data-bs-dismiss="modal">Close</button>
-        </div>
-  
+<div class="modal fade" id="ModalProveedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Agregar Proveedor</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-supplier-add></app-supplier-add>
       </div>
     </div>
   </div>
+</div>
