@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class SupplierAddComponent {
 
-  closeModal() {
-    const modelDiv = document.getElementById('ModalProveedor');
-    if (modelDiv != null) {
-      modelDiv.style.display = 'none';
-    }
-  }
-
 }
