@@ -6,20 +6,22 @@ import { Users } from '../Shared/data';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiURL = "http://127.0.0.1:8000/api/user/";
+  private apiURL = "http://127.0.0.1:8000/api/user";
+
   constructor(private http: HttpClient) { }
- //POST: Crear usuarios
- public create(newUser: Users){
-  return this.http.post(this.apiURL, newUser);
-}
 
-//PUT: Editar usuarios
-public edit(newUser: Users, id:number){
-  return this.http.put(this.apiURL + id, newUser);
-}
+  // POST: Crear usuarios
+  public create(newUser: Users) {
+    return this.http.post(this.apiURL, newUser);
+  }
 
-//Delete: Eliminar usuarios
-public delete(id: number){
-  return this.http.delete(this.apiURL + id);
-}
+  // PUT: Editar usuarios
+  public edit(newUser: Users, id: number) {
+    return this.http.put(`${this.apiURL}/${id}`, newUser);
+  }
+
+  // Delete: Eliminar usuarios
+  public delete(id: number) {
+    return this.http.delete(`${this.apiURL}/${id}`);
+  }
 }

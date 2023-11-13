@@ -1,7 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
+import { LoginService } from 'src/app/Services/login.service';
+import { Users } from 'src/app/Shared/data';
 
-declare var validaMSJ: any;
 
 @Component({
   selector: 'app-user-log-reg',
@@ -10,13 +11,26 @@ declare var validaMSJ: any;
 })
 
 export class UserLogRegComponent implements OnInit {
-
-  constructor(private LoadScript: LoadServiceService){
+  Usuario:Users={
+    "id": 0,
+    "name":"",
+    "lastName":"",
+    "email":"",
+    "password":""
+  };
+  constructor(private LoadScript: LoadServiceService, private LoginS: LoginService){
     LoadScript.Carga(["Boostrap5-3","ValidarRegistro"]);
   }
 
   ngOnInit(): void {  
-      validaMSJ("mostrar");
-  }
 
-}
+  }
+/// Agregar Usuario
+newUser(){
+this.LoginS.create(this.Usuario)
+.subscribe((respuesta: any) => {
+  console.log(respuesta);
+  location.reload();
+})
+
+}}
