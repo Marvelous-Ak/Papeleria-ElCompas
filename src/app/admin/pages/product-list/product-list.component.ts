@@ -3,6 +3,7 @@ import { Product } from 'src/app/Shared/data';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { catchError } from 'rxjs';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-list',
@@ -20,11 +21,13 @@ export class ProductListComponent {
 
   constructor(
     private CatalogoService: CatalogosService,
-    private router: Router
+    private router: Router,
+    private titleB: Title
   ) {}
   ngOnInit() {
     this.listAll();
     this.getPages();
+    this.titleB.setTitle('Lista de Productos');
   }
 
   //// Traer todos los productos: función ShowAll

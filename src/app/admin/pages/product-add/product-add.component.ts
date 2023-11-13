@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { Product, ProductPost } from 'src/app/Shared/data';
 import { NgxImageCompressService } from 'ngx-image-compress';
+import { Title } from '@angular/platform-browser';
 
 declare var alertaMJS: any;
 //const valid = document.getElementById('estado') as HTMLButtonElement;
@@ -30,7 +31,7 @@ export class ProductAddComponent implements OnInit{
     //public nombre: String = "";
 
     constructor(public LoadScript: LoadServiceService, private santizer: DomSanitizer, private router: Router, 
-      private route: ActivatedRoute, private CatalogoService: CatalogosService, private imageCompress: NgxImageCompressService) {
+      private route: ActivatedRoute, private CatalogoService: CatalogosService, private imageCompress: NgxImageCompressService, private titleB: Title) {
       LoadScript.Carga(["ValidacionProductAdd","ValidForm"]);
     }
 
@@ -48,11 +49,13 @@ export class ProductAddComponent implements OnInit{
         // Verifica la URL para determinar desde qué ruta se redirigió
         if (segments[0].path === 'Product-Add') { 
           this.status = false;
+          this.titleB.setTitle('Agregar Producto Nuevo');
         } else if (segments[0].path === 'Product-Edit'){
           this.route.params.subscribe(params => {
             this.idP = +params['numero']; // El "+" convierte el parámetro en un número
             this.status = true;
             this.cargarInfo();
+            this.titleB.setTitle('Actualizar Producto');
           });
         } 
       });
