@@ -13,12 +13,12 @@ export class LoginService {
   return this.http.post(this.apiURL, newUser);
 }
 
-//PUT: Editar productos
+//PUT: Editar usuarios
 public edit(newUser: Users, id:number){
   return this.http.put(this.apiURL + id, newUser);
 }
 
-//Delete: Eliminar producto
+//Delete: Eliminar usuarios
 public delete(id: number){
   return this.http.delete(this.apiURL + id);
 }
