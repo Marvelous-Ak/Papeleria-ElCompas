@@ -1,0 +1,57 @@
+<form class="row g-3 needs-validation mx-auto" novalidate>
+  <!-- Proveedor -->
+    <div class="col-md-12 position-relative">
+      <label for="provee" class="form-label fw-bold">Proveedor</label>
+      <input type="text" id="provee"class="form-control" placeholder="Papeleria Tony" required *ngIf="edit" [(ngModel)]="supplierInfo.business" (ngModelChange)="supplierInfo.business"
+      [ngModelOptions]="{standalone: true}">
+      <input type="text" name="bussines" [(ngModel)]="supplierInfo.business" id="provee"class="form-control" placeholder="Papeleria Tony" required *ngIf="!edit">
+    </div>
+    <!-- Nombre -->
+    <div class="col-md-6 position-relative">
+      <label for="name"class="form-label fw-bold">Nombre</label>
+      <input type="text" class="form-control" id="name" placeholder="Eduardo" required *ngIf="edit" [(ngModel)]="supplierInfo.name" (ngModelChange)="supplierInfo.name"
+      [ngModelOptions]="{standalone: true}">
+      <input type="text" name="name" [(ngModel)]="supplierInfo.name"  class="form-control" id="name" placeholder="Eduardo" required *ngIf="!edit">
+    </div>
+    <!-- Apellido -->
+    <div class="col-md-6 position-relative">
+      <label for="last_name" class="form-label fw-bold">Apellido</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Gimenez" required *ngIf="edit" [(ngModel)]="supplierInfo.lastName" (ngModelChange)="supplierInfo.lastName"
+      [ngModelOptions]="{standalone: true}">
+      <input type="text" name="last_Name" [(ngModel)]="supplierInfo.lastName"  class="form-control" id="last_name" placeholder="Gimenez" required *ngIf="!edit">
+    </div>
+    <!-- Email -->
+    <div class="col-md-7 position-relative">
+      <label for="correo" class="form-label fw-bold">Correo Electrónico</label>
+      <input type="email" class="form-control" id="correo" placeholder="admin.01@compas.com" required *ngIf="edit" [(ngModel)]="supplierInfo.email" (ngModelChange)="supplierInfo.email"
+      [ngModelOptions]="{standalone: true}">
+      <input type="email" name="email" [(ngModel)]="supplierInfo.email"  class="form-control" id="correo" placeholder="admin.01@compas.com" required *ngIf="!edit">
+    </div>
+    <!-- Telefono -->
+    <div class="col-md-5 position-relative">
+      <label for="number" class="form-label fw-bold">Telefono</label>
+      <input type="text" class="form-control" id="number" placeholder="123 357 6518" required *ngIf="edit" [(ngModel)]="supplierInfo.phone" (ngModelChange)="supplierInfo.phone"
+      [ngModelOptions]="{standalone: true}">
+      <input type="text" name="phone" [(ngModel)]="supplierInfo.phone"  class="form-control" id="number" placeholder="123 357 6518" required *ngIf="!edit">
+    </div>
+    <!-- Direccion -->
+    <div class="col-md-12 position-relative">
+      <label for="direc" class="form-label fw-bold">Dirección</label>
+      <textarea type="text" class="form-control" id="direc" required *ngIf="edit" [(ngModel)]="supplierInfo.address" (ngModelChange)="supplierInfo.address"
+      [ngModelOptions]="{standalone: true}"></textarea>
+      <textarea type="text" name="address" [(ngModel)]="supplierInfo.address"  class="form-control" id="direc" required *ngIf="!edit"></textarea>
+      <div class="invalid-tooltip">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <!-- Agregar-->
+      <button class="btn btn-success col-3" type="submit" (click)="supplierAction()">
+        <i class="fa-solid fa-check"></i>
+        {{mensaje}}</button>
+        <!-- Cancelar-->
+        <button type="button" class="btn btn-danger col-3" data-bs-dismiss="modal">
+          <i class="fa-solid fa-xmark"></i>
+          Close</button>
+        </div>
+  </form>

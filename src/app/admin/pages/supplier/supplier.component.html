@@ -1,0 +1,89 @@
+<h1 class="tittle">Lista de Proveedores</h1>
+
+<br/>
+<div class="container-fluid">
+  <!-- Agregar Producto-->
+
+  <div class="container">
+    <!-- Button para agregar producto-->
+    <div>
+      <button
+        type="button"
+        class="btn btn-icon btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalProveedor" 
+        (click)="modalNew(true)">
+        <span class="btn-inner--icon">
+          <i class="fas fa-box"></i>
+        </span>
+        <span class="btn-inner--text"> Agregar Proveedor </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<!-- Tabla de Productos-->
+<div class="tablaP">
+  <table class="table table-striped table-hover table-light">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Numero</th>
+        <th scope="col">Dirección</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let supplier of listSuppliers; let i = index">
+        <tr
+        *ngIf="
+            i >= (currentPage - 1) * itemsPerPage &&
+            i < currentPage * itemsPerPage
+          ">
+          <th scope="row">{{supplier.business}}</th>
+          <td>{{supplier.name}}</td>
+          <td>{{supplier.lastName}}</td>
+          <td>{{supplier.email}}</td>
+          <td>{{formatoPhone(supplier.phone)}}</td>
+          <td>{{supplier.address}}</td>
+          <td class="mat-cell">
+            <!-- Boton Editar-->
+            <button
+              class="btn btn-icon btn-2 btn-warning btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalProveedor"
+              type="button" (click)="modalNew(false)" (click)="idSupp(supplier.id)">
+              <span class="btn-inner--icon">
+                <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>
+              </span>
+            </button>
+            <!--Boton Eliminar-->
+            <button
+              class="btn btn-icon btn-2 btn-danger"
+              type="button" (click)="deleteSupplier(supplier.id)">
+              <span class="btn-inner--icon"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></span>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+ <!-- Modal Agregar Proveedor-->
+<div class="modal fade" id="ModalProveedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{mensaje}}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <app-supplier-add *ngIf="isNew" [isNew]="0"></app-supplier-add>
+        <app-supplier-add *ngIf="!isNew" [isNew]="idS"></app-supplier-add>
+      </div>
+    </div>
+  </div>
+</div>

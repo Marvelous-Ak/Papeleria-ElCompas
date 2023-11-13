@@ -23,3 +23,27 @@ export interface ProductPost{
     stock?: number;
     categories: number[];
 }
+export interface Comment{
+    id: number;
+    content: string;
+    created_at?: Date;
+    updated_at?: Date;
+    user_name: string;
+    user_image: string;
+    rating: number;
+}
+export interface Users{
+
+
+}
+export interface Supplier{
+    id: number;
+    business: string;
+    name: string;
+    lastName: string;
+    phone?: number;
+    address: string;
+    email: string;
+    created_at: Date;
+    updated_at: Date;
+}

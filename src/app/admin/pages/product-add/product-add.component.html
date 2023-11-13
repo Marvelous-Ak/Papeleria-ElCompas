@@ -9,7 +9,7 @@
             <div class="cargarImagen">
                 <!-- Capturar archivos -->
                 <div class="addimg">
-                    <input type="file" name="addimg" id="file" (change)="capFile($event)" accept="image/*" onchange="return validFile()">
+                    <input type="file" name="addimg" id="file" (change)="capFile($event)" accept="image/*" onchange="return validFile()" required>
                     <!-- <button class="upload">Subir imagen</button> -->
                     <label for="file" class="upload">{{status ? 'Editar Imagen' : 'Seleccionar Imagen'}}</label>
                 </div>
@@ -29,33 +29,33 @@
             <div class="input-group mb-3 nombreP config">
                 <label class="form-label" for="name">Nombre:</label>
                 <input class="form-control" id="name" name="name" maxlength="20" *ngIf="status" [(ngModel)]="producto.name" (ngModelChange)="producto.name"
-                [ngModelOptions]="{standalone: true}">
-                <input class="form-control" type="text" id="name" name="name" [(ngModel)]="newProducto.name" maxlength="20" placeholder="Ej. Cuaderno Profesional" *ngIf="!status">
+                [ngModelOptions]="{standalone: true}" required>
+                <input class="form-control" type="text" id="name" name="name" [(ngModel)]="newProducto.name" maxlength="20" placeholder="Ej. Cuaderno Profesional" *ngIf="!status" required>
             </div>
 
             <!-- Marca -->
             <div class="input-group mb-3 marcaP config">
                 <label class="form-label" for="brand">Marca:</label>
                 <input class="form-control" type="text" id="brand" name="brand" maxlength="10" *ngIf="status" [(ngModel)]="producto.brand"  (ngModelChange)="producto.brand"
-                    [ngModelOptions]="{standalone: true}">
-                <input class="form-control" type="text" id="brand" name="brand" [(ngModel)]="newProducto.brand" maxlength="10" placeholder="Ej. Scribe" *ngIf="!status">
+                    [ngModelOptions]="{standalone: true}" required>
+                <input class="form-control" type="text" id="brand" name="brand" [(ngModel)]="newProducto.brand" maxlength="10" placeholder="Ej. Scribe" *ngIf="!status" required>
             </div>
 
             <!-- Precio -->
             <div class="input-group mb-3 precioP config">
                 <label class="form-label" for="price" name="price">Precio:</label>
                 <span class="input-group-text">$</span>
-                <input class="form-control" type="text" id="price" name="price" maxlength="4" placeholder="00.00" *ngIf="status" [(ngModel)]="producto.price"  (ngModelChange)="producto.price"
-                    [ngModelOptions]="{standalone: true}">
-                <input class="form-control" type="text" id="price" name="price" [(ngModel)]="newProducto.price" maxlength="4" placeholder="85.00" *ngIf="!status">
+                <input class="form-control" type="text" id="price" name="price" maxlength="10" placeholder="00.00" *ngIf="status" [(ngModel)]="producto.price"  (ngModelChange)="producto.price"
+                    [ngModelOptions]="{standalone: true}" required>
+                <input class="form-control" type="text" id="price" name="price" [(ngModel)]="newProducto.price" maxlength="10" placeholder="85.00" *ngIf="!status" required>
             </div> 
 
             <!-- Stocks -->
             <div class="input-group mb-3 stockP config">
                 <label class="form-label" for="stock">Stock:</label>
-                <input class="form-control" type="text" inputmode="numeric" name="stocks" maxlength="3" id="stock" *ngIf="status" [(ngModel)]="producto.stock"  (ngModelChange)="producto.stock"
-                [ngModelOptions]="{standalone: true}">
-            <input class="form-control" type="text" inputmode="numeric" id="stock" [(ngModel)]="newProducto.stock" name="stocks" maxlength="20" placeholder="Ej. 48" *ngIf="!status">
+                <input class="form-control" type="text" inputmode="numeric" name="stocks" maxlength="10" id="stock" *ngIf="status" [(ngModel)]="producto.stock"  (ngModelChange)="producto.stock"
+                [ngModelOptions]="{standalone: true}" required>
+            <input class="form-control" type="text" inputmode="numeric" id="stock" [(ngModel)]="newProducto.stock" name="stocks" maxlength="10" placeholder="Ej. 48" *ngIf="!status" required>
             </div>
 
             <!-- Interuptor de Promocion -->
@@ -65,30 +65,21 @@
                     <input type="checkbox" class="form-check-input" [(ngModel)]="newProducto.promo" role="switch" id="flexSwitchCheckDefault">
                 </div>
                 <!-- En caso de tener desceunto mostrar el div -->
-                <!-- <div class="actPromo">
-                    <label for="promo2" id="desc">Descuento:</label>
-                    <input class="form-control" type="number" maxlength="3" name="promo2" id="desc2" *ngIf="status && producto?.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
-                        [ngModelOptions]="{standalone: true}">
-                    <input type="number" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto?.promo">
-                    <input type="number"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
-                </div> -->
-
-                <!-- Remplazar el de arriba por este-->
                 <div class="input-group mb-3 config">
                     <label class="form-label" for="price" name="price">Dto:</label>
                     <span class="input-group-text">$</span>
-                    <input class="form-control" type="text" maxlength="3" name="promo2" id="desc2" *ngIf="status && producto?.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
+                    <input class="form-control" type="text" maxlength="10" name="promo2" id="desc2" *ngIf="status && producto.promo" [(ngModel)]="producto.pricePromo" (ngModelChange)="producto.brand"
                         [ngModelOptions]="{standalone: true}">
-                    <input class="form-control" type="text" maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto?.promo">
-                    <input class="form-control" type="text"  maxlength="3" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
+                    <input class="form-control" type="text" maxlength="10" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="00.00" *ngIf="status && !producto.promo">
+                    <input class="form-control" type="text"  maxlength="10" name="promo2" id="desc2" [(ngModel)]="newProducto.pricePromo" placeholder="70.50" *ngIf="!status">
                 </div> 
 
             </div>
             <!-- Descripcion de Producto-->
             <div class="addDescp">
                 <label for="description" class="descripcion">Descripcion:</label>
-                <textarea class="form-control" name="descp" id="descp" rows="3"*ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description" [ngModelOptions]="{standalone: true}"></textarea>
-                <textarea class="form-control" name="descp" id="descp" rows="3"[(ngModel)]="newProducto.description" maxlength="150" *ngIf="!status"></textarea>
+                <textarea class="form-control" name="descp" id="descp" rows="3"*ngIf="status" [(ngModel)]="producto.description" (ngModelChange)="producto.description" [ngModelOptions]="{standalone: true}" required></textarea>
+                <textarea class="form-control" name="descp" id="descp" rows="3"[(ngModel)]="newProducto.description" maxlength="150" *ngIf="!status" required></textarea>
             </div>
 
         </div>

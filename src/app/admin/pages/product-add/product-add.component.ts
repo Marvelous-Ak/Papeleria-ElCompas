@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CatalogosService } from 'src/app/Services/catalogs.service';
 import { Product, ProductPost } from 'src/app/Shared/data';
-import { NgxImageCompressService } from 'ngx-image-compress';
+import { NgxImageCompressService} from 'ngx-image-compress';
 import { Title } from '@angular/platform-browser';
 
 declare var alertaMJS: any;
@@ -20,11 +20,9 @@ export class ProductAddComponent implements OnInit{
     public preview: String = ""
     public idP!: number;
     public status: boolean= false; /// false: Add   true:  Edit
-    public producto: Product  ={
-      "brand": "", "name": "", "promo": false, "description": "", "image":"", "id": 0, "stock":0, "price": 0, "pricePromo": 0, "created_at": new Date, "updated_at": new Date
-    };
+    public producto!: Product;
     public newProducto: ProductPost ={
-      "brand": "", "name": "", "promo": false, "description": "", "categories":[], "image":""
+      "brand": "", "name": "", "promo": false, "description": "", "categories":[]
     };
     public category: any =[];
     public idArray: number[] = [];
@@ -69,7 +67,6 @@ export class ProductAddComponent implements OnInit{
       this.newProducto.image = respuesta.image;
       this.newProducto.promo = respuesta.promo;
       this.cambi();
-      //console.log(respuesta);
       
     })
 
@@ -100,12 +97,10 @@ export class ProductAddComponent implements OnInit{
         if (!this.newProducto.promo) {
           this.newProducto.pricePromo = 0;
         }
-        console.log(this.newProducto);
         this.CatalogoService.edit(this.newProducto, this.idP)
           .subscribe((resp: any) => {
             // Redirige a Product-List después de editar
             this.router.navigate(['admin/Product-List']);
-            console.log("Exito!!!");
           });
       }else {
         if (!this.newProducto.promo) {
@@ -139,6 +134,8 @@ export class ProductAddComponent implements OnInit{
       this.checkSize(fileCap, targetSizeInBytes); /// Mandamos el archivo (imagen) a comprimirlo....
       this.extraerBase64(fileCap).then((image: any) => {
         this.preview = image.base;
+        this.newProducto.image = image.base;
+        //console.log(image);
       })
       //this.archivo.push(fileCap);
       /*console.log(event.target.files[0].name);

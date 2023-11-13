@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Comment } from 'src/app/Shared/data';
 
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.scss']
 })
-export class CommentComponent {
+export class CommentComponent{
+  @Input() comments!:Comment;
+
 // comments: any[] = [];
   //nuevoComentario: string = '';
   //agregarComentario(nuevoComentario: string) {
     //const fecha = new Date();
     //this.comments.push({ comentario: nuevoComentario, fecha: fecha });
     //this.actualizarLocalStorage();
+
+
+    
+    
   }
 
   //editarComentario(index: number, nuevoComentario: string) {
