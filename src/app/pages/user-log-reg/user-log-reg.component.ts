@@ -16,7 +16,8 @@ export class UserLogRegComponent implements OnInit {
     "name":"",
     "lastName":"",
     "email":"",
-    "password":""
+    "password":"",
+    "verification_code":""
   };
   constructor(private LoadScript: LoadServiceService, private LoginS: LoginService){
     LoadScript.Carga(["Boostrap5-3","ValidarRegistro"]);
@@ -26,11 +27,16 @@ export class UserLogRegComponent implements OnInit {
 
   }
 /// Agregar Usuario
-newUser(){
+newUser(){ 
 this.LoginS.create(this.Usuario)
 .subscribe((respuesta: any) => {
   console.log(respuesta);
   location.reload();
 })
 
-}}
+}
+loginUser(){
+  
+}
+
+}

@@ -38,6 +38,7 @@ export interface Users{
     lastName:string;
     email:string;
     password:string;
+    verification_code:String;
 }
 export interface Supplier{
     id: number;
