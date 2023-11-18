@@ -21,7 +21,7 @@ export class ProductAddComponent implements OnInit{
     public status: boolean= false; /// false: Add   true:  Edit
     public producto!: Product;
     public newProducto: ProductPost ={
-      "brand": "", "name": "", "promo": false, "description": "", "categories":[]
+      "brand": "", "name": "", "promo": false, "description": "", "cost_of_sale": 20.00,"categories":[], "suppliers":[]
     };
     public category: any =[];
     public idArray: number[] = [];

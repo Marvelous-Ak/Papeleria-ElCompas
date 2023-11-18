@@ -21,6 +21,8 @@ export interface ProductPost{
     promo: boolean;
     description: string;
     stock?: number;
+    cost_of_sale: number;
+    suppliers: string [];
     categories: number[];
 }
 export interface Comment{

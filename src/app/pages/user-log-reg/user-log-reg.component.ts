@@ -18,5 +18,6 @@ export class UserLogRegComponent implements OnInit {
   ngOnInit(): void {  
       validaMSJ("mostrar");
   }
+  
 
 }
