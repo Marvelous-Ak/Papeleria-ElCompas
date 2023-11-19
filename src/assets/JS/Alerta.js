@@ -1,8 +1,9 @@
 function mialerta(){
     Swal.fire({
-        icon: 'error',
+        icon: 'warning',
         title: 'Inicie Sesion',
-        text: 'Inicie Sesion o Crea una cuenta para continuar',
+        text: 'Inicie Sesion para continuar con la compra',
+        footer: '<a href="home/login">Why do I have this issue?</a>'
       })
 }
 

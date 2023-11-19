@@ -35,8 +35,11 @@ export interface Comment{
     rating: number;
 }
 export interface Users{
-
-
+    id:number;
+    name:string;
+    lastName:string;
+    email:string;
+    password:string;
 }
 export interface Supplier{
     id: number;

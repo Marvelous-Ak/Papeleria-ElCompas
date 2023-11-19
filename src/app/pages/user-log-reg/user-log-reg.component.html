@@ -10,7 +10,7 @@
                     <div class="icon-user input-group-text bg-info">
                       <i class="fa-solid fa-user"style="color: #ffffff;"></i>
                     </div>
-                    <input type="email" class="correo form-control user" id="validationCustom01" placeholder="Email" maxlength="75" required>
+                    <input name="email" type="email" class="correo form-control user" id="validationCustom01" placeholder="Email" maxlength="75" required [(ngModel)]="Usuario.email">
                     <div class="invalid-feedback">
                         Ingrese el correo
                     </div>
@@ -22,7 +22,7 @@
                     <div class="icon-password input-group-text bg-info">
                       <i class="fa-solid fa-key" style="color: #ffffff;"></i>
                     </div>
-                    <input type="password" class="pass form-control" id="validationCustom02"  placeholder="Password" required>
+                    <input name="password" type="password" class="pass form-control" id="validationCustom02"  placeholder="Password" required [(ngModel)]="Usuario.password">
                     <div class="invalid-feedback">
                         Ingrese la contraseña
                     </div>
@@ -50,7 +50,7 @@
         </div>
         <!-- Contenedor del botton y centrado -->
         <div class="contButton">
-            <button type="submit" class="btn btn-primary btnLogin">Login</button>
+            <button type="submit" class="btn btn-primary btnLogin" (click)="loginUser()" >Login</button>
         </div>
 
         <div class="d-flex gap-1 justify-content-center mt-1">
@@ -68,7 +68,7 @@
             <!-- Ingresar nombre -->
             <div class="col-md-4 validForm">
                 <label for="validationCustom01" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="validationCustom01" value="" placeholder="Name" maxlength="50" required>
+                <input name="name" type="text" class="form-control" id="validationCustom01" value="" placeholder="Name" maxlength="50" required [(ngModel)]="Usuario.name">
                 <div class="invalid-feedback">
                   Ingrese su nombre
                 </div>
@@ -76,7 +76,7 @@
               <!-- Ingresar Apellido -->
               <div class="col-md-4 validForm">
                 <label for="validationCustom02" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Last Name" maxlength="50" required>
+                <input name="lastName" type="text" class="form-control" id="validationCustom02" value="" placeholder="Last Name" maxlength="50" required [(ngModel)]="Usuario.lastName">
                 <div class="invalid-feedback">
                   Ingrese su apellido
                 </div>
@@ -86,7 +86,7 @@
                 <label for="validationCustomUsername" class="form-label">Correo Electronico</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text" id="inputGroupPrepend">@</span>
-                  <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="email" maxlength="70" required>
+                  <input name="email" type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="email" maxlength="70" required [(ngModel)]="Usuario.email">
                   <div class="invalid-feedback">
                     Ingrese su correo electronico
                   </div>
@@ -95,7 +95,7 @@
               <!-- Password -->
               <div class="col-md-6 validForm">
                 <label for="validationCustom03" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="validationCustom03" placeholder="Password" maxlength="30" required>
+                <input name="password" type="password" class="form-control" id="validationCustom03" placeholder="Password" maxlength="30" required [(ngModel)]="Usuario.password">
                 <div class="invalid-feedback">
                   Ingrese su contraseña
                 </div>
@@ -103,7 +103,7 @@
               <!-- Terminos y Condiciones -->
               <div class="col-12 validForm">
                 <div class="form-check check">
-                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                  <input name="conditional" class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                   <label class="form-check-label" for="invalidCheck">
                     Al crear la cuenta, usted ha leido y aceptado nuestros terminos y condiciones
                   </label>
@@ -114,7 +114,7 @@
               </div>
               <!-- Boton de Validar -->
               <div class="col-12 button">
-                <button class="btn btn-primary enviar" type="submit">Registrar</button>
+                <button class="btn btn-primary enviar" type="submit" (click)="newUser()" >Registrar</button>
               </div>
         </form>
     </div>
