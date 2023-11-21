@@ -21,6 +21,8 @@ export interface ProductPost{
     promo: boolean;
     description: string;
     stock?: number;
+    cost_of_sale: number;
+    suppliers: string [];
     categories: number[];
 }
 export interface Comment{
@@ -33,8 +35,11 @@ export interface Comment{
     rating: number;
 }
 export interface Users{
-
-
+    id:number;
+    name:string;
+    lastName:string;
+    email:string;
+    password:string;
 }
 export interface Supplier{
     id: number;

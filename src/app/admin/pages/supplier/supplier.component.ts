@@ -45,7 +45,7 @@ export class SupplierComponent {
   }
 
   /// Paginación
-  itemsPerPage: number = 10; // Cantidad de productos por página
+  itemsPerPage: number = 20; // Cantidad de productos por página
   currentPage: number = 1; // Página actual
 
   getTotalPages(): number {
