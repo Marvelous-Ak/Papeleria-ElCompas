@@ -33,6 +33,7 @@ import { LoadServiceService } from './Services/load-service.service';
 import { UserLogRegComponent } from './pages/user-log-reg/user-log-reg.component';
 import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.component';
 import { WarehouseComponent } from './admin/pages/warehouse/warehouse.component';
+import { WarehouseAddComponent } from './admin/pages/warehouse-add/warehouse-add.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { WarehouseComponent } from './admin/pages/warehouse/warehouse.component'
     SupplierComponent,
     SupplierAddComponent,
     WarehouseComponent,
+    WarehouseAddComponent,
     
   ],
   imports: [

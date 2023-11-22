@@ -1,0 +1,60 @@
+<form class="row g-3 needs-validation mx-auto" novalidate>
+  <!-- Nombre -->
+  <div class="col-md-12 position-relative">
+    <label for="name" class="form-label fw-bold">Nombre</label>
+    <input type="text" id="name" class="form-control" placeholder="Boligrafo Punta Fina" required/>
+    <div class="invalid-tooltip">Ingrese el nombre del producto</div>
+  </div>
+
+  <!-- Marca -->
+  <div class="col-md-6 position-relative">
+    <label for="marca" class="form-label fw-bold">Marca</label>
+    <input type="text" id="marca" class="form-control" placeholder="PaperMate" required/>
+    <div class="invalid-tooltip">Ingrese la marca del producto</div>
+  </div>
+
+  <!-- Proveedor -->
+  <div class="col-md-6 position-relative">
+    <label class="form-label fw-bold" for="provee">Proveedor</label>
+        <select class="form-select" id="provee" aria-label="Default select example">
+            <option selected>Proveedor</option>
+            <option value="1">Papeleria Tony</option>
+            <option value="2">Super Papeleria</option>
+            <option value="3">Amazon</option>
+          </select>
+  </div>
+
+  <!-- Cantidad -->
+  <div class="col-md-6 position-relative">
+    <label for="cant" class="form-label fw-bold">Cantidad</label>
+    <input type="text" id="cant" onkeypress="return '0123456789'.includes(event.key)" class="form-control" placeholder="50" maxlength="10" required/>
+    <div class="invalid-tooltip">Ingrese la cantidad de productos</div>
+  </div>
+
+  <!-- Precio -->
+  <div class="col-md-6 position-relative">
+    <label class="form-label fw-bold" for="price" name="price">Precio</label>
+    <div class="input-group">
+      <span class="input-group-text">$</span>
+      <input class="form-control" onkeypress="return '0123456789.'.includes(event.key)" type="text" id="price" name="price" maxlength="10" placeholder="15.78" required/>
+    </div>
+  </div>
+  <!-- Importe-->
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <h5 class="fw-bold">Importe: </h5>
+      <h5>$00.00</h5>
+  </div>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <!-- Agregar-->
+    <button class="btn btn-success col-3" type="submit" data-bs-dismiss="modal">
+      <i class="fa-solid fa-check"></i>
+      Agregar
+    </button>
+    <!-- Cancelar-->
+    <button type="button" class="btn btn-danger col-3" data-bs-dismiss="modal">
+      <i class="fa-solid fa-xmark"></i>
+      Close
+    </button>
+  </div>
+</form>

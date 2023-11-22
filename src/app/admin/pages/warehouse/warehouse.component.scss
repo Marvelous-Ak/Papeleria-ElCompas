@@ -1,0 +1,17 @@
+.table {
+  vertical-align: middle;
+}
+
+.tittle {
+  color: #034e53;
+}
+
+.container {
+  column-count: 2;
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

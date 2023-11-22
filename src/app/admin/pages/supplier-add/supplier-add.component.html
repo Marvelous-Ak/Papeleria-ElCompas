@@ -30,10 +30,10 @@
   <!-- Direccion -->
   <div class="col-md-12 position-relative">
     <label for="direc" class="form-label fw-bold">Dirección</label>
-    <textarea type="text" class="form-control" id="direc" required
+    <textarea type="text" class="form-control" id="direc"
     *ngIf="edit" [(ngModel)]="supplierInfo.address" (ngModelChange)="supplierInfo.address"
     [ngModelOptions]="{standalone: true}"></textarea>
-    <textarea type="text" name="address" [(ngModel)]="supplierInfo.address"  class="form-control" id="direc" required *ngIf="!edit"></textarea>
+    <textarea type="text" name="address" [(ngModel)]="supplierInfo.address"  class="form-control" id="direc" *ngIf="!edit"></textarea>
     <div class="invalid-tooltip">Falta agregar la dirección</div>
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">

@@ -5,6 +5,11 @@ export const navbarData = [
     label: 'Dashboard',
   },
   {
+    routeLink: 'Dashboard',
+    icon: 'fa-solid fa-boxes-packing',
+    label: 'Ventas (Sin Funcion)',
+  },
+  {
     routeLink: 'Product-List',
     icon: 'fa-solid fa-list-check',
     label: 'Lista de Productos',
