@@ -166,7 +166,7 @@ export class ProductAddComponent implements OnInit{
 
     ///Cancelar acción
     pageListProduc() {
-      this.router.navigate(['admin/Product-List']);
+      this.router.navigate(['admin/Warehouse']);
     }
 
     /// function compresed image
