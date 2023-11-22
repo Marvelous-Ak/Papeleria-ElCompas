@@ -8,24 +8,7 @@
     <input type="text" name="bussines" [(ngModel)]="supplierInfo.business" id="provee"class="form-control" placeholder="Papeleria Tony" required *ngIf="!edit"/>
     <div class="invalid-tooltip">Ingrese el nombre de la compañia del proveedor</div>
   </div>
-  <!-- Nombre -->
-  <div class="col-md-6 position-relative">
-    <label for="name" class="form-label fw-bold">Nombre</label>
-    <input type="text" class="form-control" id="name" placeholder="Eduardo" required
-    *ngIf="edit" [(ngModel)]="supplierInfo.name" (ngModelChange)="supplierInfo.name"
-    [ngModelOptions]="{standalone: true}"/>
-    <input type="text" name="name" [(ngModel)]="supplierInfo.name"  class="form-control" id="name" placeholder="Eduardo" required *ngIf="!edit"/>
-    <div class="invalid-tooltip">Ingrese el nombre</div>
-  </div>
-  <!-- Apellido -->
-  <div class="col-md-6 position-relative">
-    <label for="last_name" class="form-label fw-bold">Apellido</label>
-    <input type="text" class="form-control" id="last_name" placeholder="Gimenez" required
-    *ngIf="edit" [(ngModel)]="supplierInfo.lastName" (ngModelChange)="supplierInfo.lastName"
-    [ngModelOptions]="{standalone: true}"/>
-    <input type="text" name="last_Name" [(ngModel)]="supplierInfo.lastName"  class="form-control" id="last_name" placeholder="Gimenez" required *ngIf="!edit"/>
-    <div class="invalid-tooltip">Ingrese el apellido</div>
-  </div>
+
   <!-- Email -->
   <div class="col-md-7 position-relative">
     <label for="correo" class="form-label fw-bold">Correo Electrónico</label>
@@ -38,10 +21,10 @@
   <!-- Telefono -->
   <div class="col-md-5 position-relative">
     <label for="number" class="form-label fw-bold">Telefono</label>
-    <input type="text" class="form-control" id="number" placeholder="123 357 6518" required
+    <input type="text" onkeypress="return '0123456789'.includes(event.key)" class="form-control" id="number" placeholder="123 357 6518" required
     *ngIf="edit" [(ngModel)]="supplierInfo.phone" (ngModelChange)="supplierInfo.phone"
-    [ngModelOptions]="{standalone: true}"/>
-    <input type="text" name="phone" [(ngModel)]="supplierInfo.phone"  class="form-control" id="number" placeholder="123 357 6518" required *ngIf="!edit"/>
+    [ngModelOptions]="{standalone: true}"maxLength="10"/>
+    <input type="text" onkeypress="return '0123456789'.includes(event.key)" name="phone" [(ngModel)]="supplierInfo.phone"  class="form-control" id="number" placeholder="123 357 6518" required *ngIf="!edit" maxLength="10"/>
     <div class="invalid-tooltip">Telefono obligatorio</div>
   </div>
   <!-- Direccion -->
@@ -55,7 +38,7 @@
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <!-- Agregar-->
-    <button class="btn btn-success col-3" type="submit" (click)="supplierAction()">
+    <button class="btn btn-success col-3" type="submit" (click)="supplierAction()" data-bs-dismiss="modal">
       <i class="fa-solid fa-check"></i>
       {{mensaje}}
     </button>

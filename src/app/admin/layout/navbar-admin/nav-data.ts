@@ -10,9 +10,9 @@ export const navbarData = [
     label: 'Lista de Productos',
   },
   {
-    routeLink: '',
+    routeLink: 'Warehouse',
     icon: 'fa-solid fa-boxes-stacked',
-    label: 'Bodega (Sin Funcion)',
+    label: 'Bodega',
   },
   {
     routeLink: 'Supplier-List',

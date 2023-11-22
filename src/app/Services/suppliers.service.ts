@@ -6,7 +6,6 @@ import {  Supplier } from '../Shared/data';
   providedIn: 'root'
 })
 export class SuppliersService {
-
   private apiUrl = "http://127.0.0.1:8000/api/supplier";
   constructor(private http: HttpClient) { }
 

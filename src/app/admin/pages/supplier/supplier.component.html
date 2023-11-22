@@ -28,8 +28,6 @@
     <thead class="table-dark">
       <tr>
         <th scope="col">Proveedor</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
         <th scope="col">Correo</th>
         <th scope="col">Numero</th>
         <th scope="col">Dirección</th>
@@ -44,8 +42,6 @@
             i < currentPage * itemsPerPage
           ">
           <th scope="row">{{supplier.business}}</th>
-          <td>{{supplier.name}}</td>
-          <td>{{supplier.lastName}}</td>
           <td>{{supplier.email}}</td>
           <td>{{formatoPhone(supplier.phone)}}</td>
           <td>{{supplier.address}}</td>
