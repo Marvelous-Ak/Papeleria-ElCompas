@@ -51,7 +51,7 @@
       <ng-container *ngFor="let product of listProducts; let i = index">
         <tr>
           <td><input class="form-check-input" type="checkbox"
-            [(ngModel)]="checkboxes[i]" (change)="updateButtonState()"></td>
+            [(ngModel)]="checkboxes[i]" (change)="updateButtonState(product.id)"></td>
           <th scope="row">{{product.brand}}</th>
           <td>{{product.name}}</td>
           <td>{{product.quantity}}</td>
@@ -70,7 +70,7 @@
             <!--Boton Eliminar-->
             <button
               class="btn btn-icon btn-2 btn-danger"
-              type="button">
+              type="button" (click)="deleteProduct(product.id)">
               <span class="btn-inner--icon"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></span>
             </button>
           </td>
