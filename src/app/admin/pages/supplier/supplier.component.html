@@ -12,7 +12,7 @@
         class="btn btn-icon btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalProveedor" 
         (click)="modalNew(true)">
         <span class="btn-inner--icon">
-          <i class="fas fa-box"></i>
+          <i class="fas fa-user-plus"></i>
         </span>
         <span class="btn-inner--text"> Agregar Proveedor </span>
       </button>
@@ -28,8 +28,6 @@
     <thead class="table-dark">
       <tr>
         <th scope="col">Proveedor</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
         <th scope="col">Correo</th>
         <th scope="col">Numero</th>
         <th scope="col">Dirección</th>
@@ -44,15 +42,13 @@
             i < currentPage * itemsPerPage
           ">
           <th scope="row">{{supplier.business}}</th>
-          <td>{{supplier.name}}</td>
-          <td>{{supplier.lastName}}</td>
           <td>{{supplier.email}}</td>
           <td>{{formatoPhone(supplier.phone)}}</td>
           <td>{{supplier.address}}</td>
           <td class="mat-cell">
             <!-- Boton Editar-->
             <button
-              class="btn btn-icon btn-2 btn-warning btn-outline-success" data-bs-toggle="modal" data-bs-target="#ModalProveedor"
+              class="btn btn-icon btn-2 btn-warning" data-bs-toggle="modal" data-bs-target="#ModalProveedor"
               type="button" (click)="modalNew(false)" (click)="idSupp(supplier.id)">
               <span class="btn-inner--icon">
                 <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>
@@ -70,8 +66,44 @@
     </tbody>
   </table>
 
+  <!-- Paginacion -->
+  <nav aria-label="page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a
+          class="page-link"
+          (click)="currentPage = currentPage - 1"
+          aria-label="Previous"
+        >
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let page of getPages()">
+        <a
+          class="page-link"
+          (click)="currentPage = page"
+          [class.active]="currentPage === page"
+        >
+          {{ page }}
+        </a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === getTotalPages()">
+        <a
+          class="page-link"
+          (click)="currentPage = currentPage + 1"
+          aria-label="Next"
+        >
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
  <!-- Modal Agregar Proveedor-->
-<div class="modal fade" id="ModalProveedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="ModalProveedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <!-- Modal Header -->

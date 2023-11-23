@@ -5,7 +5,7 @@ import { Supplier } from 'src/app/Shared/data';
 @Component({
   selector: 'app-supplier-add',
   templateUrl: './supplier-add.component.html',
-  styleUrls: ['./supplier-add.component.scss']
+  styleUrls: ['./supplier-add.component.scss'],
 })
 export class SupplierAddComponent implements OnChanges {
   @Input() isNew: number=1 ;

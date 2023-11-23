@@ -1,7 +1,17 @@
 <h1>Dashboard</h1>
-<div class="card">
-    <div class="card-head">Lorem ipsum - Dashboard</div>
-    <div class="card-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod amet voluptatum odit nemo quis laudantium consectetur hic, blanditiis nisi doloremque. Corrupti perferendis adipisci facilis eaque rerum possimus accusantium blanditiis! Deleniti!
-    </div>
-</div>
+<div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [stroke]="chartOptions.stroke"
+      [dataLabels]="chartOptions.dataLabels"
+      [yaxis]="chartOptions.yaxis"
+      [labels]="chartOptions.labels"
+      [legend]="chartOptions.legend"
+      [title]="chartOptions.title"
+      [subtitle]="chartOptions.subtitle"
+    ></apx-chart>
+  </div>
+
+  

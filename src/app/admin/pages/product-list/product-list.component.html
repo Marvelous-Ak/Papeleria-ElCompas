@@ -13,26 +13,6 @@
   </div>
 </div>
 -->
-<br/>
-<div class="container-fluid">
-  <!-- Agregar Producto-->
-
-  <div class="container">
-    <!-- Button para agregar producto-->
-    <div>
-      <button
-        type="button"
-        class="btn btn-icon btn-outline-success"
-        (click)="pageAddProduc()"
-      >
-        <span class="btn-inner--icon">
-          <i class="fas fa-box"></i>
-        </span>
-        <span class="btn-inner--text"> Agregar Producto </span>
-      </button>
-    </div>
-  </div>
-</div>
 
 <br />
 
@@ -43,9 +23,10 @@
       <tr>
         <th scope="col">Marca</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Stock</th>
+        <th scope="col">PDA</th>
         <th scope="col">Precio</th>
         <th scope="col">Precio Promo</th>
-        <th scope="col">Stock</th>
         <th scope="col">Imagen</th>
         <th scope="col"></th>
       </tr>
@@ -60,9 +41,10 @@
         >
           <th scope="row">{{ product.brand }}</th>
           <td>{{ product.name }}</td>
+          <td>{{ product.stock }}</td>
+          <td>"$250.74"</td>
           <td>$ {{ product.price }}</td>
           <td>{{ product.promo ? "$" + product.pricePromo : "---" }}</td>
-          <td>{{ product.stock }}</td>
           <td class="imageP">
             <div class="text-center img-wrapper">
               <img

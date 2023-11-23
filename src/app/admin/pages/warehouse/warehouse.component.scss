@@ -1,0 +1,29 @@
+.table {
+  vertical-align: middle;
+}
+
+.tittle {
+  color: #034e53;
+}
+
+.container {
+  column-count: 2;
+}
+
+.btn-outline-Produ{
+  color:rgb(21, 173, 183);
+  border-color: rgb(21, 173, 183);
+}
+
+.btn-outline-Produ:hover,
+.btn-outline-Produ:active {
+    color: #fff; /* Color del texto al pasar el ratón o hacer clic */
+    background-color: rgb(21, 173, 183); /* Color de fondo violeta al pasar el ratón o hacer clic */
+    border-color: rgb(21, 173, 183); /* Color del borde al pasar el ratón o hacer clic */
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

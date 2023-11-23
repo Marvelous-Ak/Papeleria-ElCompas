@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 import { SuppliersService } from 'src/app/Services/suppliers.service';
@@ -9,8 +9,10 @@ import { Supplier } from 'src/app/Shared/data';
   templateUrl: './supplier.component.html',
   styleUrls: ['./supplier.component.scss'],
 })
-export class SupplierComponent {
+export class SupplierComponent implements OnInit{
   public listSuppliers: Supplier[] = [];
+
+  
   //idSupplier!: number
   //phoneStr!: string;
 
@@ -22,7 +24,6 @@ export class SupplierComponent {
     this.listAll();
     this.getPages();
   }
-
   //// Traer todos los proveedores: función ShowAll
   public listAll() {
     this.SupplierService.showAll().subscribe((respuesta: any) => {
@@ -32,6 +33,8 @@ export class SupplierComponent {
       respuesta.sort((a:any, b:any) => b.updated_at.getTime() - a.updated_at.getTime());
       this.listSuppliers = respuesta;
     });
+
+  
   }
 
 
@@ -45,7 +48,7 @@ export class SupplierComponent {
   }
 
   /// Paginación
-  itemsPerPage: number = 10; // Cantidad de productos por página
+  itemsPerPage: number = 20; // Cantidad de productos por página
   currentPage: number = 1; // Página actual
 
   getTotalPages(): number {

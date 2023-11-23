@@ -32,6 +32,10 @@ import { ProductAddComponent } from './admin/pages/product-add/product-add.compo
 import { LoadServiceService } from './Services/load-service.service';
 import { UserLogRegComponent } from './pages/user-log-reg/user-log-reg.component';
 import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.component';
+import { WarehouseComponent } from './admin/pages/warehouse/warehouse.component';
+import { WarehouseAddComponent } from './admin/pages/warehouse-add/warehouse-add.component';
+import { SaleComponent } from './admin/pages/sale/sale.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -60,6 +64,9 @@ import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.co
     UserLogRegComponent,
     SupplierComponent,
     SupplierAddComponent,
+    WarehouseComponent,
+    WarehouseAddComponent,
+    SaleComponent,
     
   ],
   imports: [
@@ -67,6 +74,7 @@ import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.co
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgApexchartsModule,
   ],
   providers: [LoadServiceService],
   bootstrap: [AppComponent],

@@ -5,14 +5,19 @@ export const navbarData = [
     label: 'Dashboard',
   },
   {
+    routeLink: 'Sale',
+    icon: 'fa-solid fa-boxes-packing',
+    label: 'Ventas',
+  },
+  {
     routeLink: 'Product-List',
     icon: 'fa-solid fa-list-check',
     label: 'Lista de Productos',
   },
   {
-    routeLink: '',
+    routeLink: 'Warehouse',
     icon: 'fa-solid fa-boxes-stacked',
-    label: 'Bodega (Sin Funcion)',
+    label: 'Bodega',
   },
   {
     routeLink: 'Supplier-List',

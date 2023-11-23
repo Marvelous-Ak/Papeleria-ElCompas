@@ -1,162 +1,175 @@
 //Estilos del formulario
-.containerForm .promoDiv .promo{
-    margin-right: 10px;
+.containerForm .promoDiv .promo {
+  margin-right: 10px;
 }
-.containerForm .promoDiv .actPromo{
-    display: none;
+.containerForm .promoDiv .actPromo {
+  display: none;
 }
 //Estilo de diseño de los contenedores
-.containerForm{
-    width: 90%;
-    height: 95%;
-    //max-height: 800px;
-    max-width: 1000px;
-    margin: auto;
-    position: relative;
+.containerForm {
+  width: 90%;
+  height: 95%;
+  //max-height: 800px;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
 }
-.containerForm .buttons{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.containerForm .buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-.containerForm .buttons button{
-    margin: 5px;
+.containerForm .buttons button {
+  margin: 5px;
 }
-.texto{
-    margin-bottom: 2%;
-}    
+.texto {
+  margin-bottom: 2%;
+}
 //Contenedor Texto(Parte 1)
-.parte1{
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    padding: 5px 10px;
-    //background: #000;
+.parte1 {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  padding: 5px 10px;
+  //background: #000;
 }
 
-@media screen and (max-height:900px){
-    .buttons button{
-        width: 85%;
-    }
-    
+@media screen and (max-height: 900px) {
+  .buttons button {
+    width: 85%;
+  }
 }
 
 //Estilos de div capturar imagen
-.cargarImagen{
-    width: 300px;
-    height: 400px;
-    //background: #000;
-    padding: 5px;
-    border: 2px dashed #D7DBDD;
-    text-align: center;
+.cargarImagen {
+  width: 300px;
+  height: 400px;
+  //background: #000;
+  padding: 5px;
+  border: 2px dashed #d7dbdd;
+  text-align: center;
 }
-.addimg, .capFile{
-    width: 90%;
+.addimg,
+.capFile {
+  width: 90%;
 }
-.addimg{
-    margin: auto;
+.addimg {
+  margin: auto;
 }
-.capFile img{
-    width: 250px;
-    height: 50%;
-    max-height: 350px;
-    border-radius: 5%;
-    //border: 2px solid #000;
-    margin: 0 15px;
-    //vertical-align: middle;
+.capFile img {
+  width: 250px;
+  height: 50%;
+  max-height: 350px;
+  border-radius: 5%;
+  //border: 2px solid #000;
+  margin: 0 15px;
+  //vertical-align: middle;
 }
-.capFile{
-    margin-top: 7px;
-    // vertical-align: middle;
-    //max-height: 340px;
-    //background: #000;
+.capFile {
+  margin-top: 7px;
+  // vertical-align: middle;
+  //max-height: 340px;
+  //background: #000;
 }
-.cargarImagen, .parte1{
-    display: inline-block;
+.cargarImagen,
+.parte1 {
+  display: inline-block;
 }
-.contenedorImgText{
-    width: 100%;
-    max-height: 400px;
-    display: inline-flex;
-    margin-bottom: 10px;
+.contenedorImgText {
+  width: 100%;
+  max-height: 400px;
+  display: inline-flex;
+  margin-bottom: 10px;
 }
 
 //Estilo Button
-.upload{
-    width: 100%;
-    background: #0DCAF0;
-    border: none;
-    cursor: pointer;
-    padding: 2px 0;
-    // position: relative;
-    display: flex;
-    border-radius: 7px;
-    justify-content: center;
-    max-width: 250px;
+.upload {
+  width: 100%;
+  background: #0dcaf0;
+  border: none;
+  cursor: pointer;
+  padding: 2px 0;
+  // position: relative;
+  display: flex;
+  border-radius: 7px;
+  justify-content: center;
+  max-width: 250px;
 }
-.upload:hover{
-    background: #4DDDFA;
+.upload:hover {
+  background: #4dddfa;
 }
 
-.addimg input[type="file"]{
-    display: none;
+.addimg input[type="file"] {
+  display: none;
 }
 //Estilos label
-.parte1 label{
-    width: 85px;
-    font-size: 18px;    
-    margin: 0px 15px;
+.parte1 label {
+  width: 85px;
+  font-size: 18px;
+  margin: 0px 15px;
 }
 
-.parte1 #desc{
-    width: 80%;
-    padding: 2px 3px;
+.parte1 #desc {
+  width: 80%;
+  padding: 2px 3px;
 }
-.config{
-    margin: 15px 0;
+.config {
+  margin: 15px 0;
 }
 //Estilos promo
 .promoDiv .switch-product,
-.promoDiv .actPromo{
-    margin-left: 20px;
+.promoDiv .actPromo {
+  margin-left: 20px;
 }
-.promoDiv{
-    width: 100%;
-    max-width: 600px;
+.promoDiv {
+  width: 100%;
+  max-width: 600px;
 }
-.promoDiv .actPromo #desc{
-    width: 110px;
-    margin: 0;
+.promoDiv .actPromo #desc {
+  width: 110px;
+  margin: 0;
 }
-.promoDiv .actPromo #desc2{
-    width: 80%;
-    padding: 2px 3px;
+.promoDiv .actPromo #desc2 {
+  width: 80%;
+  padding: 2px 3px;
 }
 //Estilos Fomulario Parte 2
-.formulario{
-    width: 100%;
-    max-height: 230px;
-    display: inline-flex;
+.formulario {
+  width: 100%;
+  max-height: 230px;
+  display: inline-flex;
 }
 .formulario .CatSelect,
-.addDescp{
-    display: inline-block;
+.addDescp {
+  display: inline-block;
 }
-.formulario .CatSelect{
-    margin-right: 25px;
+.formulario .CatSelect {
+  margin-right: 25px;
 }
-.addDescp label{
-    font-size: 18px;
-    margin: 0 15px;
-    margin-bottom: 15px;
+.addDescp label {
+  font-size: 18px;
+  margin: 0 15px;
+  margin-bottom: 15px;
 }
-.addDescp #descp{
-    width: 100%;
-    padding: 2px 3px;
-    height: 7.5rem;
-    margin-left: 15px;
+.addDescp #descp {
+  width: 100%;
+  padding: 2px 3px;
+  height: 7.5rem;
+  margin-left: 15px;
 }
-.addDescp{
-    width: 100%;
-    max-width: 600px;
+.addDescp {
+  width: 100%;
+  max-width: 600px;
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+textarea:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

@@ -22,7 +22,7 @@ export class ProductAddComponent implements OnInit{
     public status: boolean= false; /// false: Add   true:  Edit
     public producto!: Product;
     public newProducto: ProductPost ={
-      "brand": "", "name": "", "promo": false, "description": "", "categories":[]
+      "brand": "", "name": "", "promo": false, "description": "", "PDA": 0.00,"categories":[]
     };
     public category: any =[];
     public idArray: number[] = [];
@@ -166,7 +166,7 @@ export class ProductAddComponent implements OnInit{
 
     ///Cancelar acción
     pageListProduc() {
-      this.router.navigate(['admin/Product-List']);
+      this.router.navigate(['admin/Warehouse']);
     }
 
     /// function compresed image
