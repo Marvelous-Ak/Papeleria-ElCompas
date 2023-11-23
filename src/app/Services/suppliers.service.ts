@@ -31,4 +31,9 @@ export class SuppliersService {
   public showAll(){
     return this.http.get(this.apiUrl);
   }
+
+  //GET: business
+  public business(){
+    return this.http.get(this.apiUrl+"s");
+  }
 }

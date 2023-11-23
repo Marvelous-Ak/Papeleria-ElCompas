@@ -10,6 +10,7 @@ export interface Product{
     id: number;
     created_at: Date;
     updated_at: Date;
+    PDA: number;
 }
 
 export interface ProductPost{
@@ -21,8 +22,7 @@ export interface ProductPost{
     promo: boolean;
     description: string;
     stock?: number;
-    cost_of_sale: number;
-    suppliers: string [];
+    PDA: number;
     categories: number[];
 }
 export interface Comment{
@@ -51,4 +51,27 @@ export interface Supplier{
     email: string;
     created_at: Date;
     updated_at: Date;
+}
+export interface ProductW{ ///producto de la bodega
+    id: number;
+    brand: string;
+    name: string;
+    quantity: number;
+    price: number;
+    amount: number;
+    supplier_id: number;
+    created_at: Date;
+    updated_at: Date;
+    supplier: string;
+}
+export interface Sale{
+    id: number;
+    user_name: string;
+    product_name: string;
+    product_brand: string;
+    quantity: number;
+    price: number;
+    amount: number;
+    PDA: number;
+    profit: number;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 import { LoginService } from 'src/app/Services/login.service';
 import { Users } from 'src/app/Shared/data';
@@ -18,7 +19,7 @@ export class UserLogRegComponent implements OnInit {
     "email":"",
     "password":"",
   };
-  constructor(private LoadScript: LoadServiceService, private LoginS: LoginService){
+  constructor(private LoadScript: LoadServiceService, private LoginS: LoginService, private router: Router){
     LoadScript.Carga(["Boostrap5-3","ValidarRegistro"]);
   }
 
@@ -40,7 +41,9 @@ loginUser(){
   .subscribe((respuesta: any) => {
     ///localStorage.setItem('compas_token', respuesta.token);
     //console.log(respuesta.user.rolAdmi)
-    this.LoginS.rol(respuesta.user.rolAdmi); //redireccionar si es un administrador
+    this.LoginS.rol(respuesta.user); //redireccionar si es un administrador
+    this.router.navigate(['home/catalog/5']);
+  
 })
 }
 

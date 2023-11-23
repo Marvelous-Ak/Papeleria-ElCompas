@@ -33,6 +33,8 @@ export class SupplierComponent implements OnInit{
       respuesta.sort((a:any, b:any) => b.updated_at.getTime() - a.updated_at.getTime());
       this.listSuppliers = respuesta;
     });
+
+  
   }
 
 

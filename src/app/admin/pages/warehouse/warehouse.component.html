@@ -8,7 +8,7 @@
     <!-- Button para agregar producto-->
     <div class="d-flex justify-content-start">
       <button
-        type="button"
+        type="button" (click)="modalNew(true)"
         class="btn btn-icon btn-outline btn-outline-Produ" data-bs-toggle="modal" data-bs-target="#ModalProveedor">
         <span class="btn-inner--icon">
           <i class="fas fa-box"></i>
@@ -48,47 +48,21 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container>
+      <ng-container *ngFor="let product of listProducts; let i = index">
         <tr>
           <td><input class="form-check-input" type="checkbox"
           [(ngModel)]="checkbox1" (change)="updateButtonState()"></td>
-          <th scope="row">PaperMate</th>
-          <td>Kit de 3 Boligrafos punta fina 0.7mm</td>
-          <td>50</td>
-          <td>$10.69</td>
-          <td>$534.50</td>
-          <td>Papeleria Tony</td>
+          <th scope="row">{{product.brand}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.quantity}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.amount}}</td>
+          <td>{{product.supplier}}</td>
           <td class="mat-cell">
             <!-- Boton Editar-->
             <button
               class="btn btn-icon btn-2 btn-warning" data-bs-toggle="modal" data-bs-target="#ModalProveedor"
-              type="button">
-              <span class="btn-inner--icon">
-                <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>
-              </span>
-            </button>
-            <!--Boton Eliminar-->
-            <button
-              class="btn btn-icon btn-2 btn-danger"
-              type="button">
-              <span class="btn-inner--icon"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></span>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td><input class="form-check-input" type="checkbox"
-            [(ngModel)]="checkbox2" (change)="updateButtonState()"></td>
-          <th scope="row">PaperMate</th>
-          <td>Corrector liquido 35ml</td>
-          <td>42</td>
-          <td>$8.76</td>
-          <td>$367.92</td>
-          <td>Papeleria Tony</td>
-          <td class="mat-cell">
-            <!-- Boton Editar-->
-            <button
-              class="btn btn-icon btn-2 btn-warning" data-bs-toggle="modal" data-bs-target="#ModalProveedor"
-              type="button">
+              type="button" (click)="modalNew(false)" (click)="sendP(product.id)">
               <span class="btn-inner--icon">
                 <i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>
               </span>
@@ -111,12 +85,13 @@
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Agregar Producto</h4>
+        <h4 class="modal-title">{{mensaje}}</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-        <app-warehouse-add></app-warehouse-add>
+        <app-warehouse-add *ngIf="isNew" [isNew]="true"></app-warehouse-add>
+        <app-warehouse-add *ngIf="!isNew" [isNew]="false" [productWarehouse]="productoEnviado"></app-warehouse-add>
       </div>
     </div>
   </div>

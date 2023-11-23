@@ -2,32 +2,37 @@
   <!-- Nombre -->
   <div class="col-md-12 position-relative">
     <label for="name" class="form-label fw-bold">Nombre</label>
-    <input type="text" id="name" class="form-control" placeholder="Boligrafo Punta Fina" required/>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Boligrafo Punta Fina" required
+    *ngIf="!isNew" [(ngModel)]="product.name" (ngModelChange)="product.name"
+    [ngModelOptions]="{standalone: true}"/>
+    <input type="text" id="name" name="name" class="form-control" placeholder="Boligrafo Punta Fina" [(ngModel)]="product.name"  required *ngIf="isNew"/>
     <div class="invalid-tooltip">Ingrese el nombre del producto</div>
   </div>
 
   <!-- Marca -->
   <div class="col-md-6 position-relative">
     <label for="marca" class="form-label fw-bold">Marca</label>
-    <input type="text" id="marca" class="form-control" placeholder="PaperMate" required/>
+    <input type="text" id="marca" name="brand" class="form-control" placeholder="PaperMate" required *ngIf="!isNew" [(ngModel)]="product.brand" (ngModelChange)="product.brand"
+    [ngModelOptions]="{standalone: true}"/>
+    <input type="text" id="marca" name="brand" class="form-control" placeholder="PaperMate" [(ngModel)]="product.brand"  required *ngIf="isNew"/>
     <div class="invalid-tooltip">Ingrese la marca del producto</div>
   </div>
 
   <!-- Proveedor -->
   <div class="col-md-6 position-relative">
     <label class="form-label fw-bold" for="provee">Proveedor</label>
-        <select class="form-select" id="provee" aria-label="Default select example">
+        <select class="form-select" name="supplier" id="provee" aria-label="Default select example" [(ngModel)]="product.supplier">
             <option selected>Proveedor</option>
-            <option value="1">Papeleria Tony</option>
-            <option value="2">Super Papeleria</option>
-            <option value="3">Amazon</option>
+            <option *ngFor="let proveedor of business" [value]="proveedor">{{ proveedor }}</option>
           </select>
   </div>
 
   <!-- Cantidad -->
   <div class="col-md-6 position-relative">
     <label for="cant" class="form-label fw-bold">Cantidad</label>
-    <input type="text" id="cant" onkeypress="return '0123456789'.includes(event.key)" class="form-control" placeholder="50" maxlength="10" required/>
+    <input type="text" id="cant" onkeypress="return '0123456789'.includes(event.key)" class="form-control" placeholder="50" maxlength="10" required [(ngModel)]="product.quantity" (ngModelChange)="product.quantity"
+    [ngModelOptions]="{standalone: true}"/>
+    <!--input type="text" id="cant" onkeypress="return '0123456789'.includes(event.key)" class="form-control" placeholder="50" maxlength="10" [(ngModel)]="product.quantity"  (ngModelChange)="product.quantity" required *ngIf="isNew"/-->
     <div class="invalid-tooltip">Ingrese la cantidad de productos</div>
   </div>
 
@@ -36,20 +41,22 @@
     <label class="form-label fw-bold" for="price" name="price">Precio</label>
     <div class="input-group">
       <span class="input-group-text">$</span>
-      <input class="form-control" onkeypress="return '0123456789.'.includes(event.key)" type="text" id="price" name="price" maxlength="10" placeholder="15.78" required/>
+      <input class="form-control" onkeypress="return '0123456789.'.includes(event.key)" type="text" id="price" name="price" maxlength="10" placeholder="15.78" required  [(ngModel)]="product.price" (ngModelChange)="product.price"
+      [ngModelOptions]="{standalone: true}"/>
+      <!--input class="form-control" onkeypress="return '0123456789.'.includes(event.key)" type="text" id="price" name="price" maxlength="10" placeholder="15.78" [(ngModel)]="product.price" (ngModelChange)="product.price" required *ngIf="isNew"/-->
     </div>
   </div>
   <!-- Importe-->
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <h5 class="fw-bold">Importe: </h5>
-      <h5>$00.00</h5>
+      <h5>{{importe()}}</h5>
   </div>
 
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <!-- Agregar-->
-    <button class="btn btn-success col-3" type="submit" data-bs-dismiss="modal">
+    <button class="btn btn-success col-3" type="submit" data-bs-dismiss="modal"  (click)="supplierAction()">
       <i class="fa-solid fa-check"></i>
-      Agregar
+      {{mensaje}}
     </button>
     <!-- Cancelar-->
     <button type="button" class="btn btn-danger col-3" data-bs-dismiss="modal">

@@ -44,7 +44,7 @@ export class LoginService {
     if (userRole === 1) {
       this.router.navigate(['/admin']);
     } else {
-      this.router.navigate(['home/catalog/2']);
+      this.router.navigate(['home/']);
     }
   }
 }
