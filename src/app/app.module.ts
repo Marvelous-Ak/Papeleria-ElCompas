@@ -35,6 +35,7 @@ import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.co
 import { WarehouseComponent } from './admin/pages/warehouse/warehouse.component';
 import { WarehouseAddComponent } from './admin/pages/warehouse-add/warehouse-add.component';
 import { SaleComponent } from './admin/pages/sale/sale.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { SaleComponent } from './admin/pages/sale/sale.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgApexchartsModule,
   ],
   providers: [LoadServiceService],
   bootstrap: [AppComponent],
