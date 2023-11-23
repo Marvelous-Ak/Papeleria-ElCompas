@@ -24,7 +24,6 @@
 
         <!-- Contenedor de producto parte 1 -->
         <div class="parte1">
-
             <!-- Nombre -->
             <div class="input-group mb-3 nombreP config">
                 <label class="form-label" for="name">Nombre:</label>
@@ -40,9 +39,15 @@
                     [ngModelOptions]="{standalone: true}" required>
                 <input class="form-control" type="text" id="brand" name="brand" [(ngModel)]="newProducto.brand" maxlength="10" placeholder="Ej. Scribe" *ngIf="!status" required>
             </div>
+            <!-- Precio Adquisición-->
+            <div class="input-group col-md-6 precioP config">
+                <label class="form-label" for="priceA" name="priceA">PDA:</label>
+                <span class="input-group-text">$</span>
+                <input class="form-control" type="text" id="priceA" name="priceA" placeholder="42.99" disabled>
+            </div> 
 
             <!-- Precio -->
-            <div class="input-group mb-3 precioP config">
+            <div class="input-group col-md-6precioP config">
                 <label class="form-label" for="price" name="price">Precio:</label>
                 <span class="input-group-text">$</span>
                 <input class="form-control" type="text" id="price" name="price" maxlength="10" placeholder="00.00" *ngIf="status" [(ngModel)]="producto.price"  (ngModelChange)="producto.price"

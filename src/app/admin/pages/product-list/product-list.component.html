@@ -23,9 +23,10 @@
       <tr>
         <th scope="col">Marca</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Stock</th>
+        <th scope="col">PDA</th>
         <th scope="col">Precio</th>
         <th scope="col">Precio Promo</th>
-        <th scope="col">Stock</th>
         <th scope="col">Imagen</th>
         <th scope="col"></th>
       </tr>
@@ -40,9 +41,10 @@
         >
           <th scope="row">{{ product.brand }}</th>
           <td>{{ product.name }}</td>
+          <td>{{ product.stock }}</td>
+          <td>"$250.74"</td>
           <td>$ {{ product.price }}</td>
           <td>{{ product.promo ? "$" + product.pricePromo : "---" }}</td>
-          <td>{{ product.stock }}</td>
           <td class="imageP">
             <div class="text-center img-wrapper">
               <img
