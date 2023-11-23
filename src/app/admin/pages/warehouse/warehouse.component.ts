@@ -9,9 +9,7 @@ import { ProductW } from 'src/app/Shared/data';
   styleUrls: ['./warehouse.component.scss'],
 })
 export class WarehouseComponent implements OnInit{
-
-  checkbox1: boolean = false;
-  checkbox2: boolean = false;
+  checkboxes: boolean[] = [];
   isButtonEnabled: boolean = false;
 
   public listProducts: ProductW[] = [];
@@ -19,7 +17,8 @@ export class WarehouseComponent implements OnInit{
 
 
   updateButtonState() {
-    this.isButtonEnabled = (this.checkbox1 ? 1 : 0) + (this.checkbox2 ? 1 : 0) === 1;
+    const checkedCount = this.checkboxes.filter(checkbox => checkbox).length;
+    this.isButtonEnabled = checkedCount === 1;
   }
   
 
@@ -32,6 +31,7 @@ export class WarehouseComponent implements OnInit{
 
   ngOnInit(){
     this.listAll();
+    this.checkboxes = new Array(this.listProducts.length).fill(false);
   }
 
   pageAddProduc() {
