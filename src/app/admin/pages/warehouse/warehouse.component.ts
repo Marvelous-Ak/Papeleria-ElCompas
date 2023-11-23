@@ -15,10 +15,15 @@ export class WarehouseComponent implements OnInit{
   public listProducts: ProductW[] = [];
   public business: string[] = [];
 
+  idP!:number
 
-  updateButtonState() {
+
+  updateButtonState(id: number) {
     const checkedCount = this.checkboxes.filter(checkbox => checkbox).length;
     this.isButtonEnabled = checkedCount === 1;
+    this.idP= id;
+    //console.log(id);
+    ///this.boton
   }
   
 
@@ -35,7 +40,7 @@ export class WarehouseComponent implements OnInit{
   }
 
   pageAddProduc() {
-    this.router.navigate(['admin/Product-Add']);
+    this.router.navigate(['admin/Product-Add'], { queryParams: { id: this.idP } });
   }
 
   ///serivcios..
@@ -53,6 +58,16 @@ export class WarehouseComponent implements OnInit{
        }
 
     });
+  }
+
+  //eliminar 
+  deleteProduct(id: number){
+    this.bodega.delete(id)
+  .subscribe((respuesta: any) => {
+    console.log(respuesta)
+    location.reload();
+
+  })
   }
 
   ///Modal

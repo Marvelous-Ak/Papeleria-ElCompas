@@ -66,6 +66,7 @@ export class ProductAddComponent implements OnInit{
       this.producto = respuesta;
       this.newProducto.image = respuesta.image;
       this.newProducto.promo = respuesta.promo;
+      this.producto.PDA = this.newProducto.PDA = respuesta.cost_of_sale;
       this.cambi();
       
     })
@@ -91,6 +92,7 @@ export class ProductAddComponent implements OnInit{
         this.newProducto.stock = this.producto.stock;
         this.newProducto.description = this.producto.description;
         this.newProducto.price = this.producto.price;
+        this.newProducto.PDA = this.producto.PDA;
         if (this.producto.promo) {
           this.newProducto.pricePromo = this.producto.pricePromo;
         }
