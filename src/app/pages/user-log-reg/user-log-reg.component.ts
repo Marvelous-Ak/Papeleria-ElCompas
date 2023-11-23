@@ -42,7 +42,7 @@ loginUser(){
     ///localStorage.setItem('compas_token', respuesta.token);
     //console.log(respuesta.user.rolAdmi)
     this.LoginS.rol(respuesta.user); //redireccionar si es un administrador
-    this.router.navigate(['home/catalog/5']);
+    this.router.navigate(['home/']);
   
 })
 }

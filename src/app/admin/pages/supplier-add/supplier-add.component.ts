@@ -51,7 +51,8 @@ export class SupplierAddComponent implements OnChanges {
   newSupplier(){
     this.supplierService.create(this.supplierInfo)
   .subscribe((respuesta: any) => {
-    console.log(respuesta)
+    console.log(respuesta);
+    location.reload();
   })
   }
 

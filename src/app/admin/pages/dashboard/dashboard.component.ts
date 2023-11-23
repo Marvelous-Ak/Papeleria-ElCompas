@@ -31,12 +31,13 @@ export type ChartOptions = {
 export class DashboardComponent implements OnInit {
   chartOptions!: ChartOptions;
 
+  
 
   ngOnInit() {
     this.chartOptions = {
       series: [
         {
-          name: 'STOCK ABC',
+          name: 'STOCK',
           data: series.monthDataSeries1.prices,
         },
       ],
