@@ -92,10 +92,10 @@
           <!-- End Favoritos -->
           <!-- Carrito -->
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">
+            <button class="nav-link text-dark " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
               <img src="/assets/img/cart.svg" width="30" height="auto" alt="Carrito">
               Cart
-            </a>
+            </button>
           </li>
           <!-- End Carrito -->
         </ul>
@@ -104,3 +104,61 @@
     </div>
   </nav>
   <!-- End Navbar -->
+
+  <!-- Div del carrito -->
+  <div class="containerCarr offcanvas offcanvas-end" id="offcanvasRight">
+    <!-- Cabezera del contenedor -->
+    <div class="cabezera">
+      <h2>My cart</h2>
+      <button type="button" class="btn-close cerrar" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <!-- Cuerpo de las compras -->
+    <div class="body">
+      <div class="producto">
+        <!-- Imagen del Producto -->
+        <div class="imageP">
+          <img src="https://www.officedepot.com.mx/medias/91273.jpg-515ftw?context=bWFzdGVyfHJvb3R8ODc1MDB8aW1hZ2UvanBlZ3xoOGMvaDEzLzk5MDE0MzA4MDA0MTQuanBnfGFkM2I1MjNlNWY2ODA0ODkwNDZjMTUxNDNmYTQzMGEwNzJhMTc5NThiNDY5YTRjOWQyOTljNjdiNmFhNDk0YjA" alt="">
+        </div>
+        <!-- Descipcion del Producto -->
+        <div class="descripcion">
+          <div class="title-icon">
+            <label for="" name="nombre">Memoria USB Adata UV128 / 128gb / USB 3.0 / Negro con azul</label>
+            <i class="fa-regular fa-trash-can delete"></i>
+          </div>
+          <div class="precio">
+            <label for="" name="price">Precio: $300.00 MXN</label>
+          </div>
+          <div class="cantidad">
+            <button>-</button>
+            <input type="text" value="1" id="cantidad">
+            <button>+</button>
+          </div>
+          <div class="subtotal">
+            <label for="" name="total" id="total">Subtotal: $300.00 MXN</label>
+          </div>          
+        </div>        
+      </div>
+    </div>
+    <!-- Boton, Total y descuento -->
+    <div class="footer">
+      <!--<div class="cupon">
+        <div class="col-sm">
+          <input type="text" class="form-control" placeholder="Enter Discount Code">
+        </div>
+        <Button class="apply">Apply</Button>
+      </div>
+      <div class="total">
+        <label name="subtotal" for="" id="total">Subtotal</label>
+        <label name="precioAnterior" for="" id="subtotal">$52.10</label>
+      </div>
+      <div class="total corte">
+        <label name="totalD" for="" id="total">Descuento</label>
+        <label name="aplica" for="" id="descuento">No Aplica</label>
+      </div>-->
+      <div class="total">
+        <label name="total" for="" id="total">Total de Compra</label>
+        <label name="precio" for="" id="compra">$52.10</label>
+      </div>
+      <Button class="btn btn-info">Comprar</Button>
+    </div>
+  </div>

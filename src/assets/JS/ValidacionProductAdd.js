@@ -6,10 +6,12 @@ checkbox.addEventListener('change', function() {
   promoAct.disabled = !checkbox.checked;
 });
 
-if(checkbox.checked){
-  promoAct.disabled = false;
-} else {
-  promoAct.disabled = true;
+if(promoAct){
+  if(checkbox.checked){
+    promoAct.disabled = false;
+  } else {
+    promoAct.disabled = true;
+  }
 }
 
 

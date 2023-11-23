@@ -94,3 +94,115 @@
 .navbar_text {
   margin: 0px 20px;
 }
+//Estilo del Contenedor Carrito
+.containerCarr{
+  //width: 25%;
+  //max-width: 420px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: #FFFFFF;
+  padding: 1em;
+}
+.containerCarr .cabezera .cerrar{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+.cabezera{
+  border-bottom: solid 2px #F2F3F4;
+}
+.containerCarr .footer .btn-info{
+  width: 100%;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+.cupon{
+  display: flex;
+  margin-bottom: 10px;
+}
+.cupon .col-sm{
+  width: 70%;
+}
+.cupon .apply{
+  width: 30%;
+  border-radius: 5px;
+  border: none;
+}
+.cupon .apply:hover{
+  background: #E5E7E9;
+}
+.total label{
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+#compra{
+  position: absolute;
+  right: 20px;
+}
+.footer .total{
+  margin-bottom: 10px;
+  border-bottom: solid 2px #F2F3F4;
+}
+//Estilo Eliminar
+.title-icon{
+  position: relative;
+}
+.title-icon .delete{
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  top: 0;
+}
+//Estilos del contenedor Producto
+.producto{
+  width: 100%;
+  display: flex;
+  border-bottom: solid 2px #F2F3F4;
+}
+.producto .imageP{
+  width: 100px;
+  height: 150px;
+}
+.producto .imageP img{
+  width: 100%;
+  height: 100%;
+}
+.producto .title-icon label{
+  width: 90%;
+}
+.producto label{
+  font-size: 10px;
+}
+.producto #cantidad{
+  width: 50px;
+  text-align: center;
+  cursor: default;
+}
+.producto #total{
+  position: absolute;
+  right: 50px;
+}
+.descripcion{
+  margin: auto 0px;
+}
+.descripcion .cantidad button{
+  width: 20px;
+  height: 28px;
+  border: none;
+}
+//Posiciones de los contenedores
+.body{
+  width: 100%;
+  height: 75%;
+  //background: #000;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 92%;
+  //height: 5%;
+  //text-align: center;
+  margin-bottom: 10px;
+}
