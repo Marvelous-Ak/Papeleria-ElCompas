@@ -18,10 +18,10 @@ export class WarehouseComponent implements OnInit{
   idP!:number
 
 
-  updateButtonState(id: number) {
+  updateButtonState() {
     const checkedCount = this.checkboxes.filter(checkbox => checkbox).length;
     this.isButtonEnabled = checkedCount === 1;
-    this.idP= id;
+    //this.idP= id;
     //console.log(id);
     ///this.boton
   }
