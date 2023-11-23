@@ -5,9 +5,9 @@ export const navbarData = [
     label: 'Dashboard',
   },
   {
-    routeLink: 'Dashboard',
+    routeLink: 'Sale',
     icon: 'fa-solid fa-boxes-packing',
-    label: 'Ventas (Sin Funcion)',
+    label: 'Ventas',
   },
   {
     routeLink: 'Product-List',

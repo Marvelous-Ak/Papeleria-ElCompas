@@ -34,6 +34,7 @@ import { UserLogRegComponent } from './pages/user-log-reg/user-log-reg.component
 import { SupplierAddComponent } from './admin/pages/supplier-add/supplier-add.component';
 import { WarehouseComponent } from './admin/pages/warehouse/warehouse.component';
 import { WarehouseAddComponent } from './admin/pages/warehouse-add/warehouse-add.component';
+import { SaleComponent } from './admin/pages/sale/sale.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { WarehouseAddComponent } from './admin/pages/warehouse-add/warehouse-add
     SupplierAddComponent,
     WarehouseComponent,
     WarehouseAddComponent,
+    SaleComponent,
     
   ],
   imports: [
