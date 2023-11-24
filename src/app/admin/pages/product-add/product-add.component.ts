@@ -47,13 +47,13 @@ export class ProductAddComponent implements OnInit{
         // Verifica la URL para determinar desde qué ruta se redirigió
         if (segments[0].path === 'Product-Add') { 
           this.status = false;
-          this.titleB.setTitle('Agregar Producto Nuevo');
+          //this.titleB.setTitle('Agregar Producto Nuevo');
         } else if (segments[0].path === 'Product-Edit'){
           this.route.params.subscribe(params => {
             this.idP = +params['numero']; // El "+" convierte el parámetro en un número
             this.status = true;
             this.cargarInfo();
-            this.titleB.setTitle('Actualizar Producto');
+            //this.titleB.setTitle('Actualizar Producto');
           });
         } 
       });

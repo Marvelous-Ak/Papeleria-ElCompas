@@ -51,7 +51,7 @@
       <ng-container *ngFor="let product of listProducts; let i = index">
         <tr>
           <td><input class="form-check-input" type="checkbox"
-            [(ngModel)]="checkboxes[i]" (change)="updateButtonState(product.id)"></td>
+            [(ngModel)]="checkboxes[i]" (change)="updateButtonState()"></td>
           <th scope="row">{{product.brand}}</th>
           <td>{{product.name}}</td>
           <td>{{product.quantity}}</td>
