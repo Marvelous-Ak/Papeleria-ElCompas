@@ -45,6 +45,10 @@ export class ProductListComponent {
       // Selecciona los n productos más recientes
       //this.listProduct = respuesta.slice(0, 12);
       this.listProduct = respuesta;
+
+      for (let i = 0; i < this.listProduct.length; i++) {
+        this.listProduct[i].PDA = respuesta[i].cost_of_sale
+       }
     });
   }
 
