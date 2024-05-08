@@ -1,0 +1,35 @@
+<header>
+    <div class="container">
+        <h1>Carrito</h1>
+    </div>
+</header>
+<section class="papped">
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>COD</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listaItemsCarrito">
+                    <td><img src={{item.image}} alt="" width="100px" height="100px"></td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.stock}}</td>
+                    <td>{{item.stock! * item.price! | number: '.2'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="contBuy">
+            <button class="btn btn-danger" (click)="cleanCarrito()">Vaciar Carrito</button>
+            <button class="btn btn-primary" (click)="pagos()">Comprar</button>
+        </div>
+    </div>
+</section>

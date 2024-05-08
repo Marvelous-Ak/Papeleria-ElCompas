@@ -94,6 +94,8 @@
 .navbar_text {
   margin: 0px 20px;
 }
+
+
 //Estilo del Contenedor Carrito
 .containerCarr{
   //width: 25%;
@@ -118,20 +120,8 @@
   text-transform: uppercase;
   margin: 0 auto;
 }
-.cupon{
-  display: flex;
-  margin-bottom: 10px;
-}
-.cupon .col-sm{
-  width: 70%;
-}
-.cupon .apply{
-  width: 30%;
-  border-radius: 5px;
-  border: none;
-}
-.cupon .apply:hover{
-  background: #E5E7E9;
+.descripcion .precio{
+  margin-bottom: 7px;
 }
 .total label{
   font-size: 15px;
@@ -205,4 +195,14 @@
   //height: 5%;
   //text-align: center;
   margin-bottom: 10px;
+}
+
+// Configuracion del Menu Carrito Parte 2
+.carrito .linkC:hover{
+  //cursor: pointer;
+  color: rgba(0,0,0,0.5);
+}
+.linkC{
+  text-decoration: none;
+  color: #000000;
 }
