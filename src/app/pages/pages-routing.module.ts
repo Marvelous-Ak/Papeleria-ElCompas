@@ -6,11 +6,16 @@ import { LocationComponent } from './location/location.component';
 import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
 import { UserLogRegComponent } from './user-log-reg/user-log-reg.component';
+import { InfoPagesComponent } from './info-pages/info-pages.component';
 
 
 //Prueba de diseños
 import { CardComponent } from './card/card.component';
 import { CommentComponent } from './comment/comment.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { MetodosPagosComponent } from './metodos-pagos/metodos-pagos.component';
+import { PagoComponent } from './pago/pago.component';
+import { PagoEfectivoComponent } from './pago-efectivo/pago-efectivo.component';
 
 const routes: Routes = [
   {
@@ -51,6 +56,26 @@ const routes: Routes = [
   {
     path: 'login',
     component: UserLogRegComponent,
+  },
+  {
+    path: 'info-pages',
+    component: InfoPagesComponent,
+  },
+  {
+    path: 'carrito',
+    component: CarritoComponent,
+  },
+  {
+    path: 'payments',
+    component: MetodosPagosComponent,
+  },
+  {
+    path: 'buyproduct-carr',
+    component: PagoComponent,
+  },
+  {
+    path: 'deposito-compra',
+    component: PagoEfectivoComponent,
   },
 ];
 

@@ -36,6 +36,11 @@ import { WarehouseComponent } from './admin/pages/warehouse/warehouse.component'
 import { WarehouseAddComponent } from './admin/pages/warehouse-add/warehouse-add.component';
 import { SaleComponent } from './admin/pages/sale/sale.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { InfoPagesComponent } from './pages/info-pages/info-pages.component';
+import { CarritoComponent } from './pages/carrito/carrito.component';
+import { MetodosPagosComponent } from './pages/metodos-pagos/metodos-pagos.component';
+import { PagoComponent } from './pages/pago/pago.component';
+import { PagoEfectivoComponent } from './pages/pago-efectivo/pago-efectivo.component';
 
 
 @NgModule({
@@ -67,6 +72,11 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     WarehouseComponent,
     WarehouseAddComponent,
     SaleComponent,
+    InfoPagesComponent,
+    CarritoComponent,
+    MetodosPagosComponent,
+    PagoComponent,
+    PagoEfectivoComponent,
     
   ],
   imports: [
