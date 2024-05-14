@@ -41,6 +41,7 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
 import { MetodosPagosComponent } from './pages/metodos-pagos/metodos-pagos.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PagoEfectivoComponent } from './pages/pago-efectivo/pago-efectivo.component';
+import { BuysCompleteComponent } from './pages/buys-complete/buys-complete.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { PagoEfectivoComponent } from './pages/pago-efectivo/pago-efectivo.compo
     MetodosPagosComponent,
     PagoComponent,
     PagoEfectivoComponent,
+    BuysCompleteComponent,
     
   ],
   imports: [

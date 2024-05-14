@@ -16,6 +16,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { MetodosPagosComponent } from './metodos-pagos/metodos-pagos.component';
 import { PagoComponent } from './pago/pago.component';
 import { PagoEfectivoComponent } from './pago-efectivo/pago-efectivo.component';
+import { BuysCompleteComponent } from './buys-complete/buys-complete.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'deposito-compra',
     component: PagoEfectivoComponent,
+  },
+  {
+    path: 'complete-buys',
+    component: BuysCompleteComponent,
   },
 ];
 

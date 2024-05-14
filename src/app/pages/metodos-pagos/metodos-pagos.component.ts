@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadServiceService } from 'src/app/Services/load-service.service';
 
@@ -7,12 +7,13 @@ import { LoadServiceService } from 'src/app/Services/load-service.service';
   templateUrl: './metodos-pagos.component.html',
   styleUrls: ['./metodos-pagos.component.scss']
 })
-export class MetodosPagosComponent {
+export class MetodosPagosComponent{
 
   constructor(private router: Router, private LoadScript: LoadServiceService){
-    LoadScript.Carga(["MercadoPgo"]);
+    LoadScript.Carga(["PayPal"]);
   }
 
+  
   entrada(number: number){
     console.log('Numero: ',number);
     switch(number){
@@ -26,7 +27,7 @@ export class MetodosPagosComponent {
         this.router.navigate(["home/deposito-compra"]);
         break;
       case 4:
-        this.router.navigate([""]);
+        //this.router.navigate([""]);
         break;
       case 5:
         this.router.navigate([]);

@@ -4,7 +4,7 @@
     </div>
 </header>
 <section class="papped">
-    <div class="container">
+    <div class="container" *ngIf="listaItemsCarrito.length > 0" id="tablaProducto">
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
@@ -21,15 +21,41 @@
                     <td><img src={{item.image}} alt="" width="100px" height="100px"></td>
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
-                    <td>{{item.price}}</td>
+                    <td>${{item.price}}</td>
                     <td>{{item.stock}}</td>
-                    <td>{{item.stock! * item.price! | number: '.2'}}</td>
+                    <td>${{item.stock! * item.price! | number: '.2'}}</td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align: left;">Total:</td>
+                    <td>${{total | number: '.2'}}</td>
                 </tr>
             </tbody>
         </table>
         <div class="contBuy">
-            <button class="btn btn-danger" (click)="cleanCarrito()">Vaciar Carrito</button>
-            <button class="btn btn-primary" (click)="pagos()">Comprar</button>
+            <button class="btn btn-danger" (click)="cleanCarrito()" id="clear">Vaciar Carrito</button>
+            <button class="btn btn-primary" (click)="pagos()" id="buy">Comprar</button>
+        </div>
+    </div>
+
+    <div id="mensajemuestra" *ngIf="listaItemsCarrito.length == 0">
+        <div  id="mensajeCarrito" class="mensaje">
+            <h1>No hay producto disponible en este momento</h1>
+            <p>Lo sentimos, pero su carrito no tiene productos guardados</p>
+        </div>
+    
+        <div class="nohay-productos">
+            <div class="aviso-vacio">
+              <i class="cad1 fa fa-cart-arrow-down fa-5x "></i> 
+              <div class="text-vacio">
+                ¡Su carrito esta vacío!
+                <div class="slide-header">
+                 <i class="sad1 fa fa-frown-o" onmouseover="this.className='hap1 fa fa-smile-o'" onmouseout="this.className='sad1 fa fa-frown-o'"></i>
+                </div>
+                <div class="slide-content">
+                   ¡Vamos a Comprar!<i class="carcomp fa fa-shopping-cart faa-horizontal animated"></i>
+                </div>
+            </div>
+          </div>
         </div>
     </div>
 </section>

@@ -5,3 +5,7 @@ export interface ItemCarrito{
     stock: number | undefined;
     image: string | undefined;
 }
+
+export interface pago{
+    numberT: number | undefined
+}

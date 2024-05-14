@@ -8,7 +8,38 @@
     </div>
 </nav>
   <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="oxxo" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...</div>
+    <!-- Metodo de Pago OXXO -->
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="mb-4">Pago por OXXO</h2>
+          <form id="paymentForm">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required>
+              <div id="nombreError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
+              <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono" required>
+              <div id="telefonoError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label for="monto">Monto a pagar</label>
+              <input type="number" class="form-control" id="monto" placeholder="Ingresa el monto a pagar" min="1" required>
+              <div id="montoError" class="error-message"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Generar Comprobante OXXO</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Metodo de Pago 7leven -->
     <div class="tab-pane fade" id="7leven" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
     <div class="tab-pane fade" id="BBVA Bancomer" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
     <div class="tab-pane fade" id="Banamex" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>

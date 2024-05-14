@@ -1,6 +1,8 @@
 <div class="header">
     <p class="texto">
         Métodos de Pagos
+        <!-- Mercado Pago npm install @mercadopago/sdk-react -->
+        <!-- PayPal npm install dotenv express node-fetch -->
     </p>
 </div>
 
@@ -18,7 +20,7 @@
         <div class="contImg">
             <img src="https://static.wixstatic.com/media/32c95b_da27cadfe850441db601e22f61dfda0d~mv2.png/v1/fill/w_210,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/mercadopago-nuevo-logo-12208FF614-seeklogo_com.png" alt="">
         </div>
-        <div class="contDesc" id="wallet_container">
+        <div class="contDesc">
             <p class="desp">Mercado Pago</p>
         </div>
     </div>
@@ -31,7 +33,7 @@
             <p class="info">7-Eleven, BBVA Bancomer, Banamex, Oxxo y Otros</p>
         </div>
     </div>
-    <div class="metodos-pago" (click)="entrada(4)">
+    <div class="metodos-pago" (click)="entrada(4)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         <div class="contImg">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX_NO7xjnZr4O5_kQ3s4tL9xcQv5Ahwiy8Ri4MhfhqvA&s" alt="">
         </div>
@@ -47,9 +49,30 @@
             <p class="desp">Transferecias Bancarias</p>
         </div>
     </div>
+    <div id="wallet_container"></div>
     <div class="img">
         <div class="imageCont">
             <img src="/assets/img/pagos.jpg" alt="" class="pagos">
         </div>
     </div>
 </div>
+
+
+<!-- Contenedor de Pago de Paypal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Pago por PayPal</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="paypal-button-container"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="exit">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+        </div>
+      </div>
+    </div>
+  </div> 

@@ -15,4 +15,8 @@ export class NavbarComponent {
     const encodedSearchTerm = encodeURIComponent(this.searchTerm).replace(/%20/g, '_');
     this.router.navigate(['home/search'], { queryParams: { q: encodedSearchTerm } });
   }
+
+  pageCarr(){
+    this.router.navigate(['home/carrito']);
+  }
 }

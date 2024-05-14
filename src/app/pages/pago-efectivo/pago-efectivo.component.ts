@@ -8,7 +8,7 @@ import { LoadServiceService } from 'src/app/Services/load-service.service';
 })
 export class PagoEfectivoComponent {
   constructor(private LoadScript: LoadServiceService){
-    LoadScript.Carga(["ToggleVisibility"]);
+    LoadScript.Carga(["ToggleVisibility", "Boostrap5-3"]);
   }
 
 }
